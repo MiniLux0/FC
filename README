@@ -1,0 +1,201 @@
+# ⚛️ FC-UNI — Plataforma Estudiantil de la Facultad de Ciencias
+
+Plataforma web creada **por y para estudiantes** de la Facultad de Ciencias de la Universidad Nacional de Ingeniería (UNI).
+
+🔗 **Sitio en vivo:** https://minilux0.github.io/FC/
+
+---
+
+## 📖 Descripción
+
+**FC-UNI** es una plataforma independiente que centraliza información clave, recursos académicos y orientación práctica para estudiantes de la Facultad de Ciencias.
+
+El objetivo es simplificar el acceso a información que normalmente está dispersa en múltiples fuentes institucionales.
+
+---
+
+## 🎯 Propósito
+
+* Facilitar la transición de ingresantes a la vida universitaria
+* Centralizar recursos académicos útiles
+* Reducir la desinformación sobre trámites y reglamentos
+* Visibilizar el impacto internacional de egresados FC
+* Construir una comunidad estudiantil informada
+
+---
+
+## 🏫 Sobre la Facultad de Ciencias (UNI)
+
+La Facultad de Ciencias de la UNI:
+
+* Tiene origen en la antigua Facultad de Ciencias Físicas y Matemáticas
+* Adopta su estructura actual en 1983
+* Integra cinco escuelas profesionales
+* Forma investigadores en ciencias puras y aplicadas
+
+Cuenta con:
+
+* 📚 Biblioteca especializada (más de 17,800 volúmenes)
+* 🔬 Instituto de Investigación IIFUNI
+* 🧪 Más de 20 grupos de investigación activos
+* 🎓 Programas de posgrado en múltiples áreas
+
+---
+
+## 🎓 Escuelas Profesionales
+
+Duración: **5 años (10 semestres)**
+Requisito: **~208 créditos**
+
+* **Física** — Mecánica, Cuántica, Computacional
+* **Matemática** — Álgebra, Análisis, Estadística
+* **Química** — Orgánica, Analítica, Ambiental
+* **Ciencia de la Computación** — IA, Algoritmos, Sistemas
+* **Ingeniería Física** — Energía, Instrumentación, Materiales
+
+---
+
+## 📚 Contenido de la plataforma
+
+### 🧭 Guía del Estudiante
+
+* Proceso de primer ciclo paso a paso
+* Activación de correos y matrícula
+* Examen médico y ficha socioeconómica
+
+### 🏛️ Instalaciones
+
+* Biblioteca FC
+* Sala de lectura
+* Catálogo virtual
+* Infraestructura UNI
+
+### 📄 Trámites y Reglamentos
+
+* Créditos mínimos de egreso
+* Normas de matrícula
+* Tutorías y procesos académicos
+
+### 📁 Recursos Académicos
+
+* Drives con exámenes pasados
+* Guías de laboratorio
+* Software científico recomendado
+
+### 🌍 Científicos FC
+
+Casos reales de egresados investigando en el mundo:
+
+* Investigadores en CNRS (Francia)
+* Doctorandos en Paris-Saclay
+* Especialistas en física cuántica, IA y nanomagnetismo
+
+---
+
+## 🤝 Comunidad
+
+* Centro de Estudiantes (CEFC)
+* Agrupaciones como ACECOM y AEDICI
+* Espacios de apoyo académico y orientación
+
+---
+
+## ❓ FAQ
+
+Sección diseñada para resolver dudas frecuentes sobre:
+
+* Matrícula
+* Promedios ponderados
+* Convalidaciones
+* Reglamentos
+
+---
+
+## ⚠️ Disclaimer
+
+Este proyecto es **independiente** y no oficial.
+
+La información ha sido recopilada de fuentes institucionales como:
+
+* UNI (DIRCE, AERA)
+* SUNEDU
+* OCRI
+
+Para información oficial:
+👉 https://fc.uni.edu.pe/
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+* HTML5
+* CSS3
+* JavaScript
+* Git & GitHub
+* GitHub Pages
+
+---
+
+## 📂 Estructura del proyecto
+
+```bash id="bzr4o7"
+FC/
+│── index.html
+│── assets/
+│── pages/
+│── styles/
+│── scripts/
+```
+
+---
+
+## 🚀 Uso local
+
+```bash id="8bq4gm"
+git clone https://github.com/MiniLux0/FC.git
+cd FC
+```
+
+Abrir `index.html` en el navegador.
+
+---
+
+## 🌐 Deployment
+
+Desplegado con **GitHub Pages**.
+Cada actualización en el repositorio se refleja automáticamente en el sitio.
+
+---
+
+## 📈 Roadmap
+
+* [ ] Añadir más recursos académicos
+* [ ] Integrar buscador de contenido
+* [ ] Mejorar UI/UX
+* [ ] Agregar contenido interactivo
+* [ ] Expandir base de científicos FC
+
+---
+
+## 👨‍💻 Autor
+
+**Jesus Vera (MiniLux0)**
+Estudiante de Física — Universidad Nacional de Ingeniería
+
+---
+
+## ⭐ Contribuye
+
+Si este proyecto te ayuda:
+
+* Dale ⭐ al repositorio
+* Comparte con otros estudiantes FC
+* Sugiere mejoras
+
+---
+
+## 💡 Filosofía
+
+> “Información clara, accesible y útil — sin burocracia.”
+
+---
