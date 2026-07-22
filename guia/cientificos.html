@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Directorio de Egresados de la Facultad de Ciencias e Investigadores de la UNI de Proyección Internacional.">
+  <title>Científicos UNI en el Mundo – FC-UNI</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/logos/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .area-block {
+      margin-top: var(--space-xl);
+    }
+    .area-title {
+      font-family: var(--font-serif);
+      color: var(--accent);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: var(--space-xs);
+      margin-bottom: var(--space-md);
+      font-size: 1.6rem;
+    }
+    .profile-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .profile-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      display: flex;
+      gap: var(--space-lg);
+      align-items: start;
+      text-align: left;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-meta {
+      font-size: var(--step-4);
+      color: var(--text-muted);
+      margin-bottom: var(--space-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+    .profile-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .profile-career {
+      font-size: var(--step-3);
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: var(--space-sm);
+    }
+    .profile-details p {
+      margin-bottom: var(--space-xs);
+      font-size: var(--step-3);
+      line-height: var(--lh-relaxed);
+    }
+    .profile-achievements {
+      margin-top: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: var(--step-3);
+    }
+    .profile-achievements strong {
+      color: var(--accent);
+    }
+    .profile-links {
+      margin-top: var(--space-sm);
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+    .profile-links a {
+      font-size: var(--step-4);
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .profile-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 720px) {
+      .profile-card {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="../index.html" class="logo"><img src="../assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
+    <nav class="nav" id="nav">
+      <a href="../index.html">Inicio</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="primer-ciclo.html" role="menuitem">Primer ciclo</a>
+          <a href="campus.html" role="menuitem">Instalaciones FC</a>
+          <a href="tramites.html" role="menuitem">Trámites</a>
+          <a href="consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../comunidad/recursos.html" role="menuitem">Recursos</a>
+          <a href="../comunidad/grupos.html" role="menuitem">Grupos</a>
+          <a href="cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="../comunidad/faq.html" role="menuitem">FAQ</a>
+        </div>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+
+    <section class="hero hero--simple">
+      <div class="hero-content">
+        <p class="hero-label"><a href="../index.html">Inicio</a> · Guía</p>
+        <h1>Científicos UNI en el Mundo</h1>
+        <p>Los egresados de la Facultad de Ciencias y de la UNI que lideran la investigación de frontera en centros científicos de primer nivel.</p>
+      </div>
+    </section>
+
+    <!-- ─── SECCIÓN 1: EGRESADOS DE LA FACULTAD DE CIENCIAS (FC-UNI) ────────── -->
+    <section class="section">
+      <div class="inner">
+        <h2 class="section-title" style="text-align: center;">Egresados de la Facultad de Ciencias</h2>
+        <p class="section-desc text-center">Científicos que cursaron sus carreras de pregrado directamente en las escuelas profesionales de nuestra facultad.</p>
+
+        <!-- FÍSICA -->
+        <div class="area-block" id="fc-fisica">
+          <h3 class="area-title">Física</h3>
+          <div class="profile-grid">
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">CNRS · Francia</span>
+                <h4 class="profile-name">Juan Carlos Rojas Sánchez</h4>
+                <div class="profile-career">Física (UNI, Bachiller en 1999)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Doctorado en Física por el Instituto Jean Lamour (Nancy, Francia).</p>
+                  <p><strong>Cargo Actual:</strong> Investigador Permanente del <strong>CNRS</strong> (Centre National de la Recherche Scientifique).</p>
+                  <p><strong>Líneas de investigación:</strong> Espintrónica, nanomagnetismo, transporte de espín y materiales funcionales avanzados.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Distinguido con la Medalla de Bronce del CNRS por su trayectoria científica. Es líder y pionero internacional en el desarrollo de dispositivos espintrónicos de consumo energético ultra-bajo, con más de 50 publicaciones indexadas de alto impacto.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">CEA Paris-Saclay · Francia</span>
+                <h4 class="profile-name">Joan Cáceres Salazar</h4>
+                <div class="profile-career">Física (UNI, Bachiller en 2019)</div>
+                <div class="profile-details">
+                  <p><strong>Proyección internacional:</strong> Doctorando en Física Cuántica en el Quantronics Group del <strong>CEA Paris-Saclay</strong>, uno de los centros de investigación de tecnologías cuánticas más importantes de Europa.</p>
+                  <p><strong>Líneas de investigación:</strong> Circuitos cuánticos superconductores, coherencia cuántica y computación cuántica experimental.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Joven investigador destacado de la facultad que realiza investigación experimental directa en las fronteras de la computación cuántica superconductora.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">Arizona State University · Estados Unidos</span>
+                <h4 class="profile-name">Fernando Agustín Ponce Antúnez de Mayolo</h4>
+                <div class="profile-career">Física (UNI, Egresó alrededor de 1971)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> M.S. en University of Maryland (1975); Ph.D. en Ciencia e Ingeniería de Materiales por Stanford University (1981).</p>
+                  <p><strong>Cargo Actual:</strong> Profesor de Física y Director de Laboratorio en Arizona State University (ASU).</p>
+                  <p><strong>Líneas de investigación:</strong> Física del estado sólido, semiconductores de brecha ultra-ancha, materiales de nitruros III-V (GaN), iluminación LED y celdas solares.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Nombrado Fellow de la American Physical Society (APS). Colaborador histórico (desde 1994) del equipo japonés galardonado con el Premio Nobel de Física en 2014, aportando la caracterización cristalográfica clave del Nitruro de Galio (GaN) para el LED azul viable. Ex-investigador líder de Xerox PARC y Hewlett-Packard.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://search.asu.edu/profile/215963" target="_blank" rel="noopener noreferrer">Perfil ASU ↗</a>
+                    <a href="https://experts.azregents.edu/en/persons/fernando-ponce/" target="_blank" rel="noopener noreferrer">Directorio Arizona ↗</a>
+                    <a href="https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=83151" target="_blank" rel="noopener noreferrer">CONCYTEC ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">Oak Ridge National Laboratory (ORNL) · Estados Unidos</span>
+                <h4 class="profile-name">Jaime A. Fernandez-Baca</h4>
+                <div class="profile-career">Física (UNI, Estudios: 1971 - 1977)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> M.S. en Física (1982) y Ph.D. en Física (1986) por la University of Maryland, College Park.</p>
+                  <p><strong>Cargo Actual:</strong> Científico Principal y Líder de la división de Espectroscopía de Triple Eje en el Laboratorio Nacional Oak Ridge (ORNL).</p>
+                  <p><strong>Líneas de investigación:</strong> Dispersión de neutrones (neutron scattering), dinámica de espín en aleaciones amorfas y materiales cuánticos topológicos.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Nombrado Fellow de la American Physical Society (APS). Dirige instrumentación subatómica mediante reactores nucleares y fuentes de espalación en el ORNL, uno de los laboratorios del Departamento de Energía de EE. UU. más importantes del mundo.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://orcid.org/0000-0001-9080-5096" target="_blank" rel="noopener noreferrer">ORCID Perfil ↗</a>
+                    <a href="https://www.ornl.gov/sites/default/files/2021-04/Fernandez-Baca%20CV_04282021.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae Oficial (PDF) ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">Harvard University · Estados Unidos / IGP · Perú</span>
+                <h4 class="profile-name">Ronald Woodman Pollitt</h4>
+                <div class="profile-career">Física / Ingeniería (UNI)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Ph.D. en Física Aplicada por la Universidad de Harvard (1967).</p>
+                  <p><strong>Trayectoria:</strong> Ex-Presidente del Instituto Geofísico del Perú (IGP) y Director del Radio Observatorio de Jicamarca.</p>
+                  <p><strong>Líneas de investigación:</strong> Física ionosférica, radio-ciencia atmosférica, radares MST y dinámica de la alta atmósfera.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Referente y pionero mundial de la física ionosférica. Su trabajo cimentó las bases de la radio-ciencia atmosférica y del radar de Jicamarca. Distinguido con el Premio Appleton de la Royal Society de Londres y miembro internacional de la Academia Nacional de Ciencias de EE. UU. (NAS).
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">Universidad de Maryland · Estados Unidos / IPEN · Perú</span>
+                <h4 class="profile-name">Víctor Latorre Aguilar</h4>
+                <div class="profile-career">Física (UNI)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Ph.D. en Física por la Universidad de Maryland.</p>
+                  <p><strong>Trayectoria:</strong> Físico nuclear y referente histórico en la institucionalización de la investigación científica en el Perú.</p>
+                  <p><strong>Líneas de investigación:</strong> Física nuclear, instrumentación científica y desarrollo de políticas de ciencia y tecnología.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Figura fundamental para el desarrollo de la física nuclear en el país. Contribuyó a la creación e institucionalización de centros de investigación nacionales a través de la dirección del Instituto Peruano de Energía Nuclear (IPEN) y la docencia universitaria en la UNI.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">UNAM · México</span>
+                <h4 class="profile-name">Roberto Acosta Najarro</h4>
+                <div class="profile-career">Física (UNI)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Ph.D. en Física por la Universidad Nacional Autónoma de México (UNAM).</p>
+                  <p><strong>Cargo Actual:</strong> Profesor e Investigador Titular en la UNAM (México).</p>
+                  <p><strong>Líneas de investigación:</strong> Física teórica, mecánica cuántica y estructura de la materia.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Relevante investigador titular en la UNAM con amplia trayectoria en la formación de cuadros científicos internacionales. Reconocido por sus aportes académicos con el grado de Doctor Honoris Causa por la Universidad Nacional de Ingeniería.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">IFT-UNESP · Brasil</span>
+                <h4 class="profile-name">Bruto Pimentel Escobar</h4>
+                <div class="profile-career">Física (UNI)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Ph.D. en Física Teórica en Brasil.</p>
+                  <p><strong>Cargo / Trayectoria:</strong> Profesor Titular en la Universidade Estadual Paulista (UNESP) y Ex-Director del IFT.</p>
+                  <p><strong>Líneas de investigación:</strong> Física teórica de campos, electrodinámica cuántica y modelos de gravitación.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Eminencia internacional en física teórica. Ha servido en dos ocasiones como director del prestigioso Instituto de Física Teórica de São Paulo (IFT-UNESP) en Brasil, liderando investigaciones de frontera en teoría de campos.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">Portland State University · Estados Unidos</span>
+                <h4 class="profile-name">Andrés La Rosa</h4>
+                <div class="profile-career">Física (UNI, Egresado)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Ph.D. en Física en Estados Unidos.</p>
+                  <p><strong>Cargo Actual:</strong> Profesor Catedrático de Física en Portland State University.</p>
+                  <p><strong>Líneas de investigación:</strong> Microscopía óptica y acústica de campo cercano, nanolitografía asistida por campo eléctrico y fuerzas de cizallamiento (shear force).</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Pionero en instrumentación óptica y acústica a nanoescala. Colabora activamente con la facultad de ciencias dictando conferencias y asesorando proyectos experimentales en el Perú.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://www.indico.uni.edu.pe/event/106/contributions/554/author/1079" target="_blank" rel="noopener noreferrer">Ficha de Ponente ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MATEMÁTICA -->
+        <div class="area-block" id="fc-matematica">
+          <h3 class="area-title">Matemática</h3>
+          <div class="profile-grid">
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">University of Minnesota · Estados Unidos</span>
+                <h4 class="profile-name">Bernardo Cockburn Krumdieck</h4>
+                <div class="profile-career">Matemática Aplicada (UNI, Bachiller 1978; Maestría 1980)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Ph.D. en Matemáticas por la University of Chicago (1986). Doctorado de tercer ciclo en la Université Paris VI (Francia).</p>
+                  <p><strong>Cargo Actual:</strong> Catedrático en la University of Minnesota.</p>
+                  <p><strong>Líneas de investigación:</strong> Análisis numérico, métodos de Galerkin Discontinuo, dinámica de fluidos computacional y ecuaciones diferenciales.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Autor fundacional de la literatura matemática global sobre métodos de Galerkin Discontinuo Runge-Kutta. Recibió el prestigioso Frontiers of Science Award in Mathematics (2024) y es Doctor Honoris Causa por la UNI (2016). Es catalogado como "ISI Highly Cited" (científico altamente citado) con más de 30,000 citas.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://cse.umn.edu/math/bernardo-cockburn" target="_blank" rel="noopener noreferrer">Perfil UMN ↗</a>
+                    <a href="https://www.researchgate.net/profile/Bernardo-Cockburn" target="_blank" rel="noopener noreferrer">ResearchGate ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">IMPA / FGV · Brasil</span>
+                <h4 class="profile-name">César Leopoldo Camacho Manco</h4>
+                <div class="profile-career">Matemáticas y Ciencias Físicas (Estudios en la UNI en los años 60)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Maestría en el IMPA (Brasil); Ph.D. en Matemáticas por la University of California, Berkeley (1971) bajo la asesoría del Nobel/Medalla Fields Stephen Smale.</p>
+                  <p><strong>Cargo Actual:</strong> Director de la Escuela de Matemática Aplicada de la FGV; Exdirector del IMPA (Instituto de Matemática Pura e Aplicada).</p>
+                  <p><strong>Líneas de investigación:</strong> Sistemas dinámicos complejos, topología de foliaciones holomorfas y análisis global.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Galardonado con el TWAS Prize in Mathematics (1996), la Beca Guggenheim y la Gran Cruz de la Orden Nacional del Mérito Científico. Fundó la Olimpiada Brasileña de Matemáticas de Escuelas Públicas (OBMEP) que reúne a 18 millones de alumnos. Fue el gestor principal para la creación del prestigioso Instituto de Matemática y Ciencias Afines (IMCA) en la UNI.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://emap.fgv.br/en/professors/cesar-camacho" target="_blank" rel="noopener noreferrer">Perfil FGV ↗</a>
+                    <a href="https://es.wikipedia.org/wiki/C%C3%A9sar_Camacho_Manco" target="_blank" rel="noopener noreferrer">Wikipedia ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">The Ohio State University · Estados Unidos</span>
+                <h4 class="profile-name">Liz Vivas (Elizabeth Vivas)</h4>
+                <div class="profile-career">Matemáticas (UNI, Graduada en 2001)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> M.S. en el IMPA (Brasil, 2003); Ph.D. en Matemáticas por la University of Michigan (2009). Posdoctorados en Purdue University.</p>
+                  <p><strong>Cargo Actual:</strong> Profesora Asociada e Investigadora en The Ohio State University.</p>
+                  <p><strong>Líneas de investigación:</strong> Dinámica compleja, geometría compleja, variables complejas múltiples y cuencas globales de atracción.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Primera mujer en la historia en obtener el primer puesto absoluto en el examen de admisión general de la UNI (1999). Ganadora de la Medalla de Plata en la XII Olimpiada Iberoamericana de Matemáticas.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://math.osu.edu/people/vivas.3" target="_blank" rel="noopener noreferrer">Perfil OSU ↗</a>
+                    <a href="https://people.math.osu.edu/vivas.3/" target="_blank" rel="noopener noreferrer">Página Personal ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">Universidad de Tsukuba · Japón / Brasil</span>
+                <h4 class="profile-name">Neantro Teodoro Saavedra Rivano</h4>
+                <div class="profile-career">Ciencias Físicas y Matemáticas (UNI, Egresó en 1966)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Ph.D. en Matemáticas por la Université de Paris - IHÉS (1972) bajo la tutoría de Alexander Grothendieck; Ph.D. en Economía por Columbia University, EE. UU. (1982).</p>
+                  <p><strong>Trayectoria:</strong> Catedrático e investigador en la Universidad de Tsukuba (Japón) y la Universidad de Brasilia (Brasil).</p>
+                  <p><strong>Líneas de investigación:</strong> Geometría algebraica abstracta, categorías Tannakianas y modelos matemáticos de optimización macroeconómica.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Fue el último estudiante doctoral del genio matemático Alexander Grothendieck, sistematizando y expandiendo las Categorías Tannakianas. Su obra fundamental publicada por Springer-Verlag es referencia mundial en álgebra abstracta.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">Université de Lyon 1 · Francia</span>
+                <h4 class="profile-name">Marcel Morales Quiroz</h4>
+                <div class="profile-career">Matemáticas (UNI, Estudios: 1967 - 1970)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Doctorat d'Etat (Doctorado de Estado) en Matemáticas en Francia.</p>
+                  <p><strong>Cargo Actual:</strong> Catedrático en la Université de Lyon 1 e Investigador en el Institut Fourier (Grenoble).</p>
+                  <p><strong>Líneas de investigación:</strong> Álgebra conmutativa, geometría binomial y didáctica geométrica interactiva asistida por Origami.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Desarrollador de metodologías y algoritmos geométricos mundiales para la enseñanza tridimensional de deltaedros y poliedros convexos complejos utilizando Origami sin cortes ni herramientas externas.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://www.researchgate.net/profile/Marcel-Morales" target="_blank" rel="noopener noreferrer">ResearchGate ↗</a>
+                    <a href="https://www-fourier.univ-grenoble-alpes.fr/~morales/" target="_blank" rel="noopener noreferrer">Página Personal en Institut Fourier ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- QUÍMICA Y BIOFÍSICA -->
+        <div class="area-block" id="fc-quimica">
+          <h3 class="area-title">Química y Biofísica</h3>
+          <div class="profile-grid">
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">CERN / University of Colorado Boulder · Suiza / EE. UU.</span>
+                <h4 class="profile-name">Rómulo Leoncio Cruz Simbrón</h4>
+                <div class="profile-career">Química / Fisicoquímica (UNI, Estudios hasta 2020)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> Maestro en Ciencias Químicas (UNI, 2016); Ph.D. candidate en Química Atmosférica por la University of Colorado Boulder (inició 2022).</p>
+                  <p><strong>Cargo Actual:</strong> Investigador en el Proyecto CLOUD de la Organización Europea para la Investigación Nuclear (CERN) en Suiza.</p>
+                  <p><strong>Líneas de investigación:</strong> Química de la atmósfera, formación de aerosoles amazónicos e impacto de rayos cósmicos en la nucleación de nubes.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Utiliza cámaras hiper-estériles y aceleradores del CERN para recrear las atmósferas tropicales y medir cómo se forman las nubes planetarias. Coautor en publicaciones científicas en la prestigiosa revista <em>Nature</em>.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=18582" target="_blank" rel="noopener noreferrer">CTI Vitae Concytec ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">St. Jude Children's Research Hospital · Estados Unidos</span>
+                <h4 class="profile-name">Alfredo Florez Ariza</h4>
+                <div class="profile-career">Química (UNI, Bachiller 2015)</div>
+                <div class="profile-details">
+                  <p><strong>Posgrado:</strong> M.S. en Campinas (Brasil); Ph.D. en Biofísica por la Universidad de California, Berkeley (2020-2025).</p>
+                  <p><strong>Cargo Actual:</strong> Investigador en el St. Jude Children's Research Hospital.</p>
+                  <p><strong>Líneas de investigación:</strong> Biofísica celular, biología estructural, transcripción de polimerasas y criomicroscopía electrónica (Cryo-EM).</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Financiado por el laboratorio de Carlos Bustamante y Eva Nogales en Berkeley para modelar los motores atómicos del ADN y ARN. Coautor de descubrimientos estructurales de alto impacto publicados en las revistas <em>Nature</em>, <em>Cell</em> y <em>Nature Structural & Molecular Biology</em>.
+                  </div>
+                  <div class="profile-links">
+                    <a href="https://www.researchgate.net/profile/Alfredo-Florez-Ariza" target="_blank" rel="noopener noreferrer">ResearchGate ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CIENCIA DE LA COMPUTACIÓN -->
+        <div class="area-block" id="fc-computacion">
+          <h3 class="area-title">Ciencia de la Computación</h3>
+          <div class="profile-grid">
+
+            <div class="profile-card">
+              <div class="profile-info">
+                <span class="profile-meta">NeuroSpin · Francia</span>
+                <h4 class="profile-name">Dennis Núñez</h4>
+                <div class="profile-career">Ciencia de la Computación (UNI)</div>
+                <div class="profile-details">
+                  <p><strong>Proyección internacional:</strong> Doctorando en Inteligencia Artificial y Visión Computacional en el centro de neuroimágenes de campo magnético ultra-alto <strong>NeuroSpin</strong> (Francia).</p>
+                  <p><strong>Líneas de investigación:</strong> Procesamiento de imágenes cerebrales tridimensionales de alta resolución, Deep Learning convolucional y neurología computacional.</p>
+                  <div class="profile-achievements">
+                    <strong>Logros destacados:</strong> Becario de la Embajada de Francia en el Perú, desarrolla algoritmos de aprendizaje profundo para mapeo y modelado cerebral avanzado.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── SECCIÓN 2: INVESTIGADORES DE OTRAS FACULTADES DE LA UNI (INGENIERÍA Y AFINES) ─── -->
+    <section class="section section--alt">
+      <div class="inner">
+        <h2 class="section-title" style="text-align: center;">Investigadores de Otras Facultades de la UNI</h2>
+        <p class="section-desc text-center">Egresados de ramas de ingeniería y sistemas de la UNI que han trascendido hacia la investigación científica internacional de frontera.</p>
+
+        <div class="profile-grid" style="margin-top: var(--space-xl);">
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">MIT · Estados Unidos</span>
+              <h4 class="profile-name">Barton Zwiebach Cantor</h4>
+              <div class="profile-career">Ingeniería Electrónica (FIEE, UNI: 1972 - 1977)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Pregrado completo (sustentó su tesis antes de concluir los cinco años, caso único en la historia académica de la UNI).</p>
+                <p><strong>Posgrado:</strong> Ph.D. en Física por el California Institute of Technology (Caltech, 1983). Supervisor de tesis: Murray Gell-Mann (Premio Nobel de Física). Postdoctorados en UC Berkeley y MIT.</p>
+                <p><strong>Cargo Actual:</strong> Profesor Titular de Física en el Massachusetts Institute of Technology (MIT).</p>
+                <p><strong>Líneas de investigación:</strong> Teoría de supercuerdas, gravedad cuántica, teoría cuántica de campos e interacciones fuertes.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Autor de literatura fundamental de referencia mundial, como <em>"A First Course in String Theory"</em> y <em>"Closed String Field Theory"</em>. Recibió la Beca Guggenheim (1996) y el MIT School of Science Teaching Prize (2003). Es pionero mundial en física teórica y cuenta con más de 15,689 citas académicas indexadas.
+                </div>
+                <div class="profile-links">
+                  <a href="https://physics.mit.edu/faculty/barton-zwiebach/" target="_blank" rel="noopener noreferrer">Perfil MIT ↗</a>
+                  <a href="https://www.semanticscholar.org/author/B.-Zwiebach/5035833" target="_blank" rel="noopener noreferrer">Semantic Scholar ↗</a>
+                  <a href="https://es.wikipedia.org/wiki/Barton_Zwiebach" target="_blank" rel="noopener noreferrer">Wikipedia ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">Instituto Geofísico del Perú / NAS · Perú</span>
+              <h4 class="profile-name">Ronald Woodman Pollit</h4>
+              <div class="profile-career">Ingeniería Mecánica Eléctrica (FIM, UNI: 1951 - 1956)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Pregrado completo.</p>
+                <p><strong>Posgrado:</strong> Maestría (1956) y Ph.D. en Física Aplicada (1967) por la Universidad de Harvard, EE. UU.</p>
+                <p><strong>Líneas de investigación:</strong> Física del radio y plasma, sensores remotos de la alta atmósfera y dispersión incoherente en la ionósfera ecuatorial.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Contribuciones críticas de trascendencia mundial para el desarrollo del Radio Observatorio de Jicamarca y el Observatorio de Arecibo. Incorporado como miembro extranjero de la Academia Nacional de Ciencias de EE. UU. (NAS). Recibió el Premio Appleton (Royal Society, 1999) y el Premio Elektrón (IEEE, 2007).
+                </div>
+                <div class="profile-links">
+                  <a href="https://es.wikipedia.org/wiki/Ronald_Woodman" target="_blank" rel="noopener noreferrer">Wikipedia ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">The Ohio State University · Estados Unidos</span>
+              <h4 class="profile-name">Eduardo Reátegui Pizarro</h4>
+              <div class="profile-career">Ingeniería Mecánica (FIM, UNI: 1996 - 2001)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Pregrado completo.</p>
+                <p><strong>Posgrado:</strong> M.S. en UMass Dartmouth; Ph.D. en Ingeniería Mecánica por la University of Minnesota (2011). Estancia posdoctoral en la Harvard Medical School.</p>
+                <p><strong>Cargo Actual:</strong> Profesor Asociado de Ingeniería Química e Investigador del James Comprehensive Cancer Center de Ohio State University.</p>
+                <p><strong>Líneas de investigación:</strong> Microfluídica traslacional, Lab-on-a-chip, detección molecular de vesículas extracelulares y biomarcadores de inmunología tumoral.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Inventor co-titular de 3 patentes biotecnológicas en EE. UU. y coautor del manual global MISEV2023 (con 4,476 citas). Ha desarrollado dispositivos microfluídicos integrados ("Lab-on-a-chip") para capturar exosomas específicos en pacientes con cáncer de pulmón, reduciendo la necesidad de biopsias invasivas. Posee más de 7,175 citas en Google Scholar (índice h de 23).
+                </div>
+                <div class="profile-links">
+                  <a href="https://orcid.org/0000-0002-8271-8205" target="_blank" rel="noopener noreferrer">ORCID Perfil ↗</a>
+                  <a href="https://scholar.google.com/citations?user=80uqk6wAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">University of California, Irvine (UCI) · Estados Unidos</span>
+              <h4 class="profile-name">Luis A. Jáuregui</h4>
+              <div class="profile-career">Ingeniería Electrónica (FIEE, UNI, Graduado en 2007)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Pregrado completo.</p>
+                <p><strong>Posgrado:</strong> Ph.D. en Ingeniería Eléctrica (Nanotecnología) en Purdue University; estancia posdoctoral en Harvard University.</p>
+                <p><strong>Cargo Actual:</strong> Profesor Catedrático e Investigador en la University of California, Irvine (UCI).</p>
+                <p><strong>Líneas de investigación:</strong> Dispositivos cuánticos 2D, optoelectrónica cuántica en heteroestructuras grafeno/van der Waals y modulación por deformación.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Recibió el prestigioso NSF CAREER Award (2021). Ha demostrado experimentalmente que es posible transformar materiales aislantes en conductores eficientes mediante pulsos acústicos y deformación atómica. Cuenta con publicaciones en <em>Science</em> y <em>Nature Communications</em> y un nombramiento conjunto en Los Alamos National Laboratory (LANL).
+                </div>
+                <div class="profile-links">
+                  <a href="https://sites.uci.edu/qmdl/luis-a-jauregui/" target="_blank" rel="noopener noreferrer">Laboratorio QMDL (UCI) ↗</a>
+                  <a href="https://scholar.google.com/citations?user=yy_w2eEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">Texas A&M University (TAMU) · Estados Unidos</span>
+              <h4 class="profile-name">Jorge M. Seminario</h4>
+              <div class="profile-career">Ingeniería Electrónica (FIEE, UNI, B.S. en 1975; Grado de Ingeniero en 1980)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Pregrado y titulación profesional completos.</p>
+                <p><strong>Posgrado:</strong> M.S. (1984) y Ph.D. en Ciencias Moleculares (1988) por Southern Illinois University. Postdoctorados en Nueva Orleans y South Carolina.</p>
+                <p><strong>Cargo Actual:</strong> Profesor Catedrático en Texas A&M University (TAMU).</p>
+                <p><strong>Líneas de investigación:</strong> Electrónica molecular (molectrónica), sensores basados en grafeno, simulación cuántica de nuevos materiales y baterías avanzadas de Litio-Ion.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Titular de la cátedra Lanford en TAMU. Es uno de los pioneros mundiales en proponer y diseñar simulaciones de circuitos de memoria y conmutadores basados en moléculas individuales (*in silico*) para evadir el límite físico del silicio.
+                </div>
+                <div class="profile-links">
+                  <a href="https://engineering.tamu.edu/chemical/profiles/jseminario.html" target="_blank" rel="noopener noreferrer">Perfil TAMU ↗</a>
+                  <a href="https://scholar.google.com/citations?user=bwR0388AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">Imperial College London · Reino Unido</span>
+              <h4 class="profile-name">Gustavo Quino Quispe</h4>
+              <div class="profile-career">Ingeniería Mecánica (FIM, UNI, Egresó en 2009)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Pregrado completo (Grado de Bachiller).</p>
+                <p><strong>Posgrado:</strong> M.Sc. en King Abdullah University of Science and Technology (KAUST); DPhil (Ph.D.) en Ingeniería por la Universidad de Oxford (2018).</p>
+                <p><strong>Cargo Actual:</strong> Catedrático en el Imperial College London (Top 10 mundial).</p>
+                <p><strong>Líneas de investigación:</strong> Mecánica experimental, materiales compuestos y análisis de fallas estructurales dinámicas ante impactos a alta velocidad.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Ha liderado proyectos de simulación estructural de fallas mecánicas en materiales compuestos avanzados colaborando de forma directa con la corporación aeroespacial **Boeing** para aviación de seguridad.
+                </div>
+                <div class="profile-links">
+                  <a href="https://profiles.imperial.ac.uk/g.quino-quispe" target="_blank" rel="noopener noreferrer">Perfil Imperial College ↗</a>
+                  <a href="https://scholar.google.com/citations?user=nDj_kT0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">UTEC / MIT & Harvard · Perú / EE. UU.</span>
+              <h4 class="profile-name">Manuel Arturo Deza Figueroa</h4>
+              <div class="profile-career">Ingeniería Mecatrónica (FIM, UNI, Estudios: 2007 - 2012)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Pregrado completo.</p>
+                <p><strong>Posgrado:</strong> Ph.D. en Neurociencia Dinámica por University of California, Santa Barbara (2018). Posdoctorados en psicología cognitiva de Harvard y en el Center for Brains, Minds and Machines (CBMM) del MIT.</p>
+                <p><strong>Cargo Actual:</strong> Investigador del consorcio MIT-Harvard y Profesor en UTEC.</p>
+                <p><strong>Líneas de investigación:</strong> Visión artificial por computadora, Deep Learning, redes convolucionales y neurobiología computacional foveal.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Ganador del Angus MacDonald Award (MIT). Sus publicaciones se listan en los congresos más exigentes de IA (ICLR, NeurIPS, CVPR). Es fundador y CEO de Artificio, aplicando redes neuronales bio-inspiradas para vehículos de navegación autónoma.
+                </div>
+                <div class="profile-links">
+                  <a href="https://www.researchgate.net/profile/Arturo-Deza" target="_blank" rel="noopener noreferrer">ResearchGate ↗</a>
+                  <a href="http://arturodeza.wikidot.com/" target="_blank" rel="noopener noreferrer">Página Personal (MIT Wiki) ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">Universidad Nacional de Ingeniería · Perú / USA</span>
+              <h4 class="profile-name">José Luis Mantari Laureano</h4>
+              <div class="profile-career">Ingeniería Naval (FIM, UNI)</div>
+              <div class="profile-details">
+                <p><strong>Posgrado:</strong> Maestría y Ph.D. en Ingeniería Naval por la Universidad Técnica de Lisboa (Portugal).</p>
+                <p><strong>Cargo Actual:</strong> Profesor Investigador UNI y UTEC; profesor colaborador en la University of New Mexico (EE. UU.).</p>
+                <p><strong>Líneas de investigación:</strong> Mecánica computacional, biomecánica, simulación por elementos finitos aplicados a placas compuestas laminadas y estructuras sándwich.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Catalogado por la Universidad de Stanford en el prestigioso ranking <em>"World's Top 2% Scientist 2022"</em>. Posee más de 128 publicaciones de alto impacto y es el investigador con mayor citación en mecánica avanzada del país.
+                </div>
+                <div class="profile-links">
+                  <a href="https://scholar.google.com/citations?user=50QvXtIAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar Perfil ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">Instituto Nacional de Pesquisas Espaciales de Brasil (INPE) · Brasil</span>
+              <h4 class="profile-name">Danny Zambrano</h4>
+              <div class="profile-career">Ingeniería de Sistemas (FIIS, UNI)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Egresado de pregrado.</p>
+                <p><strong>Líneas de investigación:</strong> Integración y ensayo de satélites espaciales, sistemas de comunicaciones orbitales y validación de hardware.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> El primer ingeniero de nacionalidad peruana en integrarse al programa del sector aeroespacial del INPE en Brasil, ejecutando protocolos críticos de control e integración de órbita.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <span class="profile-meta">Purdue University · Estados Unidos</span>
+              <h4 class="profile-name">Manuel Aspilcueta</h4>
+              <div class="profile-career">Ingeniería Civil (FIC, UNI, Egresó alrededor de 2021)</div>
+              <div class="profile-details">
+                <p><strong>Relación con la UNI:</strong> Egresado de pregrado.</p>
+                <p><strong>Posgrado:</strong> M.S. en Ingeniería Civil por Purdue University, EE. UU.</p>
+                <p><strong>Líneas de investigación:</strong> Ingeniería estructural sismorresistente, cimentaciones ecológicas y análisis de vulnerabilidad social de infraestructuras.</p>
+                <div class="profile-achievements">
+                  <strong>Logros destacados:</strong> Ganador de la altamente competitiva beca de la Comisión Fulbright en el Perú para estudios avanzados de postgrado orientados al diseño sismorresistente.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">FC-UNI</div>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Guía</p>
+        <a href="primer-ciclo.html">Primer ciclo</a>
+        <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+        <a href="tramites.html">Trámites</a>
+        <a href="consejos.html">Consejos</a>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Comunidad</p>
+        <a href="../comunidad/recursos.html">Recursos</a>
+        <a href="../comunidad/grupos.html">Grupos</a>
+          <a href="cientificos.html" role="menuitem">Científicos FC</a>
+        <a href="../comunidad/faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Proyecto FC · Facultad de Ciencias UNI · Lima, Perú</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

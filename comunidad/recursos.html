@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recursos de estudio para la Facultad de Ciencias de la UNI: drives de exámenes, bibliotecas y software científico.">
+  <title>Recursos de Estudio – FC-UNI</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/logos/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Hero simple centrado ─────────────────────────────── */
+    .hero--simple {
+      max-width: 100%;
+      margin: 0;
+      padding: var(--space-2xl) var(--space-md) var(--space-xl);
+      border-bottom: 1px solid var(--border);
+      display: block;
+      text-align: center;
+      background: linear-gradient(160deg, var(--bg) 60%, var(--bg-alt) 100%);
+    }
+    .hero--simple .hero-content {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .hero--simple h1 {
+      font-family: var(--font-serif);
+      font-size: var(--step--1);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: var(--lh-tight);
+      margin-bottom: var(--space-sm);
+    }
+    .hero--simple p {
+      font-size: var(--step-1);
+      color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+      margin: 0 auto;
+    }
+    .hero--simple .hero-label {
+      font-size: var(--step-4);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: var(--space-sm);
+    }
+    .hero--simple .hero-label a { color: var(--text-muted); text-decoration: none; }
+    .hero--simple .hero-label a:hover { color: var(--accent); }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(92,13,18,0.07);
+      color: var(--accent);
+      font-size: var(--step-4);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 99px;
+      margin-bottom: var(--space-sm);
+    }
+
+    /* ── Secciones centradas ───────────────────────────────── */
+    .sc {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-md);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .sc--alt {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-xl) var(--space-md);
+      text-align: center;
+    }
+    .sc--alt .sc-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .sc .section-title,
+    .sc--alt .section-title { text-align: center; margin-bottom: var(--space-xs); }
+    .sc .section-desc,
+    .sc--alt .section-desc {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sec-num {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-size: var(--step-4);
+      font-weight: 600;
+      color: var(--accent);
+      opacity: 0.45;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    /* ── Reveal ────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 500ms cubic-bezier(0.16,1,0.3,1),
+                  transform 500ms cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── Drive card ────────────────────────────────────────── */
+    .drive-card {
+      max-width: 680px;
+      margin: var(--space-lg) auto 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg) var(--space-xl);
+      box-shadow: var(--shadow-md);
+      text-align: left;
+      transition: box-shadow var(--dur-normal) var(--ease-out),
+                  transform var(--dur-normal) var(--ease-out);
+    }
+    .drive-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+
+    .drive-card-head {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .icon-wrap {
+      width: 46px; height: 46px;
+      background: rgba(92,13,18,0.08);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .icon-wrap svg { color: var(--accent); }
+    .drive-card-head h3 {
+      font-family: var(--font-serif);
+      font-size: var(--step-0);
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+    .drive-card-head small {
+      display: block;
+      font-size: var(--step-4);
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0; margin: 0 0 var(--space-lg) 0;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .check-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: var(--step-3);
+      color: var(--text);
+      line-height: var(--lh-normal);
+    }
+    .check-list li .chk {
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;
+      background: rgba(92,13,18,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .check-list li .chk svg { color: var(--accent); }
+    .check-list li strong { color: var(--accent); }
+
+    .card-cta {
+      text-align: center;
+      padding-top: var(--space-sm);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Biblioteca cards ─────────────────────────────────── */
+    .lib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      max-width: 960px;
+      margin: var(--space-lg) auto 0;
+    }
+
+    .lib-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      text-align: left;
+      box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column;
+      transition: box-shadow var(--dur-normal) var(--ease-out),
+                  transform var(--dur-normal) var(--ease-out);
+      position: relative; overflow: hidden;
+    }
+    .lib-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--accent);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--dur-normal) var(--ease-out);
+    }
+    .lib-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .lib-card:hover::before { transform: scaleX(1); }
+
+    .lib-card-type {
+      font-size: var(--step-4); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--accent); opacity: 0.6;
+      margin-bottom: 6px;
+    }
+    .lib-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--text); margin: 0 0 var(--space-xs) 0;
+      line-height: var(--lh-tight);
+    }
+    .lib-card .lib-desc {
+      font-size: var(--step-3);
+      color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-sm);
+      flex: 1;
+    }
+
+    /* Stats row (solo Biblioteca FC) */
+    .lib-stats {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 8px; margin-bottom: var(--space-sm);
+    }
+    .lib-stat {
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .lib-stat-val {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--accent); line-height: 1.1;
+    }
+    .lib-stat-label {
+      font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+
+    /* Servicios mini lista */
+    .lib-services {
+      list-style: none; padding: 0; margin: 0 0 var(--space-sm) 0;
+      display: flex; flex-direction: column; gap: 7px;
+    }
+    .lib-services li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: var(--step-4); color: var(--text);
+      line-height: var(--lh-normal);
+    }
+    .lib-services li::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); opacity: 0.5;
+      margin-top: 5px; flex-shrink: 0;
+    }
+
+    /* Contact strip */
+    .lib-contact {
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      font-size: var(--step-4);
+      color: var(--text-muted);
+      display: flex; flex-direction: column; gap: 3px;
+      margin-bottom: var(--space-sm);
+    }
+    .lib-contact a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .lib-contact a:hover { color: var(--accent-hover); }
+
+    .lib-links {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .lib-link-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: var(--step-4); font-weight: 600;
+      color: var(--accent); text-decoration: none;
+      padding: 6px 14px;
+      background: rgba(92,13,18,0.07);
+      border-radius: 99px;
+      transition: background var(--dur-fast) var(--ease-out),
+                  color var(--dur-fast) var(--ease-out);
+    }
+    .lib-link-btn:hover { background: var(--accent); color: var(--white); }
+    .lib-link-btn--outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .lib-link-btn--outline:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+
+    /* ── Software cards ─────────────────────────────────────── */
+    .sw-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-lg);
+      max-width: 960px;
+      margin: var(--space-lg) auto 0;
+    }
+    .sw-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      text-align: left;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--dur-normal) var(--ease-out),
+                  transform var(--dur-normal) var(--ease-out);
+    }
+    .sw-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+    .sw-icon {
+      width: 44px; height: 44px;
+      background: rgba(92,13,18,0.08);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--space-sm);
+    }
+    .sw-icon svg { color: var(--accent); }
+    .sw-tag {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent); background: rgba(92,13,18,0.07);
+      padding: 2px 10px; border-radius: 99px; margin-bottom: 8px;
+    }
+    .sw-card h3 {
+      font-family: var(--font-serif);
+      font-size: var(--step-0); font-weight: 700;
+      color: var(--accent); margin-bottom: var(--space-xs);
+    }
+    .sw-card p {
+      font-size: var(--step-3); color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+    }
+
+    @media (max-width: 640px) {
+      .drive-card { padding: var(--space-md); }
+      .lib-grid { grid-template-columns: 1fr; }
+      .sw-grid  { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="../index.html" class="logo"><img src="../assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
+    <nav class="nav" id="nav">
+      <a href="../index.html">Inicio</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../guia/primer-ciclo.html" role="menuitem">Primer ciclo</a>
+          <a href="../guia/campus.html" role="menuitem">Instalaciones FC</a>
+          <a href="../guia/tramites.html" role="menuitem">Trámites</a>
+          <a href="../guia/consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <a href="../escuelas/index.html">Escuelas</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="recursos.html" class="active" role="menuitem">Recursos</a>
+          <a href="grupos.html" role="menuitem">Grupos</a>
+          <a href="../guia/cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="faq.html" role="menuitem">FAQ</a>
+        </div>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ───────────────────────────────────────────── -->
+    <section class="hero--simple">
+      <div class="hero-content">
+        <p class="hero-label"><a href="../index.html">Inicio</a> · Comunidad</p>
+        <div class="hero-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Comunidad · FC-UNI
+        </div>
+        <h1>Recursos de Estudio</h1>
+        <p>Exámenes pasados, tres fuentes bibliográficas independientes y el software que usarás en el laboratorio — todo en un solo lugar.</p>
+      </div>
+    </section>
+
+    <!-- ── 01 · DRIVE FC ──────────────────────────────────── -->
+    <section class="sc" id="drive-fc">
+      <div class="reveal">
+        <span class="sec-num">01 · Drive colaborativo</span>
+        <h2 class="section-title">Drive FC — Exámenes y Solucionarios</h2>
+        <p class="section-desc">Base de datos mantenida por estudiantes de ciclos superiores. Contiene exámenes pasados, solucionarios y apuntes organizados por curso.</p>
+
+        <div class="drive-card">
+          <div class="drive-card-head">
+            <div class="icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Drive de la Biblioteca FC</h3>
+              <small>Google Drive · Acceso público · Mantenido por estudiantes</small>
+            </div>
+          </div>
+
+          <ul class="check-list">
+            <li>
+              <span class="chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span><strong>Exámenes anteriores:</strong> parciales y finales de múltiples cursos, organizados por ciclo académico.</span>
+            </li>
+            <li>
+              <span class="chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span><strong>Solucionarios resueltos:</strong> paso a paso por estudiantes del tercio superior — útil para entender el estilo de calificación de cada cátedra.</span>
+            </li>
+            <li>
+              <span class="chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span><strong>Libros y apuntes:</strong> PDF de textos de referencia, guías de laboratorio y apuntes de clase de ciclos recientes.</span>
+            </li>
+          </ul>
+
+          <div class="card-cta">
+            <a href="https://drive.google.com/drive/folders/1gwnaDy5Cn_rR5E7i2t2OvJxugIECCTAM"
+               target="_blank" rel="noopener noreferrer"
+               class="btn" id="btn-drive-fc">
+              Abrir Drive FC ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 02 · BIBLIOTECAS ───────────────────────────────── -->
+    <section class="sc--alt" id="bibliotecas">
+      <div class="sc-inner">
+        <div class="reveal">
+          <span class="sec-num">02 · Fuentes bibliográficas oficiales</span>
+          <h2 class="section-title">Tres Bibliotecas a tu Disposición</h2>
+          <p class="section-desc">La FC-UNI cuenta con dos bibliotecas institucionales y el repositorio digital virtual de acceso remoto.</p>
+
+          <div class="lib-grid">
+
+            <!-- Biblioteca FC física -->
+            <div class="lib-card">
+              <div class="lib-card-type">Biblioteca presencial</div>
+              <h3>Biblioteca FC-UNI</h3>
+              <p class="lib-desc">Colección especializada en Física, Matemática, Química, Ingeniería Física y Ciencia de la Computación. Integrada al sistema de gestión <strong>UNI-KOHA</strong>. Fue la primera biblioteca de la UNI en sistematizar sus servicios (1993).</p>
+
+              <div class="lib-stats">
+                <div class="lib-stat">
+                  <span class="lib-stat-val">17,897</span>
+                  <span class="lib-stat-label">Libros</span>
+                </div>
+                <div class="lib-stat">
+                  <span class="lib-stat-val">556</span>
+                  <span class="lib-stat-label">Tesis</span>
+                </div>
+                <div class="lib-stat">
+                  <span class="lib-stat-val">288</span>
+                  <span class="lib-stat-label">Revistas impresas</span>
+                </div>
+                <div class="lib-stat">
+                  <span class="lib-stat-val">121</span>
+                  <span class="lib-stat-label">Soportes digitales</span>
+                </div>
+              </div>
+
+              <ul class="lib-services">
+                <li>Préstamo de libros y tesis en sala y a domicilio</li>
+                <li>Salas de estudio individual y grupal</li>
+                <li>Catálogo en línea (4 computadoras en sala)</li>
+                <li>Reprografía y digitalización de materiales</li>
+              </ul>
+
+              <div class="lib-contact">
+                <span><strong>Responsable:</strong> Lic. Maritza Dietz Castro — Jefa (e)</span>
+                <span>Tel: 481-0824 &nbsp;·&nbsp; Anexos 5020 / 5025</span>
+                <a href="mailto:bibliotecafc@uni.edu.pe">bibliotecafc@uni.edu.pe</a>
+              </div>
+
+              <div class="lib-links">
+                <a href="../guia/campus.html#biblioteca" class="lib-link-btn" id="link-campus-biblioteca">Ver instalaciones ↗</a>
+              </div>
+            </div>
+
+            <!-- AlphaCloud virtual -->
+            <div class="lib-card">
+              <div class="lib-card-type">Biblioteca virtual</div>
+              <h3>Biblioteca Virtual AlphaCloud</h3>
+              <p class="lib-desc">Plataforma de acceso remoto habilitada por la FC. Permite consultar libros electrónicos y bases de datos especializadas desde cualquier dispositivo, sin necesidad de estar en el campus.</p>
+
+              <ul class="lib-services">
+                <li>Libros electrónicos especializados en ciencias exactas</li>
+                <li>Acceso desde fuera del campus con credenciales UNI</li>
+                <li>Bases de datos académicas actualizadas</li>
+                <li>Complementa la colección física de la Biblioteca FC</li>
+              </ul>
+
+              <div class="lib-contact">
+                <span>Acceso habilitado para estudiantes y docentes de la FC-UNI.</span>
+                <a href="mailto:bibliotecafc@uni.edu.pe">Consultas: bibliotecafc@uni.edu.pe</a>
+              </div>
+
+              <div class="lib-links">
+                <a href="https://www.alphaeditorialcloud.com/library" target="_blank" rel="noopener noreferrer" class="lib-link-btn" id="link-alphacloud">Abrir AlphaCloud ↗</a>
+              </div>
+            </div>
+
+            <!-- Biblioteca Central UNI -->
+            <div class="lib-card">
+              <div class="lib-card-type">Biblioteca central · UNI</div>
+              <h3>Biblioteca Central de la UNI</h3>
+              <p class="lib-desc">Ubicada en la avenida principal del campus. Recurso general disponible para todos los estudiantes de la universidad, con salas de estudio y catálogo digital.</p>
+
+              <ul class="lib-services">
+                <li>Salas de estudio grupal reservables con tu código de alumno</li>
+                <li>Catálogo en línea y publicaciones científicas</li>
+                <li>Colección multidisciplinar de toda la UNI</li>
+                <li>Acceso con carné universitario vigente</li>
+              </ul>
+
+              <div class="lib-contact">
+                <span>Portal oficial de la Biblioteca Central UNI</span>
+                <a href="https://www.bibliotecacentral.uni.edu.pe/" target="_blank" rel="noopener noreferrer">bibliotecacentral.uni.edu.pe</a>
+              </div>
+
+              <div class="lib-links">
+                <a href="https://www.bibliotecacentral.uni.edu.pe/" target="_blank" rel="noopener noreferrer" class="lib-link-btn" id="link-bibl-central">Visitar portal ↗</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 03 · SOFTWARE ──────────────────────────────────── -->
+    <section class="sc" id="software-cientifico">
+      <div class="reveal">
+        <span class="sec-num">03 · Herramientas</span>
+        <h2 class="section-title">Software Científico Recomendado</h2>
+        <p class="section-desc">Herramientas utilizadas en laboratorio y en investigación curricular a lo largo de todas las escuelas de la FC.</p>
+
+        <div class="sw-grid">
+
+          <div class="sw-card">
+            <div class="sw-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <span class="sw-tag">Análisis de datos</span>
+            <h3>OriginPro y Minitab</h3>
+            <p>Usados en los laboratorios de Química y Física Médica para análisis de datos experimentales, regresiones no lineales y graficación de calidad de publicación.</p>
+          </div>
+
+          <div class="sw-card">
+            <div class="sw-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <span class="sw-tag">Programación científica</span>
+            <h3>Python (SciPy / Pandas)</h3>
+            <p>Estándar en la Escuela de Ciencia de la Computación para análisis numérico, machine learning y procesamiento masivo de datos.</p>
+          </div>
+
+          <div class="sw-card">
+            <div class="sw-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <span class="sw-tag">Redacción científica</span>
+            <h3>LaTeX</h3>
+            <p>Lenguaje de marcado obligatorio para informes científicos, artículos académicos y tesis de egreso en todas las escuelas profesionales de la FC.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">FC-UNI</div>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Guía</p>
+        <a href="../guia/primer-ciclo.html">Primer ciclo</a>
+        <a href="../escuelas/index.html">Escuelas</a>
+        <a href="../guia/tramites.html">Trámites</a>
+        <a href="../guia/consejos.html">Consejos</a>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Comunidad</p>
+        <a href="recursos.html">Recursos</a>
+        <a href="grupos.html">Grupos</a>
+        <a href="../guia/cientificos.html">Científicos FC</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Proyecto FC · Facultad de Ciencias UNI · Lima, Perú</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

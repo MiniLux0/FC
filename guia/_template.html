@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guía completa de la Facultad de Ciencias de la UNI. Accede a Primer ciclo, Trámites, Consejos, Científicos, Escuelas, Recursos, Grupos y FAQ.">
+  <title>Guía – FC-UNI</title>
+  <link rel="stylesheet" href="{{pathPrefix}}css/styles.css">
+  <link rel="icon" href="{{pathPrefix}}assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="{{pathPrefix}}assets/logos/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <a href="{{pathPrefix}}index.html" class="logo"><img src="{{pathPrefix}}assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
+    <nav class="nav" id="nav">
+      <a href="{{pathPrefix}}index.html">Inicio</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="{{pathPrefix}}guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="{{pathPrefix}}guia/primer-ciclo.html" role="menuitem">Primer ciclo</a>
+          <a href="{{pathPrefix}}guia/tramites.html" role="menuitem">Trámites</a>
+          <a href="{{pathPrefix}}guia/consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <a href="{{pathPrefix}}escuelas/index.html">Escuelas</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="{{pathPrefix}}comunidad/recursos.html" role="menuitem">Recursos</a>
+          <a href="{{pathPrefix}}comunidad/grupos.html" role="menuitem">Grupos</a>
+          <a href="cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="{{pathPrefix}}comunidad/faq.html" role="menuitem">FAQ</a>
+        </div>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+
+    <section class="hero hero--simple">
+      <div class="hero-content">
+        <p class="hero-label"><a href="{{pathPrefix}}index.html">Inicio</a> · Guía</p>
+        <h1>Guía de la Facultad de Ciencias</h1>
+        <p>Todo lo que necesitas saber para aprovechar al máximo tu paso por la FC. Organizado por etapa y tema.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Áreas de la guía</h2>
+      <p class="section-desc">Cada sección responde a una etapa distinta de tu vida en la facultad.</p>
+      <div class="grid reveal-grid">
+        <a class="card" href="{{pathPrefix}}guia/primer-ciclo.html">
+          <h3>Primer ciclo</h3>
+          <p>Qué pasa al ingresar: correos, INTRALU, matrícula, cursos y consejos para el primer semestre.</p>
+        </a>
+        <a class="card" href="{{pathPrefix}}guia/tramites.html">
+          <h3>Trámites</h3>
+          <p>Constancias, cambios de carrera, retiros, certificados y gestiones administrativas paso a paso.</p>
+        </a>
+        <a class="card" href="{{pathPrefix}}guia/consejos.html">
+          <h3>Consejos</h3>
+          <p>Estrategias de estudio, gestión del tiempo, becas, movilidad y vida estudiantil según estudiantes avanzados.</p>
+        </a>
+        <a class="card" href="{{pathPrefix}}guia/cientificos.html">
+          <h3>Científicos</h3>
+          <p>Egresados de la FC investigando en instituciones de primer nivel mundial. Historias y trayectorias.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="inner">
+        <h2 class="section-title">Recursos y comunidad</h2>
+        <p class="section-desc">Herramientas y espacios para conectar, compartir y avanzar juntos.</p>
+        <div class="grid reveal-grid">
+          <a class="card" href="{{pathPrefix}}escuelas/index.html">
+            <h3>Escuelas</h3>
+            <p>Qué se estudia en cada carrera, perfil de egreso y diferencias entre las cinco escuelas profesionales.</p>
+          </a>
+          <a class="card" href="{{pathPrefix}}comunidad/recursos.html">
+            <h3>Recursos</h3>
+            <p>Drives, apuntes, exámenes anteriores y material organizado por curso y semestre.</p>
+          </a>
+          <a class="card" href="{{pathPrefix}}comunidad/grupos.html">
+            <h3>Grupos</h3>
+            <p>Comunidades de estudiantes, delegaciones, grupos de estudio y organizaciones por escuela.</p>
+          </a>
+          <a class="card" href="{{pathPrefix}}comunidad/faq.html">
+            <h3>FAQ</h3>
+            <p>Preguntas frecuentes de ingresantes respondidas sin burocracia.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Accesos rápidos</h2>
+      <p class="section-desc">Enlaces directos a las páginas más consultadas.</p>
+      <div class="grid reveal-grid">
+        <a class="card" href="{{pathPrefix}}guia/primer-ciclo.html#etapas">
+          <h3>Etapas del primer ciclo</h3>
+          <p>Correo, INTRALU, ficha socioeconómica, examen médico, boleta de matrícula.</p>
+        </a>
+        <a class="card" href="{{pathPrefix}}guia/primer-ciclo.html#cursos">
+          <h3>Cursos base</h3>
+          <p>Cálculo, Álgebra, Física I, Química I, Introducción a la Computación.</p>
+        </a>
+        <a class="card" href="{{pathPrefix}}guia/primer-ciclo.html#contactos">
+          <h3>Contactos clave</h3>
+          <p>AERA, Tutoría, INTRALU, UNI Virtual — correos y links directos.</p>
+        </a>
+        <a class="card" href="{{pathPrefix}}escuelas/index.html">
+          <h3>Comparar escuelas</h3>
+          <p>Diferencias curriculares, perfiles y salidas profesionales de las 5 escuelas.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">FC-UNI</div>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Guía</p>
+        <a href="{{pathPrefix}}guia/primer-ciclo.html">Primer ciclo</a>
+        <a href="{{pathPrefix}}guia/tramites.html">Trámites</a>
+        <a href="{{pathPrefix}}guia/consejos.html">Consejos</a>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Comunidad</p>
+        <a href="{{pathPrefix}}comunidad/recursos.html">Recursos</a>
+        <a href="{{pathPrefix}}comunidad/grupos.html">Grupos</a>
+          <a href="cientificos.html" role="menuitem">Científicos FC</a>
+        <a href="{{pathPrefix}}comunidad/faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Proyecto FC · Facultad de Ciencias UNI · Lima, Perú</p>
+    </div>
+  </footer>
+
+  <script src="{{pathPrefix}}js/main.js"></script>
+</body>
+</html>

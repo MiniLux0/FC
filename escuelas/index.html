@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Escuelas Profesionales de la Facultad de Ciencias de la UNI. Conoce las 5 especialidades: Física, Matemática, Química, Ciencia de la Computación e Ingeniería Física.">
+  <title>Escuelas Profesionales – FC-UNI</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/logos/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-physics: #5c0d12;
+      --color-math: #1e5631;
+      --color-chem: #8b2d1a;
+      --color-comp: #3d1a5c;
+      --color-engphys: #155263;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="../index.html" class="logo"><img src="../assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
+    <nav class="nav" id="nav">
+      <a href="../index.html">Inicio</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../guia/primer-ciclo.html" role="menuitem">Primer ciclo</a>
+          <a href="../guia/campus.html" role="menuitem">Instalaciones FC</a>
+          <a href="../guia/tramites.html" role="menuitem">Trámites</a>
+          <a href="../guia/consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../comunidad/recursos.html" role="menuitem">Recursos</a>
+          <a href="../comunidad/grupos.html" role="menuitem">Grupos</a>
+          <a href="../guia/cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="../comunidad/faq.html" role="menuitem">FAQ</a>
+        </div>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO SECTION ──────────────────────────────────────────────── -->
+    <section class="hero hero--simple">
+      <div class="hero-content">
+        <p class="hero-label"><a href="../index.html">Inicio</a> · Escuelas</p>
+        <h1>Escuelas Profesionales de la Facultad de Ciencias</h1>
+        <p>Formación científica de vanguardia e investigación aplicada en las 5 especialidades fundamentales de la UNI.</p>
+      </div>
+    </section>
+
+    <!-- ─── SECCIÓN DE MÉTRICAS CLAVE ──────────────────────────────────── -->
+    <section class="section" style="padding-top: var(--space-lg); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--border);">
+      <div class="inner">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); text-align: center;">
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--accent);">65+</div>
+            <div style="font-size: var(--step-4); color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-top: 4px;">Años de Historia (1960)</div>
+          </div>
+
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--accent);">5</div>
+            <div style="font-size: var(--step-4); color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-top: 4px;">Carreras Profesionales</div>
+          </div>
+
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--accent);">ABET</div>
+            <div style="font-size: var(--step-4); color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-top: 4px;">Acreditación EE. UU. (Ing. Física)</div>
+          </div>
+
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm);">
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--accent);">208</div>
+            <div style="font-size: var(--step-4); color: var(--text-muted); font-weight: 600; text-transform: uppercase; margin-top: 4px;">Créditos en 10 Semestres</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECCIÓN DE LAS 5 ESCUELAS ──────────────────────────────────── -->
+    <section class="section section--alt">
+      <div class="inner">
+        <h2 class="section-title text-center">Las 5 Escuelas Profesionales</h2>
+        <p class="section-desc text-center">Haz clic en cada tarjeta para explorar su plan de estudios, directores de escuela, mallas curriculares y perfil de egreso.</p>
+        
+        <div class="escuelas-grid" style="margin-top: var(--space-lg);">
+          
+          <a class="escuela-card" href="fisica.html" data-discipline="physics" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs);">
+                <span class="escuela-num">01</span>
+                <span class="meta-badge" style="font-size: var(--step-5);">Fundada en 1960</span>
+              </div>
+              <strong style="font-size: 1.4rem; display: block; margin-bottom: 6px; color: var(--color-physics);">Escuela de Física</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin-bottom: var(--space-sm); line-height: 1.5;">
+                Formación rigurosa en mecánica teórica, electrodinámica, cuántica y física de estado sólido. Preparación de excelencia para posgrados directos en el extranjero.
+              </p>
+              <p style="font-size: var(--step-4); font-weight: 600; color: var(--accent); margin-bottom: var(--space-sm);">Director: Dr. José Luis Solís Velélz</p>
+            </div>
+            <div class="escuela-areas">
+              <span class="escuela-area">Mecánica</span>
+              <span class="escuela-area">Cuántica</span>
+              <span class="escuela-area">Computacional</span>
+            </div>
+          </a>
+
+          <a class="escuela-card" href="matematica.html" data-discipline="math" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs);">
+                <span class="escuela-num">02</span>
+                <span class="meta-badge" style="font-size: var(--step-5);">Fundada en 1960</span>
+              </div>
+              <strong style="font-size: 1.4rem; display: block; margin-bottom: 6px; color: var(--color-math);">Escuela de Matemática</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin-bottom: var(--space-sm); line-height: 1.5;">
+                Fundamentos abstractos y avanzados en álgebra, análisis funcional, topología y estadística probabilística. Cimiento teórico para Ciencia de Datos e investigación pura.
+              </p>
+              <p style="font-size: var(--step-4); font-weight: 600; color: var(--accent); margin-bottom: var(--space-sm);">Director: Dr. Roger Pedro Cabanas Paredes (e)</p>
+            </div>
+            <div class="escuela-areas">
+              <span class="escuela-area">Álgebra</span>
+              <span class="escuela-area">Análisis</span>
+              <span class="escuela-area">Estadística</span>
+            </div>
+          </a>
+
+          <a class="escuela-card" href="quimica.html" data-discipline="chem" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs);">
+                <span class="escuela-num">03</span>
+                <span class="meta-badge" style="font-size: var(--step-5);">Fundada en 1960</span>
+              </div>
+              <strong style="font-size: 1.4rem; display: block; margin-bottom: 6px; color: var(--color-chem);">Escuela de Química</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin-bottom: var(--space-sm); line-height: 1.5;">
+                Investigación en síntesis orgánica, física-química, espectroscopía y química analítica industrial. Incluye certificaciones técnicas intermedias durante la carrera.
+              </p>
+              <p style="font-size: var(--step-4); font-weight: 600; color: var(--accent); margin-bottom: var(--space-sm);">Director: Dr. Javier Bernardo Enríquez Poma</p>
+            </div>
+            <div class="escuela-areas">
+              <span class="escuela-area">Orgánica</span>
+              <span class="escuela-area">Analítica</span>
+              <span class="escuela-area">Ambiental</span>
+            </div>
+          </a>
+
+          <a class="escuela-card" href="computacion.html" data-discipline="comp" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs);">
+                <span class="escuela-num">04</span>
+                <span class="meta-badge" style="font-size: var(--step-5); color: var(--color-comp);">RR N° 0687 (2018)</span>
+              </div>
+              <strong style="font-size: 1.4rem; display: block; margin-bottom: 6px; color: var(--color-comp);">Escuela de Ciencia de la Computación</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin-bottom: var(--space-sm); line-height: 1.5;">
+                Formación bajo estándares internacionales ACM/IEEE en inteligencia artificial, procesamiento de lenguaje natural, computación distribuida y teoría de grafos.
+              </p>
+              <p style="font-size: var(--step-4); font-weight: 600; color: var(--accent); margin-bottom: var(--space-sm);">Director: Dr. José Eduardo Ochoa Luna (e)</p>
+            </div>
+            <div class="escuela-areas">
+              <span class="escuela-area">IA</span>
+              <span class="escuela-area">Algoritmos</span>
+              <span class="escuela-area">Sistemas</span>
+            </div>
+          </a>
+
+          <a class="escuela-card" href="ingenieria-fisica.html" data-discipline="engphys" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs);">
+                <span class="escuela-num">05</span>
+                <span class="meta-badge" style="font-size: var(--step-5); color: var(--color-engphys);">Acreditada ABET (1999)</span>
+              </div>
+              <strong style="font-size: 1.4rem; display: block; margin-bottom: 6px; color: var(--color-engphys);">Escuela de Ingeniería Física</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin-bottom: var(--space-sm); line-height: 1.5;">
+                Puente entre la física básica y la innovación tecnológica: metrología industrial de alta precisión, energías no convencionales, instrumentación cuántica y física médica.
+              </p>
+              <p style="font-size: var(--step-4); font-weight: 600; color: var(--accent); margin-bottom: var(--space-sm);">Director: Dr. Juan Martín Rodríguez Rodríguez (e)</p>
+            </div>
+            <div class="escuela-areas">
+              <span class="escuela-area">Energía</span>
+              <span class="escuela-area">Instrumentación</span>
+              <span class="escuela-area">Materiales</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECCIÓN DE CONEXIONES E INTERACCION ENTRE ESCUELAS ─────────── -->
+    <section class="section">
+      <div class="inner">
+        <h2 class="section-title text-center">Redes Epistemológicas: ¿Cómo se conectan las 5 Escuelas?</h2>
+        <p class="section-desc text-center">La Facultad de Ciencias opera como un ecosistema donde las formulaciones abstractas se traducen en tecnología aplicada e innovación industrial.</p>
+
+        <div class="grid-4" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: var(--space-lg); text-align: left;">
+          
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm); border-top: 3px solid var(--color-math);">
+            <span class="meta-badge" style="margin-bottom: var(--space-xs); display: inline-block;">Teoría → Algoritmos</span>
+            <h4 style="margin: 0; font-size: 1.1rem; color: var(--color-math); font-family: var(--font-serif);">Matemática & Computación</h4>
+            <p style="margin-top: 6px; font-size: var(--step-4); color: var(--text-muted); line-height: 1.5;">
+              La topología, el análisis numérico y la probabilidad fundamentan los modelos de Deep Learning y Machine Learning desarrollados por Ciencia de la Computación.
+            </p>
+          </div>
+
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm); border-top: 3px solid var(--color-comp);">
+            <span class="meta-badge" style="margin-bottom: var(--space-xs); display: inline-block;">HPC & Big Data</span>
+            <h4 style="margin: 0; font-size: 1.1rem; color: var(--color-comp); font-family: var(--font-serif);">Computación & Ing. Física</h4>
+            <p style="margin-top: 6px; font-size: var(--step-4); color: var(--text-muted); line-height: 1.5;">
+              La computación distribuida y el procesamiento masivo de datos permiten realizar simulaciones Monte Carlo y procesamiento espectroscópico de alta sensibilidad.
+            </p>
+          </div>
+
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm); border-top: 3px solid var(--color-engphys);">
+            <span class="meta-badge" style="margin-bottom: var(--space-xs); display: inline-block;">Instrumentación & Sensores</span>
+            <h4 style="margin: 0; font-size: 1.1rem; color: var(--color-engphys); font-family: var(--font-serif);">Ing. Física & Química</h4>
+            <p style="margin-top: 6px; font-size: var(--step-4); color: var(--text-muted); line-height: 1.5;">
+              Los dispositivos láser y la instrumentación cuántica diseñados por físicos son la herramienta base para la síntesis y caracterización de nuevos materiales químicos.
+            </p>
+          </div>
+
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm); border-top: 3px solid var(--color-chem);">
+            <span class="meta-badge" style="margin-bottom: var(--space-xs); display: inline-block;">Síntesis de Materiales</span>
+            <h4 style="margin: 0; font-size: 1.1rem; color: var(--color-chem); font-family: var(--font-serif);">Química & Física Pura</h4>
+            <p style="margin-top: 6px; font-size: var(--step-4); color: var(--text-muted); line-height: 1.5;">
+              La síntesis de nanomateriales, fotovoltaicos y polímeros suministra los insumos físicos para probar teorías cuánticas y desarrollar biosensores en laboratorio.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECCIÓN DE DIRECTORIO DE ATENCIÓN DIRECTA ───────────────────── -->
+    <section class="section section--alt">
+      <div class="inner" style="max-width: 900px; margin: 0 auto; text-align: left;">
+        <h2 class="section-title text-center">Directorio Oficial de Atenciones por Escuela</h2>
+        <p class="section-desc text-center">Canales oficiales de consulta para estudiantes matriculados y postulantes de la Facultad de Ciencias.</p>
+
+        <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); margin-top: var(--space-lg);">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md);">
+            
+            <div style="padding-bottom: var(--space-xs); border-bottom: 1px solid var(--border);">
+              <strong style="color: var(--accent); font-size: 1.05rem; display: block;">Escuela de Física</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 2px 0;">Correo: <a href="mailto:escuelas_fc1@uni.edu.pe">escuelas_fc1@uni.edu.pe</a></p>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 0;">Teléfono: (01) 481-1070 anexo 5023</p>
+            </div>
+
+            <div style="padding-bottom: var(--space-xs); border-bottom: 1px solid var(--border);">
+              <strong style="color: var(--accent); font-size: 1.05rem; display: block;">Escuela de Matemática</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 2px 0;">Correo: <a href="mailto:escuelas_fc1@uni.edu.pe">escuelas_fc1@uni.edu.pe</a></p>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 0;">Teléfono: (01) 481-1070 anexo 5023</p>
+            </div>
+
+            <div style="padding-bottom: var(--space-xs); border-bottom: 1px solid var(--border);">
+              <strong style="color: var(--accent); font-size: 1.05rem; display: block;">Escuela de Química</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 2px 0;">Correo: <a href="mailto:escuelas_fc1@uni.edu.pe">escuelas_fc1@uni.edu.pe</a></p>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 0;">Teléfono: (01) 481-1070 anexo 5023</p>
+            </div>
+
+            <div style="padding-bottom: var(--space-xs); border-bottom: 1px solid var(--border);">
+              <strong style="color: var(--accent); font-size: 1.05rem; display: block;">Escuela de Ciencia de la Computación</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 2px 0;">Correo: <a href="mailto:escuelas_fc1@uni.edu.pe">escuelas_fc1@uni.edu.pe</a></p>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 0;">Teléfono: (01) 481-1070 anexo 5023</p>
+            </div>
+
+            <div style="padding-bottom: var(--space-xs); border-bottom: 1px solid var(--border);">
+              <strong style="color: var(--accent); font-size: 1.05rem; display: block;">Escuela de Ingeniería Física</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 2px 0;">Correo: <a href="mailto:escuelas_fc1@uni.edu.pe">escuelas_fc1@uni.edu.pe</a></p>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 0;">Teléfono: (01) 481-1070 anexo 5023</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">FC-UNI</div>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Guía</p>
+        <a href="../guia/primer-ciclo.html">Primer ciclo</a>
+        <a href="../guia/tramites.html">Trámites</a>
+        <a href="../guia/consejos.html">Consejos</a>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Comunidad</p>
+        <a href="../comunidad/recursos.html">Recursos</a>
+        <a href="../comunidad/grupos.html">Grupos</a>
+        <a href="../guia/cientificos.html" role="menuitem">Científicos FC</a>
+        <a href="../comunidad/faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Proyecto FC · Facultad de Ciencias UNI · Lima, Perú</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

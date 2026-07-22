@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guía de trámites administrativos en la Facultad de Ciencias de la UNI: matrícula, créditos, ficha socioeconómica y tutoría.">
+  <title>Trámites Administrativos – FC-UNI</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/logos/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ─── DYNAMIC TABS AND SIDEBAR ────────────────────────────────────── */
+    .tramites-container {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: var(--space-lg);
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--space-md) 0 var(--space-xl);
+      align-items: start;
+    }
+
+    .tramites-sidebar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md);
+      position: sticky;
+      top: 90px;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .search-wrapper {
+      position: relative;
+      margin-bottom: var(--space-md);
+    }
+
+    .search-wrapper input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: var(--step-3);
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+    }
+
+    .search-wrapper input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.15);
+      background: var(--white);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .tramites-menu {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .menu-category {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .category-title {
+      font-size: var(--step-4);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      padding-left: 0.5rem;
+      border-left: 2px solid var(--accent);
+    }
+
+    .menu-item {
+      background: transparent;
+      border: none;
+      text-align: left;
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: var(--step-3);
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--dur-fast) var(--ease-out);
+    }
+
+    .menu-item:hover {
+      background: var(--bg-alt);
+      color: var(--accent);
+    }
+
+    .menu-item.active {
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .tramites-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .tramite-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Hide by default only when JS is active to ensure progressive enhancement */
+    html.js .tramite-panel {
+      display: none;
+      animation: panelFadeIn var(--dur-normal) var(--ease-out) forwards;
+    }
+
+    html.js .tramite-panel.active {
+      display: block;
+    }
+
+    @keyframes panelFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .panel-header h2 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: var(--space-xs);
+      line-height: 1.2;
+    }
+
+    .panel-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-top: var(--space-xs);
+    }
+
+    .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: var(--step-4);
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .meta-badge.cost {
+      background: rgba(30, 86, 49, 0.08);
+      border-color: rgba(30, 86, 49, 0.2);
+      color: var(--color-math);
+    }
+
+    .meta-badge.time {
+      background: rgba(21, 82, 99, 0.08);
+      border-color: rgba(21, 82, 99, 0.2);
+      color: var(--color-engphys);
+    }
+
+    .panel-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin: var(--space-md) 0 var(--space-xs);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+    }
+
+    .panel-body p {
+      font-size: var(--step-3);
+      color: var(--text);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-sm);
+    }
+
+    .panel-body ul, .panel-body ol {
+      margin-left: var(--space-md);
+      margin-bottom: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .panel-body li {
+      font-size: var(--step-3);
+      color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+    }
+
+    .panel-body li strong {
+      color: var(--text);
+    }
+
+    .remember-box {
+      background: rgba(139, 45, 26, 0.05);
+      border-left: 4px solid var(--color-chem);
+      padding: var(--space-md);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: var(--space-md) 0;
+    }
+
+    .remember-box h4 {
+      font-size: var(--step-3);
+      color: var(--color-chem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-xs);
+    }
+
+    .remember-box p {
+      margin-bottom: 0;
+      font-size: var(--step-3);
+      color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+
+    .tramite-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.25rem;
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: var(--step-3);
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--dur-fast) var(--ease-out);
+      border: none;
+    }
+
+    .tramite-btn--primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .tramite-btn--primary:hover {
+      background: var(--accent-hover);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .tramite-btn--secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--accent);
+    }
+
+    .tramite-btn--secondary:hover {
+      border-color: var(--accent);
+      background: var(--bg);
+      transform: translateY(-1px);
+    }
+
+    .option-block {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-md);
+      background: var(--bg);
+      margin-bottom: var(--space-md);
+    }
+
+    .option-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: var(--space-xs);
+      font-weight: 600;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    @media (min-width: 768px) {
+      .options-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 850px) {
+      .tramites-container {
+        grid-template-columns: 1fr;
+      }
+      .tramites-sidebar {
+        position: static;
+        max-height: none;
+        margin-bottom: var(--space-md);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="../index.html" class="logo"><img src="../assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
+    <nav class="nav" id="nav">
+      <a href="../index.html">Inicio</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="primer-ciclo.html" role="menuitem">Primer ciclo</a>
+          <a href="tramites.html" class="active" role="menuitem">Trámites</a>
+          <a href="consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../comunidad/recursos.html" role="menuitem">Recursos</a>
+          <a href="../comunidad/grupos.html" role="menuitem">Grupos</a>
+          <a href="cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="../comunidad/faq.html" role="menuitem">FAQ</a>
+        </div>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+
+    <section class="hero hero--simple">
+      <div class="hero-content">
+        <p class="hero-label"><a href="../index.html">Inicio</a> · Guía</p>
+        <h1>Guía de Trámites Administrativos</h1>
+        <p>Procesos administrativos y normativas explicados de forma clara para gestionar tu vida académica en la FC-UNI.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="inner" style="max-width: var(--max-width); margin: 0 auto; text-align: left;">
+        <h2 class="section-title text-center" style="margin-bottom: var(--space-md);">1. Información Académica General</h2>
+        <p class="section-desc text-center">Aspectos clave sobre el régimen de créditos y los cursos de nivelación de verano en la FC-UNI.</p>
+        
+        <div class="options-grid" style="margin-top: var(--space-lg);">
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-serif); color: var(--accent); font-size: 1.4rem; margin-bottom: var(--space-sm); border-bottom: 1px solid var(--border); padding-bottom: 6px;">Matrícula Regular y Créditos</h3>
+            <p style="font-size: var(--step-3); color: var(--text-muted); line-height: 1.6; margin-bottom: var(--space-sm);">La matrícula de pregrado se rige bajo las siguientes normas del Reglamento Oficial de la facultad:</p>
+            <ul style="padding-left: var(--space-md); font-size: var(--step-3); line-height: 1.6; display: flex; flex-direction: column; gap: 8px;">
+              <li><strong>Rango de créditos:</strong> Debes matricularte en un rango de entre <strong>12 y 22 créditos</strong> por semestre. Llevar menos de 12 créditos requiere una autorización especial firmada por el Decano (sustentada por trabajo o salud).</li>
+              <li><strong>Requisito de egreso:</strong> Para graduarte como Bachiller en Ciencias, debes acumular al menos <strong>208 créditos aprobados</strong> entre asignaturas obligatorias y electivos (Malla Curricular 2018).</li>
+              <li><strong>Duración estimada:</strong> El plan curricular está diseñado para ser completado de manera regular en <strong>10 semestres académicos</strong> (5 años).</li>
+              <li><strong>Calendario Oficial:</strong> Puedes consultar los plazos específicos de matrícula en el <a href="https://dirce.uni.edu.pe/calendario-actividades-uni" target="_blank" rel="noopener noreferrer">Calendario de Actividades de DIRCE ↗</a> o en el <a href="https://drive.google.com/file/d/1bjrWqUxKY6iTqy8tGRN6uRVw78CGx9vj/view" target="_blank" rel="noopener noreferrer">Calendario Académico 2026 (RR 3678-2025) ↗</a>.</li>
+            </ul>
+          </div>
+
+          <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-serif); color: var(--accent); font-size: 1.4rem; margin-bottom: var(--space-sm); border-bottom: 1px solid var(--border); padding-bottom: 6px;">Nivelación Académica (Ciclo de Verano)</h3>
+            <p style="font-size: var(--step-3); color: var(--text-muted); line-height: 1.6; margin-bottom: var(--space-sm);">Regulado por el Reglamento RE-028/VRA-011 y aprobado por la <strong>Resolución Rectoral N° 0182-2026-UNI</strong> (o puedes solicitarnos su enlace de consulta online si lo requieres) para cursos intensivos vacacionales:</p>
+            <ul style="padding-left: var(--space-md); font-size: var(--step-3); line-height: 1.6; display: flex; flex-direction: column; gap: 8px;">
+              <li><strong>Duración y carga:</strong> Tiene una duración estricta de <strong>ocho (08) semanas</strong>, con el mismo número de horas lectivas presenciales que un semestre regular.</li>
+              <li><strong>Límite de cursos:</strong> El alumno puede registrarse en un máximo de <strong>dos (02) asignaturas</strong>.</li>
+              <li><strong>Evaluación y Notas:</strong>
+                <ul>
+                  <li><strong>Sin sustitutorio:</strong> No se aplican exámenes sustitutorios. La nota es definitiva.</li>
+                  <li><strong>Fórmula del 75%:</strong> Si el curso posee 4 o más prácticas/laboratorios, el promedio de los mismos descarta el 25% de las notas más bajas (se toman los mejores promedios).</li>
+                </ul>
+              </li>
+              <li><strong>Prioridad de matrícula:</strong> El orden de prioridad beneficia primero a alumnos en riesgo de suspensión ("triqueros"), seguido por biqueados y alumnos con asignaturas atrasadas.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CATÁLOGO DIGITAL DE TRÁMITES ACADÉMICOS ─────────────────── -->
+    <section class="section" id="catalogo-tramites">
+      <div class="inner" style="max-width: 100%;">
+        <h2 class="section-title text-center">2. Catálogo Digital de Trámites Académicos</h2>
+        <p class="section-desc text-center">Consulta en tiempo real los requisitos, costos y flujos de todos los trámites de la Facultad de Ciencias.</p>
+
+        <div class="tramites-container">
+          <!-- Sidebar con Buscador -->
+          <aside class="tramites-sidebar">
+            <div class="search-wrapper">
+              <input type="text" id="tramiteSearch" placeholder="Buscar trámite..." aria-label="Buscar trámite académico">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            
+            <nav class="tramites-menu" id="tramitesMenu">
+              <div class="menu-category">
+                <span class="category-title">Matrícula y Permanencia</span>
+                <button class="menu-item active" data-target="ficha-socioeconomica">Ficha Socioeconómica</button>
+                <button class="menu-item" data-target="reserva-matricula">Reserva de Matrícula</button>
+                <button class="menu-item" data-target="retiro-matricula">Retiro de Asignatura o Ciclo</button>
+                <button class="menu-item" data-target="reincorporacion">Reincorporación Académica</button>
+              </div>
+
+              <div class="menu-category">
+                <span class="category-title">Identificación y Fotos</span>
+                <button class="menu-item" data-target="actualizacion-fotografia">Actualización de fotografía</button>
+                <button class="menu-item" data-target="carne-regular">Carné Universitario Regular</button>
+                <button class="menu-item" data-target="carne-duplicado">Carné Universitario Duplicado</button>
+              </div>
+              
+              <div class="menu-category">
+                <span class="category-title">Certificados</span>
+                <button class="menu-item" data-target="certificado-simple">Certificado de Estudios Simple</button>
+                <button class="menu-item" data-target="certificado-depurado">Certificado de Estudios Depurado</button>
+              </div>
+
+              <div class="menu-category">
+                <span class="category-title">Constancias</span>
+                <button class="menu-item" data-target="constancia-egresado">Constancia de Egresado</button>
+                <button class="menu-item" data-target="constancia-primera-matricula">Constancia de 1ª Matrícula</button>
+                <button class="menu-item" data-target="constancia-no-adeudos">Constancia de No Adeudos</button>
+                <button class="menu-item" data-target="constancia-no-adeudo-posgrado">No Adeudo (Posgrado)</button>
+                <button class="menu-item" data-target="constancia-equivalencia">Equivalencia Internacional</button>
+              </div>
+
+              <div class="menu-category">
+                <span class="category-title">Grados y Títulos</span>
+                <button class="menu-item" data-target="bachiller">Bachiller</button>
+                <button class="menu-item" data-target="titulo-tesis">Título Profesional por Tesis</button>
+                <button class="menu-item" data-target="titulo-suficiencia">Título por Suficiencia</button>
+              </div>
+            </nav>
+          </aside>
+
+          <!-- Contenido de Trámites -->
+          <div class="tramites-content" id="tramitesContent">
+
+            <!-- Trámite: Ficha Socioeconómica -->
+            <div class="tramite-panel active" id="ficha-socioeconomica">
+              <div class="panel-header">
+                <h2>Ficha Socioeconómica</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: Gratuito</span>
+                  <span class="meta-badge time">Plazo: Anual</span>
+                  <span class="meta-badge">Obligatorio</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>La Ficha Socioeconómica es un registro detallado de las condiciones socioeconómicas, de vivienda, salud y composición familiar de los estudiantes de la UNI. Es administrada por la Oficina de Bienestar Universitario y sirve como insumo obligatorio para determinar la categorización de pago y prioridades de matrícula.</p>
+                
+                <h3>Instrucciones para Completar la Ficha</h3>
+                <ol>
+                  <li>Ingresa al portal web integrado de la universidad <strong>INTRALU</strong> en <a href="https://alumnos.uni.edu.pe/login" target="_blank" rel="noopener noreferrer">alumnos.uni.edu.pe</a> con tus credenciales institucionales.</li>
+                  <li>Dirígete a la sección <strong>Configuración → Socioeconómico</strong>.</li>
+                  <li>Completa todos los campos con datos reales y actualizados de tu hogar (ingresos familiares consolidados, gastos mensuales, tipo de vivienda, etc.).</li>
+                  <li>Carga los documentos sustentatorios solicitados en formato <strong>PDF</strong> (boletas de pago, recibos de servicios, constancia de vivienda, etc.).</li>
+                  <li>Finaliza el trámite haciendo clic en "Enviar" para la evaluación de la Oficina de Bienestar Universitario.</li>
+                </ol>
+
+                <div class="remember-box">
+                  <h4>⚠️ Bloqueo de Matrícula</h4>
+                  <p>La actualización de la Ficha Socioeconómica es <strong>obligatoria</strong>. Si no la actualizas en las fechas programadas antes de iniciar el ciclo lectivo, el sistema integrado bloqueará automáticamente tu prioridad de matrícula, lo que impedirá tu inscripción a tiempo y te dejará con horarios desfavorables o sin vacantes en tus asignaturas principales.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trámite: Reserva de Matrícula -->
+            <div class="tramite-panel" id="reserva-matricula">
+              <div class="panel-header">
+                <h2>Reserva de Matrícula</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 35.00</span>
+                  <span class="meta-badge time">Plazo: Hasta la 2da semana de clases</span>
+                  <span class="meta-badge">Límite: Máx. 4 ciclos</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Procedimiento formal que permite al estudiante suspender temporalmente sus estudios en el ciclo vigente, asegurando la conservación de su vacante y evitando ser calificado como alumno inactivo o desaprobado en las asignaturas matriculadas.</p>
+                
+                <h3>Pasos para Solicitar la Reserva</h3>
+                <ol>
+                  <li>Ingresa a tu cuenta de <strong>INTRALU</strong> y en la sección de pagos genera la orden por concepto de "Reserva de Matrícula" (tasa de S/ 35.00). Realiza el pago en las entidades recaudadoras autorizadas.</li>
+                  <li>Asegúrate de no registrar deudas de libros en la biblioteca central o de facultad, ni materiales en los laboratorios de física, química o computación (verificación de no adeudo).</li>
+                  <li>Presenta una solicitud simple dirigida al Decano de la Facultad a través de la <strong>Mesa de Partes Virtual</strong> de la FC, adjuntando:
+                    <ul>
+                      <li>Comprobante de pago de la tasa.</li>
+                      <li>Carta de solicitud de reserva explicando brevemente los motivos (salud, trabajo, etc.) debidamente firmada.</li>
+                      <li>Si aplica, documentación de respaldo (ej. certificado médico visado por el Centro Médico de la UNI en caso de salud).</li>
+                    </ul>
+                  </li>
+                </ol>
+
+                <div class="remember-box">
+                  <h4>💡 Reserva para Ingresantes</h4>
+                  <p>Los alumnos ingresantes (primer ciclo) también tienen derecho a reservar su matrícula, pero el trámite debe gestionarse exclusivamente dentro de las fechas programadas de la matrícula especial de ingresantes en el calendario oficial de DIRCE.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trámite: Retiro de Asignatura o Ciclo -->
+            <div class="tramite-panel" id="retiro-matricula">
+              <div class="panel-header">
+                <h2>Retiro de Asignatura o Ciclo</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: Gratuito</span>
+                  <span class="meta-badge time">Plazo: Hasta 6ta semana (curso) / 9na semana (ciclo)</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Trámite mediante el cual el estudiante solicita dejar de cursar una o más materias específicas (retiro de asignatura) o anular la matrícula de la totalidad del semestre académico (retiro de ciclo) sin que las notas afecten su promedio ponderado acumulado ni cuenten como oportunidades académicas perdidas (bicas o tricas).</p>
+                
+                <h3>Tipos de Retiro y Plazos</h3>
+                <ul>
+                  <li><strong>Retiro de Asignatura:</strong> Permite desvincularte de materias específicas. El plazo máximo vence al término de la <strong>sexta (06) semana</strong> de clases del ciclo correspondiente.
+                    <br><em>Restricción:</em> No puedes quedar matriculado en menos de <strong>12 créditos</strong> en el ciclo vigente, salvo que sea el único curso activo que tengas.
+                  </li>
+                  <li><strong>Retiro de Ciclo:</strong> Anula por completo tu matrícula del semestre actual. El plazo para solicitarlo vence al finalizar la <strong>novena (09) semana</strong> de clases (justo después de los exámenes parciales).
+                    <br><em>Nota:</em> Este proceso no exime al alumno de los pagos o tasas administrativas realizados al inicio del ciclo.
+                  </li>
+                </ul>
+
+                <h3>Requisitos del Trámite</h3>
+                <ol>
+                  <li>Ingresar al sistema <strong>INTRALU</strong> y registrar la solicitud de retiro en el módulo de trámites académicos.</li>
+                  <li>En caso de no estar habilitado en INTRALU, deberás remitir una solicitud simple dirigida al Director de tu Escuela Profesional mediante la Mesa de Partes de la Facultad, justificando los motivos del retiro.</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Trámite: Reincorporación Académica -->
+            <div class="tramite-panel" id="reincorporacion">
+              <div class="panel-header">
+                <h2>Reincorporación Académica</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 50.00</span>
+                  <span class="meta-badge time">Plazo: Hasta 4 semanas antes de la matrícula</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Procedimiento administrativo obligatorio dirigido a estudiantes que habiendo reservado formalmente su matrícula, o habiendo dejado de matricularse voluntariamente por uno o más semestres, deciden reanudar sus estudios en la Facultad de Ciencias para el ciclo entrante.</p>
+                
+                <h3>Requisitos y Flujo</h3>
+                <ol>
+                  <li>Genera la orden de pago por "Derecho de Reincorporación" (S/ 50.00) en el sistema <strong>INTRALU</strong> y realiza el abono en los bancos autorizados.</li>
+                  <li>Verifica en tu intranet que no tengas multas electorales pendientes, deudas de biblioteca o reactivos de laboratorio.</li>
+                  <li>Presenta la solicitud dirigida al Decano mediante la <strong>Mesa de Partes de la Facultad</strong> adjuntando el comprobante de pago de la tasa y copia simple de tu DNI o carné universitario anterior.</li>
+                  <li>Registros Académicos (AERA) evaluará tu situación y registrará tu reactivación en el sistema para que figures en el padrón del siguiente proceso de matrícula.</li>
+                </ol>
+
+                <div class="remember-box">
+                  <h4>⚠️ Plazo Límite de Inactividad</h4>
+                  <p>De acuerdo con el Estatuto de la UNI, el tiempo total máximo acumulable de suspensión voluntaria de estudios sin perder la condición de alumno regular es de <strong>seis (6) semestres académicos</strong> (3 años). Superado este plazo, el estudiante pierde la vacante y debe rendir un examen de reingreso especial.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trámite 1: Actualización de fotografía -->
+            <div class="tramite-panel" id="actualizacion-fotografia">
+              <div class="panel-header">
+                <h2>Actualización de Fotografía</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: Gratuito</span>
+                  <span class="meta-badge time">Plazo: 2 días hábiles</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>La fotografía digital se utiliza para diversos trámites del estudiante a lo largo de su instancia en la UNI, la fotografía se mostrará en su intranet, también se usará para la emisión del carné universitario y la impresión de certificados.</p>
+                
+                <div class="video-box" style="margin: var(--space-md) 0; padding: var(--space-sm) var(--space-md); background: rgba(186, 12, 47, 0.05); border-left: 3px solid var(--accent); border-radius: var(--radius); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs);">
+                  <div>
+                    <strong style="color: var(--accent); display: block; font-size: var(--step-3);">🎥 Video Tutorial Explicativo:</strong>
+                    <span style="font-size: var(--step-4); color: var(--text-muted);">Guía paso a paso para la actualización de fotografía de los estudiantes de la UNI.</span>
+                  </div>
+                  <a href="https://www.youtube.com/watch?v=oAgowQri-qA&t=41s" target="_blank" rel="noopener noreferrer" class="tramite-btn tramite-btn--primary" style="font-size: var(--step-4); padding: 0.45rem 0.85rem;">Ver video explicativo ↗</a>
+                </div>
+                
+                <h3>Opciones para realizar el trámite</h3>
+                <div class="options-grid">
+                  <div class="option-block">
+                    <span class="option-title">Opción 1: Toma de foto en DIRCE</span>
+                    <p>Apersonarse a las instalaciones de la DIRCE (Mesa de partes) y solicitar la toma fotográfica en el campus en el siguiente horario:</p>
+                    <p><strong>Horario:</strong> Lunes a Viernes de 9:00 am - 12:45 pm y de 2:00 pm - 4:00 pm.</p>
+                  </div>
+
+                  <div class="option-block">
+                    <span class="option-title">Opción 2: Correo a Mesa de Ayuda</span>
+                    <p>Puedes enviar tu fotografía digital (actual y formal) por correo electrónico a <a href="mailto:mesadeayuda.dirce@uni.edu.pe">mesadeayuda.dirce@uni.edu.pe</a>.</p>
+                    <p><strong>El archivo debe cumplir exactamente:</strong></p>
+                    <ul>
+                      <li>Archivo en formato <strong>.jpg</strong> con dimensiones de <strong>240x288 píxeles</strong>.</li>
+                      <li>Tamaño de archivo <strong>menor a 50KB</strong> y resolución de <strong>300 ppp</strong>.</li>
+                      <li>Imagen totalmente nítida (sin ruido digital).</li>
+                      <li>El nombre del archivo debe ser únicamente tu número de <strong>DNI</strong>.</li>
+                    </ul>
+                    <div class="btn-group">
+                      <a href="mailto:mesadeayuda.dirce@uni.edu.pe?subject=Actualización de fotografía - DNI&body=Estimados, adjunto mi fotografía digital cumpliendo las características solicitadas para la actualización de mi cuenta." class="tramite-btn tramite-btn--primary">Enviar fotografía por correo</a>
+                    </div>
+                  </div>
+
+                  <div class="option-block">
+                    <span class="option-title">Opción 3: Cargar desde INTRALU</span>
+                    <p>Ingresa al portal web <strong>INTRALU</strong> y en la sección "Trámites y Pagos" ubica la opción "Registro o actualización de fotografía".</p>
+                    <div class="btn-group">
+                      <a href="https://alumnos.uni.edu.pe/login" target="_blank" rel="noopener noreferrer" class="tramite-btn tramite-btn--secondary">Subir foto en INTRALU</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="remember-box">
+                  <h4>⚠️ RECUERDE</h4>
+                  <p>No se aceptan fotos escaneadas, fotos antiguas, ni fotos de baja nitidez. La fotografía que no cumpla con las características mencionadas no será procesada en el sistema.</p>
+                  
+                  <div style="margin-top: var(--space-md); text-align: center;">
+                    <p style="font-weight: 600; color: var(--accent); margin-bottom: var(--space-xs); font-size: var(--step-3);">Modelo oficial y especificaciones de encuadre para la foto:</p>
+                    <img src="../assets/images/consideraciones-foto-carne.png" alt="Consideraciones oficiales para la foto de carné universitario UNI" style="max-width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trámite 2: Carné Universitario Regular -->
+            <div class="tramite-panel" id="carne-regular">
+              <div class="panel-header">
+                <h2>Carné Universitario Regular</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 17.70</span>
+                  <span class="meta-badge time">Vigencia: Anual</span>
+                  <span class="meta-badge">Entidad: SUNEDU</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Procedimiento a través del cual el estudiante por intermedio de la Facultad, solicita carné universitario, para su identificación en la universidad y que permitirá acceder al medio pasaje en transporte público. La solicitud es registrada en el sistema de la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) a solicitud de la Facultad. El entregable es el carné universitario, el cual es de vigencia determinada anual. El monto que el estudiante abona a la cuenta de la UNI por la tramitación del carné, es fijado por la SUNEDU en su Texto Único de Procedimientos Administrativos (TUPA) y transferido a su cuenta para la emisión del carné.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Estar matriculado en el periodo académico vigente.</li>
+                  <li>Pago por el monto correspondiente a <strong>S/ 17.70</strong> (generado en INTRALU).</li>
+                  <li>Para realizar el trámite el estudiante debe contar con sus datos actualizados y contar con fotografía en la INTRANET de la UNI (INTRALU).</li>
+                  <li>El plazo para la entrega del carné universitario depende estrictamente de la programación realizada por la SUNEDU.</li>
+                </ul>
+
+                <div class="remember-box">
+                  <h4>⚠️ RECUERDE</h4>
+                  <ul>
+                    <li>Debe rellenar la ficha de datos desde la intranet de estudiante (INTRALU).</li>
+                    <li>Cargar la imagen del anverso y reverso de su DNI (imagen nítida).</li>
+                    <li>No olvide ingresar su dirección actual, número de celular, fecha de nacimiento, género y ubigeo.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trámite 3: Carné Universitario Duplicado -->
+            <div class="tramite-panel" id="carne-duplicado">
+              <div class="panel-header">
+                <h2>Carné Universitario Duplicado</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 58.00</span>
+                  <span class="meta-badge time">Vigencia: Anual</span>
+                  <span class="meta-badge">Entidad: SUNEDU</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Procedimiento a través del cual, el estudiante que previamente contaba con carné universitario; a través de la Facultad solicita duplicado de carné por motivo de robo o pérdida, para su identificación en la universidad y que permitirá acceder al medio pasaje en transporte público. La solicitud es registrada en el sistema de la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU) a solicitud de la Facultad. El entregable es el duplicado de carné universitario, el cual es de vigencia determinada anual. El monto que el estudiante abona a la cuenta de la UNI por la tramitación del carné, es fijado por la SUNEDU en su Texto Único de Procedimientos Administrativos (TUPA) y transferido a su cuenta para la emisión del carné.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Solicitud simple dirigida al decano, según formulario oficial.</li>
+                  <li>Denuncia policial de pérdida o robo de documentos.</li>
+                  <li>Para realizar el trámite el estudiante debe contar con sus datos actualizados y contar con fotografía en la INTRANET de la UNI (INTRALU).</li>
+                  <li>El pago por concepto de duplicado de carné es de <strong>S/ 58.00</strong> (generado en INTRALU).</li>
+                  <li>El plazo para la entrega del carné universitario depende estrictamente de la programación realizada por la SUNEDU.</li>
+                </ul>
+
+                <div class="btn-group" style="margin: var(--space-md) 0;">
+                  <a href="https://sut.pcm.gob.pe/sutArchivos/file_54_20240222_154809.pdf" target="_blank" rel="noopener noreferrer" class="tramite-btn tramite-btn--primary">Descargar Formulario PDF Oficial ↗</a>
+                </div>
+
+                <div class="remember-box">
+                  <h4>⚠️ RECUERDE</h4>
+                  <ul>
+                    <li>El pago por derecho de trámite se realiza desde la intranet del estudiante (INTRALU).</li>
+                    <li>El carné duplicado tendrá la misma fotografía que el carné emitido anteriormente.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trámite 4: Certificado de Estudios Simple -->
+            <div class="tramite-panel" id="certificado-simple">
+              <div class="panel-header">
+                <h2>Certificado de Estudios Simple</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 84.70</span>
+                  <span class="meta-badge time">Plazo: 5 días hábiles</span>
+                  <span class="meta-badge">Vigencia: Indeterminada</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Procedimiento por el cual se expide el certificado de estudios simple que detalla las asignaturas cursadas, códigos, créditos y las notas obtenidas. Puede ser solicitado por estudiantes o egresados para fines académicos o personales.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Tener fotografía digital formal y actualizada en el portal de <strong>INTRALU</strong>.</li>
+                  <li>Actualizar los datos personales en la ficha digital de <strong>INTRALU</strong>.</li>
+                  <li>Realizar el pago de <strong>S/ 84.70</strong> (orden de pago generada vía INTRALU).</li>
+                  <li>No presentar deudas pendientes con la Facultad (verificación de no adeudos).</li>
+                </ul>
+
+                <h3>Horario de Atención Administrativa</h3>
+                <p>Lunes a Viernes de <strong>8:00 a 13:00</strong> y de <strong>14:00 a 15:30</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Trámite 5: Certificado de Estudios Depurado -->
+            <div class="tramite-panel" id="certificado-depurado">
+              <div class="panel-header">
+                <h2>Certificado de Estudios Depurado</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 83.10</span>
+                  <span class="meta-badge time">Plazo: 5 días hábiles</span>
+                  <span class="meta-badge">Vigencia: Indeterminada</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Expedición de certificado oficial que detalla los códigos, nombres de asignaturas, créditos y la nota obtenida al décimo ciclo académico aprobado, de acuerdo con el reglamento de la Facultad. Usualmente solicitado por egresados para trámites formales.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Pago por derecho de tramitación de <strong>S/ 83.10</strong> (orden de pago vía INTRALU).</li>
+                  <li>No registrar adeudos pendientes con la institución (constancia de no adeudos).</li>
+                </ul>
+
+                <h3>Horario de Atención Administrativa</h3>
+                <p>Lunes a Viernes de <strong>8:00 a 13:00</strong> y de <strong>14:00 a 15:30</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Trámite 6: Constancia de Egresado -->
+            <div class="tramite-panel" id="constancia-egresado">
+              <div class="panel-header">
+                <h2>Constancia de Egresado</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 80.00</span>
+                  <span class="meta-badge time">Plazo: 5 a 15 días hábiles</span>
+                  <span class="meta-badge">Vigencia: Indeterminada</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Documento oficial que acredita que el alumno ha cursado y aprobado el 100% de los créditos exigidos en su respectivo plan de estudios profesionales de la Facultad de Ciencias.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Realizar el pago de <strong>S/ 80.00</strong> a través de la orden de pago generada en <strong>INTRALU</strong>.</li>
+                  <li>La fotografía cargada en el sistema debe ser formal, con vestimenta adecuada (saco y corbata en varones, sastre en mujeres).</li>
+                  <li>El encuadre de la fotografía debe centrarse estrictamente en el rostro.</li>
+                </ul>
+
+                <div class="remember-box">
+                  <h4>⚠️ Requisito de Fotografía</h4>
+                  <p>Para constancias y certificados, la fotografía debe ser tomada con vestimenta formal. No se aceptan retratos casuales, autofotos (selfies), escaneados de fotos impresas ni archivos de baja resolución.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trámite 7: Constancia de Primera Matrícula -->
+            <div class="tramite-panel" id="constancia-primera-matricula">
+              <div class="panel-header">
+                <h2>Constancia de Primera Matrícula</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 15.00</span>
+                  <span class="meta-badge time">Plazo: 15 días hábiles</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Documento oficial que certifica el inicio formal de los estudios universitarios. Es otorgado por la DIRCE y refrendado por la Secretaría General de la Universidad. Detalla las asignaturas inscritas por primera vez, con códigos, nombres, créditos y ciclo correspondiente (el cual puede variar si se solicitó reserva de matrícula).</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Realizar el pago de S/ 15.00 generable en INTRALU.</li>
+                  <li>Presentar la constancia de no registrar deudas en la facultad o dependencias centrales de la UNI.</li>
+                </ul>
+
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes de <strong>9:00 am a 4:00 pm</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Trámite 8: Constancia de No Adeudos -->
+            <div class="tramite-panel" id="constancia-no-adeudos">
+              <div class="panel-header">
+                <h2>Constancia de No Adeudos (Pregrado)</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: Gratuito</span>
+                  <span class="meta-badge time">Plazo: 15 días hábiles</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Acredita oficialmente que el estudiante de pregrado no registra deudas pendientes de devolución de materiales de laboratorio, reactivos, libros de biblioteca central o de facultad, ni multas por inasistencias a elecciones o procesos de sufragio.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>No adeudar ningún implemento en laboratorios o bibliografía.</li>
+                  <li>Solicitud interna procesada por los sistemas informáticos de la Facultad.</li>
+                </ul>
+
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes de <strong>9:00 am a 4:00 pm</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Trámite 9: Constancia de No Adeudo Posgrado -->
+            <div class="tramite-panel" id="constancia-no-adeudo-posgrado">
+              <div class="panel-header">
+                <h2>Constancia de No Adeudo (Posgrado)</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: Según Tasa</span>
+                  <span class="meta-badge time">Plazo: 15 días hábiles</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Documento que acredita que el estudiante de la Sección de Posgrado de la Facultad de Ciencias no mantiene deudas de reactivos, libros, equipamiento u otros conceptos con la Universidad.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Presentar <strong>solicitud en original y copia</strong> a la Mesa de Partes de DIRCE, dirigida al Decano de la Facultad o al Rector de la UNI.</li>
+                  <li>Adjuntar el <strong>recibo original de pago</strong> emitido por Caja UNI (según las tasas vigentes establecidas por la facultad y la sección de posgrado).</li>
+                  <li>El trámite es estrictamente personal. En caso de terceros, deberán presentar carta poder legalizada notarialmente.</li>
+                  <li>Si no cuenta con código de posgrado registrado, debe adjuntar la constancia de ingreso expedida por la facultad.</li>
+                </ul>
+
+                <div class="btn-group">
+                  <a href="https://sut.pcm.gob.pe/" target="_blank" rel="noopener noreferrer" class="tramite-btn tramite-btn--primary">Descargar Formato de Solicitud (PDF)</a>
+                </div>
+
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes de <strong>9:00 am a 4:00 pm</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Trámite 10: Constancia de Equivalencia Internacional -->
+            <div class="tramite-panel" id="constancia-equivalencia">
+              <div class="panel-header">
+                <h2>Constancia de Equivalencia Internacional</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 54.00</span>
+                  <span class="meta-badge time">Plazo: 7 días hábiles</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Documento oficial que certifica el Promedio Ponderado acumulado al milésimo obtenido por el estudiante durante su carrera y su equivalencia con escalas académicas internacionales. Muestra la equivalencia vigesimal y literal aprobada por Resolución Rectoral, incluyendo la equivalencia oficial con la escala GPA (1 al 4) útil para postular a becas y posgrados en el extranjero.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Registrar la solicitud en línea a través del portal de intranet del estudiante (INTRALU).</li>
+                  <li>Realizar el pago correspondiente de la tasa de <strong>S/ 54.00</strong> en línea vía intranet.</li>
+                  <li>Mantener la información personal y académica totalmente actualizada en el sistema.</li>
+                </ul>
+
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes de <strong>8:00 a 13:00</strong> y de <strong>14:00 a 15:30</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Trámite 11: Grado Académico de Bachiller -->
+            <div class="tramite-panel" id="bachiller">
+              <div class="panel-header">
+                <h2>Grado Académico de Bachiller</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 445.70</span>
+                  <span class="meta-badge time">Plazo: 30 días hábiles</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Trámite por el cual el egresado que ha concluido el 100% de su plan de estudios solicita la obtención del Grado Académico de Bachiller en Ciencias, habiendo aprobado un trabajo de investigación y acreditado la suficiencia de un idioma extranjero.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Presentar la solicitud dirigida al Decano de la Facultad.</li>
+                  <li>Adjuntar <strong>cuatro (04) fotografías tamaño pasaporte</strong>, a color, con fondo blanco y vestimenta formal.</li>
+                  <li>Declaración jurada de cumplimiento de requisitos y condiciones previas.</li>
+                  <li>Efectuar el pago de <strong>S/ 445.70</strong> en Caja de la UNI (adjuntar comprobante de pago).</li>
+                </ul>
+
+                <h3>Condiciones Previas Obligatorias</h3>
+                <ul>
+                  <li>Haber concluido el Plan de Estudios de la respectiva Escuela Profesional (Bachiller en Ciencias exige un mínimo de **208 créditos**).</li>
+                  <li>Haber aprobado un trabajo de investigación y registrado el mismo.</li>
+                  <li>Tener conocimiento básico de un idioma extranjero (de preferencia inglés) o lengua nativa, mediante la aprobación de la traducción de un documento de mínimo dos (2) páginas (evaluación oral y escrita certificada por el Centro de Idiomas de la UNI).</li>
+                  <li>No estar sujeto a ninguna medida disciplinaria en la universidad.</li>
+                  <li>No presentar deudas pendientes (económicas, de libros o materiales) en la facultad o dependencias de la UNI.</li>
+                </ul>
+
+                <div class="btn-group">
+                  <a href="https://sut.pcm.gob.pe/sutArchivos/file_54_20240822_120900.pdf" target="_blank" rel="noopener noreferrer" class="tramite-btn tramite-btn--primary">Descargar Formato de Solicitud</a>
+                </div>
+
+                <h3>Modalidad de Pago</h3>
+                <p>Pago en Caja de la Entidad con tarjeta de débito/crédito, o depósito en agencias bancarias autorizadas (BCP, Scotiabank, Niubiz) mediante orden de pago generada por la Facultad.</p>
+
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes de <strong>8:00 a 13:00</strong> y de <strong>14:00 a 15:30</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Trámite 12: Título Profesional por Tesis -->
+            <div class="tramite-panel" id="titulo-tesis">
+              <div class="panel-header">
+                <h2>Título Profesional por Tesis</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 1161.80 a S/ 1801.80</span>
+                  <span class="meta-badge time">Plazo: 30 días hábiles</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Procedimiento por el cual el egresado o estudiante de los dos últimos ciclos inscribe su tema de tesis ante la Comisión de Grados y Títulos y solicita la obtención del título profesional tras sustentar y aprobar su tesis de investigación.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Solicitud simple dirigida al Decano de la Facultad.</li>
+                  <li>Cargar el archivo digital de la tesis aprobada (formato PDF) de acuerdo con las directrices de Cybertesis / Repositorio Institucional de la UNI.</li>
+                  <li>Presentar un (01) ejemplar empastado para la biblioteca de la Facultad tras la aprobación de la sustentación.</li>
+                  <li><strong>Cinco (05) fotografías tamaño pasaporte</strong> a color, con fondo blanco y vestimenta formal.</li>
+                  <li>Declaración jurada de cumplimiento de requisitos y condiciones previas.</li>
+                  <li>Haber obtenido previamente el grado académico de Bachiller en la UNI.</li>
+                  <li>Contar con nota aprobatoria en la sustentación pública del trabajo de tesis.</li>
+                  <li>No registrar adeudos ni sanciones disciplinarias en la universidad.</li>
+                </ul>
+
+                <h3>Monto y Tasas</h3>
+                <ul>
+                  <li><strong>Primera postulación:</strong> S/ 1161.80</li>
+                  <li><strong>Segunda postulación a más:</strong> S/ 1801.80</li>
+                </ul>
+
+                <div class="btn-group">
+                  <a href="https://sut.pcm.gob.pe/sutArchivos/file_54_20240822_122150.pdf" target="_blank" rel="noopener noreferrer" class="tramite-btn tramite-btn--primary">Descargar Formulario PDF</a>
+                </div>
+
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes de <strong>8:00 a 13:00</strong> y de <strong>14:00 a 15:30</strong>.</p>
+              </div>
+            </div>
+
+            <!-- Trámite 13: Título Profesional por Suficiencia Profesional -->
+            <div class="tramite-panel" id="titulo-suficiencia">
+              <div class="panel-header">
+                <h2>Título por Suficiencia Profesional</h2>
+                <div class="panel-meta">
+                  <span class="meta-badge cost">Costo: S/ 2667.80</span>
+                  <span class="meta-badge time">Plazo: 30 días hábiles</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <p>Procedimiento orientado a bachilleres egresados de la UNI que cuenten con un mínimo de tres (3) años de experiencia laboral calificada en labores propias de su especialidad (contados desde la obtención del Bachiller). Se solicita el título profesional sustentando un informe documentado de suficiencia y experiencia en su campo.</p>
+                
+                <h3>Requisitos del Trámite</h3>
+                <ul>
+                  <li>Solicitud simple dirigida al Decano de la Facultad.</li>
+                  <li>Cargar el Informe de Suficiencia Profesional en formato digital (PDF) de acuerdo con las especificaciones de Cybertesis / Repositorio Institucional.</li>
+                  <li>Presentar un (01) ejemplar empastado para el archivo documentario de la Facultad tras la aprobación final.</li>
+                  <li>Adjuntar <strong>cinco (05) fotografías tamaño pasaporte</strong> a color, con fondo blanco y vestimenta formal.</li>
+                  <li>Declaración jurada de cumplimiento de requisitos.</li>
+                  <li>Haber obtenido el grado de Bachiller en la UNI y Acreditar el tiempo de experiencia laboral.</li>
+                  <li>Tener aprobado el informe y su correspondiente evaluación.</li>
+                  <li>No tener adeudos ni sanciones vigentes en la institución.</li>
+                </ul>
+
+                <div class="btn-group">
+                  <a href="https://sut.pcm.gob.pe/sutArchivos/file_54_20240822_122908.pdf" target="_blank" rel="noopener noreferrer" class="tramite-btn tramite-btn--primary">Descargar Formulario PDF</a>
+                </div>
+
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes de <strong>8:00 a 13:00</strong> y de <strong>14:00 a 15:30</strong>.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── JAVASCRIPT DINÁMICO PARA TRÁMITES ───────────────────────── -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuItems = document.querySelectorAll('.menu-item');
+        const panels = document.querySelectorAll('.tramite-panel');
+        const searchInput = document.getElementById('tramiteSearch');
+
+        // Tab switching function
+        function showPanel(targetId) {
+          let targetPanel = document.getElementById(targetId);
+          if (!targetPanel) return;
+
+          // Remove active class from all items and panels
+          menuItems.forEach(item => item.classList.remove('active'));
+          panels.forEach(panel => panel.classList.remove('active'));
+
+          // Add active class to corresponding item and panel
+          targetPanel.classList.add('active');
+          const activeItem = document.querySelector(`.menu-item[data-target="${targetId}"]`);
+          if (activeItem) {
+            activeItem.classList.add('active');
+            activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          }
+        }
+
+        // Add click event listeners to menu items
+        menuItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            showPanel(targetId);
+            // Update hash in URL quietly
+            history.pushState(null, null, `#${targetId}`);
+          });
+        });
+
+        // Handle URL hash on load or change
+        function handleHash() {
+          const hash = window.location.hash.substring(1);
+          if (hash) {
+            const targetPanel = document.getElementById(hash);
+            if (targetPanel && targetPanel.classList.contains('tramite-panel')) {
+              showPanel(hash);
+              // Smooth scroll to the catalog container
+              const container = document.getElementById('catalogo-tramites');
+              if (container) {
+                container.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          }
+        }
+
+        window.addEventListener('hashchange', handleHash);
+        handleHash(); // Run on initial load
+
+        // Search filter functionality
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            document.querySelectorAll('.menu-category').forEach(cat => {
+              let hasVisibleItems = false;
+              
+              cat.querySelectorAll('.menu-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                const targetId = item.getAttribute('data-target');
+                const panel = document.getElementById(targetId);
+                const panelText = panel ? panel.textContent.toLowerCase() : '';
+                
+                if (text.includes(query) || panelText.includes(query)) {
+                  item.style.display = 'block';
+                  hasVisibleItems = true;
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+
+              if (hasVisibleItems) {
+                cat.style.display = 'flex';
+              } else {
+                cat.style.display = 'none';
+              }
+            });
+          });
+        }
+      });
+    </script>
+
+    <!-- ─── CONTACTOS ADMINISTRATIVOS ───────────────────────────────── -->
+    <section class="section section--alt" id="contactos">
+      <div class="inner">
+        <h2 class="section-title text-center">3. Contactos Administrativos Clave</h2>
+        <p class="section-desc text-center">Canales oficiales para absolver consultas sobre trámites, constancias y tutoría.</p>
+        
+        <div class="contacts" style="margin-top: var(--space-lg);">
+          <div class="contact-item" style="text-align: left;">
+            <span class="contact-label">Área de Estadística y Registros Académicos (AERA)</span>
+            <a href="mailto:estadistica_fc@uni.edu.pe">estadistica_fc@uni.edu.pe</a>
+            <p style="font-size: var(--step-4); color: var(--text-muted); margin-top: 4px;">Emisión de boletas de notas, constancias de estudio, promedios acumulados y prioridad de matrícula.</p>
+          </div>
+
+          <div class="contact-item" style="text-align: left;">
+            <span class="contact-label">Tutoría Académica FC</span>
+            <a href="mailto:tutoriafc@uni.edu.pe">tutoriafc@uni.edu.pe</a>
+            <p style="font-size: var(--step-4); color: var(--text-muted); margin-top: 4px;">Apoyo pedagógico, consejería curricular, y acompañamiento académico frente a dificultades de rendimiento.</p>
+          </div>
+
+          <div class="contact-item" style="text-align: left;">
+            <span class="contact-label">Mesa de Partes Administrativa</span>
+            <p style="margin: 0; font-size: var(--step-3);">Teléfono: (01) 481-1070 anexo 5020 / 5023</p>
+            <p style="font-size: var(--step-4); color: var(--text-muted); margin-top: 4px;">Ingreso de solicitudes formales (retiro de ciclo, reincorporación, traslados internos de carrera).</p>
+          </div>
+
+          <div class="contact-item" style="text-align: left;">
+            <span class="contact-label">Mesa de Partes Virtual UNI (Trámites Digitales)</span>
+            <a href="https://tramite.uni.edu.pe/" target="_blank" rel="noopener noreferrer">tramite.uni.edu.pe ↗</a>
+            <p style="font-size: var(--step-4); color: var(--text-muted); margin-top: 4px;">Plataforma oficial para ingresar solicitudes digitales (FUT), retiros extraordinarios de ciclo, reincorporaciones y expedientes académicos.</p>
+          </div>
+
+          <div class="contact-item" style="text-align: left;">
+            <span class="contact-label">Oficina de Bienestar Universitario FC</span>
+            <a href="mailto:bienestar_fc@uni.edu.pe">bienestar_fc@uni.edu.pe</a>
+            <p style="font-size: var(--step-4); color: var(--text-muted); margin-top: 4px;">Evaluación socioeconómica, recategorización de escala de pago, examen médico obligatorio, comedor y asistencia social.</p>
+          </div>
+
+          <div class="contact-item" style="text-align: left;">
+            <span class="contact-label">Soporte Técnico e INTRALU (Sistemas)</span>
+            <a href="mailto:soporte.intranet@uni.edu.pe">soporte.intranet@uni.edu.pe</a>
+            <p style="font-size: var(--step-4); color: var(--text-muted); margin-top: 4px;">Restablecimiento de contraseñas de correo institucional (@uni.edu.pe), desbloqueo de cuenta en INTRALU y problemas de acceso a UNI Virtual.</p>
+          </div>
+
+          <div class="contact-item" style="text-align: left;">
+            <span class="contact-label">Decanato y Secretaría Académica FC</span>
+            <a href="mailto:decanatofc@uni.edu.pe">decanatofc@uni.edu.pe</a>
+            <p style="font-size: var(--step-4); color: var(--text-muted); margin-top: 4px;">Atención de resoluciones decanales/rectorales, jurados examinadores de tesis y acuerdos del Consejo de Facultad.</p>
+          </div>
+
+          <div class="contact-item" style="text-align: left;">
+            <span class="contact-label">DIRCE Central (Pabellón Central)</span>
+            <a href="mailto:mesadeayuda.dirce@uni.edu.pe">mesadeayuda.dirce@uni.edu.pe</a>
+            <p style="margin: 0; font-size: var(--step-3);">Teléfono: (01) 481-1070 anexo 3102 / 3104 / 3107</p>
+            <p style="font-size: var(--step-4); color: var(--text-muted); margin-top: 4px;">Ubicación: Pabellón Central, 2do piso. Oficina central de la UNI para tramitar el carné universitario oficial, consulta del <a href="https://dirce.uni.edu.pe/calendario-actividades-uni" target="_blank" rel="noopener noreferrer">Calendario de Actividades de DIRCE ↗</a> (<a href="https://drive.google.com/file/d/1bjrWqUxKY6iTqy8tGRN6uRVw78CGx9vj/view" target="_blank" rel="noopener noreferrer">ver RR 3678-2025 ↗</a>), constancias centrales y búsqueda de estudiantes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">FC-UNI</div>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Guía</p>
+        <a href="primer-ciclo.html">Primer ciclo</a>
+        <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+        <a href="tramites.html">Trámites</a>
+        <a href="consejos.html">Consejos</a>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Comunidad</p>
+        <a href="../comunidad/recursos.html">Recursos</a>
+        <a href="../comunidad/grupos.html">Grupos</a>
+          <a href="cientificos.html" role="menuitem">Científicos FC</a>
+        <a href="../comunidad/faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Proyecto FC · Facultad de Ciencias UNI · Lima, Perú</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

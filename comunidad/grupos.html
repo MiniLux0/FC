@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Organizaciones, asociaciones estudiantiles y grupos de investigación en la Facultad de Ciencias de la UNI.">
+  <title>Grupos Estudiantiles – FC-UNI</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/logos/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <a href="../index.html" class="logo"><img src="../assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
+    <nav class="nav" id="nav">
+      <a href="../index.html">Inicio</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../guia/primer-ciclo.html" role="menuitem">Primer ciclo</a>
+          <a href="../guia/campus.html" role="menuitem">Instalaciones FC</a>
+          <a href="../guia/tramites.html" role="menuitem">Trámites</a>
+          <a href="../guia/consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="recursos.html" role="menuitem">Recursos</a>
+          <a href="grupos.html" class="active" role="menuitem">Grupos</a>
+          <a href="../guia/cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="faq.html" role="menuitem">FAQ</a>
+        </div>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO SECTION ──────────────────────────────────────────────── -->
+    <section class="hero hero--simple">
+      <div class="hero-content">
+        <p class="hero-label"><a href="../index.html">Inicio</a> · Comunidad</p>
+        <h1>Agrupaciones Estudiantiles FC</h1>
+        <p>Organizaciones científicas, tecnológicas y académicas autogestionadas por estudiantes de la Facultad de Ciencias de la Universidad Nacional de Ingeniería.</p>
+      </div>
+    </section>
+
+    <!-- ─── NAVEGACIÓN RÁPIDA / ÍNDICE DE AGRUPACIONES ──────────────── -->
+    <section class="section" style="padding-top: var(--space-sm); padding-bottom: var(--space-sm);">
+      <div class="inner">
+        <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-md); box-shadow: var(--shadow-sm); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-sm);">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em;">Directorio de Agrupaciones:</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <a href="#acecom" style="padding: 5px 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; font-size: 0.82rem; font-weight: 600; color: var(--text); text-decoration: none;">ACECOM</a>
+            <a href="#geft" style="padding: 5px 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; font-size: 0.82rem; font-weight: 600; color: var(--text); text-decoration: none;">GEFT</a>
+            <a href="#gem" style="padding: 5px 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; font-size: 0.82rem; font-weight: 600; color: var(--text); text-decoration: none;">GEM</a>
+            <a href="#aea" style="padding: 5px 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; font-size: 0.82rem; font-weight: 600; color: var(--text); text-decoration: none;">AEA / AstroFC</a>
+            <a href="#aedici" style="padding: 5px 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; font-size: 0.82rem; font-weight: 600; color: var(--text); text-decoration: none;">AEDICI</a>
+            <a href="#afinpa" style="padding: 5px 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; font-size: 0.82rem; font-weight: 600; color: var(--text); text-decoration: none;">AFINPA</a>
+            <a href="#greic" style="padding: 5px 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; font-size: 0.82rem; font-weight: 600; color: var(--text); text-decoration: none;">GREIC</a>
+            <a href="#fisica-recreativa" style="padding: 5px 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 20px; font-size: 0.82rem; font-weight: 600; color: var(--text); text-decoration: none;">Física Recreativa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECCIÓN: GRUPOS ESTUDIANTILES ─────────────────────────────── -->
+    <section class="section">
+      <div class="inner">
+        <h2 class="section-title text-center">Organizaciones Científicas y Tecnológicas</h2>
+        <p class="section-desc text-center">Espacios universitarios orientados a la investigación avanzada, desarrollo de proyectos, divulgación y capacitación continua.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: var(--space-xl); margin-top: var(--space-lg); text-align: left;">
+          
+          <!-- ACECOM -->
+          <div id="acecom" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="height: 72px; width: 72px; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); padding: 8px; flex-shrink: 0; border: 1px solid var(--border);">
+                    <img src="../assets/images/grupos/acecom.png" alt="Logo ACECOM" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--accent); margin: 0; line-height: 1.2;">ACECOM</h3>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 2px 0 0 0;">Asociación Científica Especializada en Computación</p>
+                  </div>
+                </div>
+                <span class="meta-badge" style="background: rgba(61, 26, 92, 0.08); color: var(--color-comp, #3d1a5c); font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem;">Computación & Software</span>
+              </div>
+
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-top: var(--space-xs);">
+                <p style="margin-bottom: 10px; color: var(--text);">
+                  La Asociación Científica Especializada en Computación (<strong>ACECOM</strong>) es una organización estudiantil enfocada en la investigación y el desarrollo de diversos temas en Ciencias de la Computación (Computer Science).
+                </p>
+                <p style="margin-bottom: 16px;">
+                  <strong>Objetivo Institucional:</strong> Difundir los avances y fundamentos de la computación mediante conversatorios y seminarios en donde los estudiantes puedan compartir sus conocimientos académicos y confraternizar.
+                </p>
+              </div>
+
+              <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--accent); margin: var(--space-sm) 0 12px 0; border-bottom: 1px solid var(--border); padding-bottom: 6px;">Áreas de Especialización de ACECOM</h4>
+              
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 10px;">
+                
+                <div style="background: var(--bg-alt); padding: 14px 16px; border-radius: var(--radius); border-left: 4px solid #3d1a5c;">
+                  <strong style="color: #3d1a5c; font-size: 0.92rem; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.03em;">Inteligencia Artificial</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
+                    Estudio integral de las variantes de la IA con el fin de diversificar el conocimiento en la comunidad universitaria, promoviendo la investigación y el análisis de sus impactos éticos.
+                  </p>
+                </div>
+
+                <div style="background: var(--bg-alt); padding: 14px 16px; border-radius: var(--radius); border-left: 4px solid #155263;">
+                  <strong style="color: #155263; font-size: 0.92rem; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.03em;">Desarrollo Web</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
+                    Creación de soluciones de software orientadas a la conexión entre usuarios e información, empleando estándares y tecnologías web modernas.
+                  </p>
+                </div>
+
+                <div style="background: var(--bg-alt); padding: 14px 16px; border-radius: var(--radius); border-left: 4px solid #8b2d1a;">
+                  <strong style="color: #8b2d1a; font-size: 0.92rem; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.03em;">Seguridad Informática</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
+                    Investigación de ciberseguridad, protocolos criptográficos, análisis de vulnerabilidades y desarrollo de proyectos técnicos de capacitación.
+                  </p>
+                </div>
+
+                <div style="background: var(--bg-alt); padding: 14px 16px; border-radius: var(--radius); border-left: 4px solid #1e5631;">
+                  <strong style="color: #1e5631; font-size: 0.92rem; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.03em;">Desarrollo de Videojuegos</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.55;">
+                    Aprendizaje y programación de aplicaciones interactivas mediante motores de videojuegos sustentados en conceptos de matemática y algoritmia.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Links oficiales ACECOM -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border); padding-top: var(--space-sm); margin-top: var(--space-xs); align-items: center;">
+              <a href="mailto:acecom@uni.edu.pe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Correo: acecom@uni.edu.pe
+              </a>
+              <a href="https://acecom-web.netlify.app/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Sitio Web Oficial ↗
+              </a>
+              <a href="https://www.facebook.com/acecom.uni" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Facebook ACECOM ↗
+              </a>
+              <a href="https://www.youtube.com/channel/UCn_8FQhIHojV-b-Uom6dfHA" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Canal de YouTube ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- GEFT -->
+          <div id="geft" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="height: 72px; width: 72px; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); padding: 8px; flex-shrink: 0; border: 1px solid var(--border);">
+                    <img src="../assets/images/grupos/geft.png" alt="Logo GEFT" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--accent); margin: 0; line-height: 1.2;">GEFT-UNI</h3>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 2px 0 0 0;">Grupo Estudiantil de Física Teórica</p>
+                  </div>
+                </div>
+                <span class="meta-badge" style="background: rgba(92, 13, 18, 0.08); color: var(--color-physics, #5c0d12); font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem;">Física Teórica</span>
+              </div>
+
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-top: var(--space-xs);">
+                <p style="margin-bottom: 10px; color: var(--text);">
+                  El <strong>Grupo Estudiantil de Física Teórica (GEFT-UNI)</strong> es una asociación orientada a generar una comunidad académica activa para el aprendizaje y la discusión sobre los fundamentos de la física teórica.
+                </p>
+                <p style="margin-bottom: 12px;">
+                  Cuenta con subgrupos de trabajo especializados que complementan la formación académica formal, organizando seminarios técnicos y divulgativos desarrollados por los propios estudiantes integrantes y docentes invitados.
+                </p>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 12px;">
+                <div style="background: var(--bg-alt); padding: 10px 14px; border-radius: var(--radius); border-left: 3px solid var(--accent); font-size: 0.85rem; color: var(--text);">
+                  <strong>Subgrupos de Trabajo:</strong> Relatividad general, teoría de campos y mecánica cuántica.
+                </div>
+                <div style="background: var(--bg-alt); padding: 10px 14px; border-radius: var(--radius); border-left: 3px solid var(--accent); font-size: 0.85rem; color: var(--text);">
+                  <strong>Seminarios Técnicos:</strong> Exposiciones especializadas y conferencias docentes.
+                </div>
+              </div>
+            </div>
+
+            <!-- Links oficiales GEFT -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border); padding-top: var(--space-sm); margin-top: var(--space-xs); align-items: center;">
+              <a href="mailto:geft.fc@uni.edu.pe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Correo: geft.fc@uni.edu.pe
+              </a>
+              <a href="https://www.facebook.com/geft.uni/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Facebook GEFT ↗
+              </a>
+              <a href="https://www.youtube.com/channel/UCUzEOnTkHdl315EIPLD52SA" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Canal de YouTube ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- GEM -->
+          <div id="gem" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="height: 72px; width: 72px; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); padding: 8px; flex-shrink: 0; border: 1px solid var(--border);">
+                    <img src="../assets/images/grupos/gem.png" alt="Logo GEM" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--accent); margin: 0; line-height: 1.2;">GEM</h3>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 2px 0 0 0;">Grupo Estudiantil de Matemáticas</p>
+                  </div>
+                </div>
+                <span class="meta-badge" style="background: rgba(30, 86, 49, 0.08); color: var(--color-math, #1e5631); font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem;">Matemática Pura & Aplicada</span>
+              </div>
+
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-top: var(--space-xs);">
+                <p style="margin-bottom: 10px; color: var(--text);">
+                  El <strong>Grupo Estudiantil de Matemáticas (GEM)</strong> fue creado por iniciativa de estudiantes de la carrera de Matemática interesados en profundizar en el conocimiento avanzado de esta ciencia.
+                </p>
+                <p style="margin-bottom: 12px;">
+                  Desarrolla cada semestre un ciclo de exposiciones denominado <em>Seminarios de Divulgación Matemática</em>, impartidos por profesores de distintas universidades nacionales e internacionales. Los seminarios presentan tópicos de especialización para estudiantes de pregrado y fomentan un punto de encuentro entre la comunidad matemática.
+                </p>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 12px;">
+                <div style="background: var(--bg-alt); padding: 10px 14px; border-radius: var(--radius); border-left: 3px solid #1e5631; font-size: 0.85rem; color: var(--text);">
+                  <strong>Seminarios Semestrales:</strong> Ponencias sobre tópicos avanzados en álgebra, análisis y topología.
+                </div>
+                <div style="background: var(--bg-alt); padding: 10px 14px; border-radius: var(--radius); border-left: 3px solid #1e5631; font-size: 0.85rem; color: var(--text);">
+                  <strong>Expositores Invitados:</strong> Docentes e investigadores de diversas universidades.
+                </div>
+              </div>
+            </div>
+
+            <!-- Links oficiales GEM -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border); padding-top: var(--space-sm); margin-top: var(--space-xs); align-items: center;">
+              <a href="mailto:gem@uni.edu.pe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Correo: gem@uni.edu.pe
+              </a>
+              <a href="https://www.facebook.com/GEMFCUNI/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Facebook GEM ↗
+              </a>
+              <a href="https://www.youtube.com/channel/UCyALMJPXSZBnJ7DlF5yEOvw" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Canal de YouTube ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- AEA / AstroFC -->
+          <div id="aea" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="height: 72px; width: 72px; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); padding: 8px; flex-shrink: 0; border: 1px solid var(--border);">
+                    <img src="../assets/images/grupos/aea.png" alt="Logo AEA" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--accent); margin: 0; line-height: 1.2;">AEA / AstroFC</h3>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 2px 0 0 0;">Asociación Estudiantil de Astronomía (hasta 2018 denominado Grupo Astronomía)</p>
+                  </div>
+                </div>
+                <span class="meta-badge" style="background: rgba(21, 82, 99, 0.08); color: var(--color-engphys, #155263); font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem;">Astronomía & Astrofísica</span>
+              </div>
+
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-top: var(--space-xs);">
+                <p style="margin-bottom: 10px; color: var(--text);">
+                  La <strong>Asociación Estudiantil de Astronomía (AEA)</strong> está integrada en su mayoría por estudiantes de la Escuela Profesional de Física de la UNI, egresados e investigadores con el acompañamiento de un docente asesor. Muchos de sus exmiembros son actualmente profesores en la FC-UNI e investigadores en el Instituto Geofísico del Perú (IGP), la CONIDA e instituciones astronómicas internacionales. Apoya activamente las labores de divulgación del <strong>Observatorio Astronómico (OA-UNI)</strong>.
+                </p>
+                <p style="margin-bottom: 8px;">
+                  <strong>Objetivos Institucionales:</strong>
+                </p>
+                <ul style="list-style: disc; margin-left: 20px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px;">
+                  <li>Difundir la Astronomía como ciencia dentro de todo medio social que se requiera.</li>
+                  <li>Promover el estudio teoricopráctico mediante divulgación académica y científica.</li>
+                  <li>Promover la interacción e incorporación técnica/académica con instituciones como el IGP, CONIDA, ON Brasil y CU Boulder.</li>
+                  <li>Promover la adquisición de equipamiento astronómico y asignación de ambientes adecuados en la universidad.</li>
+                </ul>
+              </div>
+
+              <div style="background: var(--bg-alt); border-radius: var(--radius); padding: 12px 16px; margin-top: 6px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; font-size: 0.85rem;">
+                  <div>
+                    <strong style="color: var(--accent); display: block; margin-bottom: 2px;">Local de Atención:</strong>
+                    <span style="color: var(--text-muted);">Aula R1-225A (2do piso FC – UNI, Ingreso por Puerta N° 5)</span>
+                  </div>
+                  <div>
+                    <strong style="color: var(--accent); display: block; margin-bottom: 2px;">Asesoría y Directiva:</strong>
+                    <span style="color: var(--text-muted);">Dr. Julio Tello (Asesor) · Diego Alvarado (Presidente) · Saúl Sánchez (Sec. Académico) · Jesús Delgado (Sec. Economía)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Links oficiales AEA -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border); padding-top: var(--space-sm); margin-top: var(--space-xs); align-items: center;">
+              <a href="mailto:astrofc@uni.edu.pe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Correo: astrofc@uni.edu.pe
+              </a>
+              <a href="https://astronomia.uni.edu.pe/index.php/aea/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Portal Oficial AEA ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- AEDICI -->
+          <div id="aedici" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="height: 72px; width: 72px; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); padding: 8px; flex-shrink: 0; border: 1px solid var(--border);">
+                    <img src="../assets/images/grupos/aedici.png" alt="Logo AEDICI" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--accent); margin: 0; line-height: 1.2;">AEDICI</h3>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 2px 0 0 0;">Agrupación Estudiantil de Divulgación Científica "Isaac Asimov"</p>
+                  </div>
+                </div>
+                <span class="meta-badge" style="background: rgba(26, 58, 92, 0.08); color: var(--accent); font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem;">Divulgación & Química</span>
+              </div>
+
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-top: var(--space-xs);">
+                <p style="margin-bottom: 10px; color: var(--text);">
+                  La <strong>Agrupación Estudiantil de Divulgación Científica – Isaac Asimov (AEDICI)</strong> promueve la ciencia y el fortalecimiento de la Escuela Profesional de Química mediante visitas guiadas a laboratorios de investigación, ferias científicas y talleres didácticos.
+                </p>
+                <p style="margin-bottom: 10px;">
+                  <strong>Misión:</strong> Difundir la ciencia e incentivar vocaciones científicas en la juventud, colaborando estrechamente con la Escuela de Química en eventos de extensión académica.
+                </p>
+              </div>
+
+              <div style="background: var(--bg-alt); border-radius: var(--radius); padding: 10px 14px; font-size: 0.85rem; color: var(--text);">
+                <strong>Local de Atención:</strong> Sala R1-360, Facultad de Ciencias – UNI. Convocatorias abiertas al inicio de cada semestre.
+              </div>
+            </div>
+
+            <!-- Links oficiales AEDICI -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border); padding-top: var(--space-sm); margin-top: var(--space-xs); align-items: center;">
+              <a href="mailto:aedicifc@uni.edu.pe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Correo: aedicifc@uni.edu.pe
+              </a>
+            </div>
+          </div>
+
+          <!-- AFINPA -->
+          <div id="afinpa" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="height: 72px; width: 72px; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); padding: 8px; flex-shrink: 0; border: 1px solid var(--border);">
+                    <img src="../assets/images/grupos/afinpa.jpg" alt="Logo AFINPA" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--accent); margin: 0; line-height: 1.2;">AFINPA</h3>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 2px 0 0 0;">Asociación Estudiantil de Física Nuclear, Partículas y Aplicaciones</p>
+                  </div>
+                </div>
+                <span class="meta-badge" style="background: rgba(92, 13, 18, 0.08); color: var(--color-physics, #5c0d12); font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem;">Física Nuclear & Altas Energías</span>
+              </div>
+
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-top: var(--space-xs);">
+                <p style="margin-bottom: 10px; color: var(--text);">
+                  La <strong>Asociación Estudiantil de Física Nuclear, Partículas y Aplicaciones (AFINPA)</strong> es un grupo especializado en la investigación y divulgación de la física de partículas elementales, altas energías, detección nuclear y aplicaciones tecnológicas en ciencias de los materiales y medicina nuclear.
+                </p>
+              </div>
+            </div>
+
+            <!-- Links oficiales AFINPA -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border); padding-top: var(--space-sm); margin-top: var(--space-xs); align-items: center;">
+              <a href="mailto:afinpa@uni.edu.pe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Correo: afinpa@uni.edu.pe
+              </a>
+              <a href="https://www.whatsapp.com/channel/0029Vb6MFaEC1FuKGMg0G33y" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent); color: var(--white); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Canal de Noticias WhatsApp ↗
+              </a>
+              <a href="https://www.instagram.com/afinpa_uni/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Instagram Oficial ↗
+              </a>
+              <a href="https://pe.linkedin.com/in/asociaci%C3%B3n-estudiantil-de-f%C3%ADsica-nuclear-part%C3%ADculas-y-aplicaciones-afinpa-bb5619384" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Perfil de LinkedIn ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- GREIC -->
+          <div id="greic" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="height: 72px; width: 72px; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); padding: 8px; flex-shrink: 0; border: 1px solid var(--border);">
+                    <img src="../assets/images/grupos/greic.png" alt="Logo GREIC" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--accent); margin: 0; line-height: 1.2;">GREIC</h3>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 2px 0 0 0;">Asociación Estudiantil de Instrumentación Científica</p>
+                  </div>
+                </div>
+                <span class="meta-badge" style="background: rgba(139, 45, 26, 0.08); color: var(--color-chem, #8b2d1a); font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem;">Instrumentación & Innovación</span>
+              </div>
+
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-top: var(--space-xs);">
+                <p style="margin-bottom: 10px; color: var(--text);">
+                  La <strong>Asociación Estudiantil de Instrumentación Científica (GREIC)</strong> promueve el diseño, modelado e implementación de sistemas de medición y control de variables físicas, químicas y biológicas mediante la integración de electrónica, mecánica y óptica.
+                </p>
+                <p style="margin-bottom: 10px;">
+                  <strong>Ejes de Desarrollo Técnico:</strong> Robótica aplicada, automatización industrial, Internet de las Cosas (IoT), Inteligencia Artificial, Óptica Avanzada y Tecnología Aeroespacial (nanosatélites y sensores).
+                </p>
+              </div>
+            </div>
+
+            <!-- Links oficiales GREIC -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border); padding-top: var(--space-sm); margin-top: var(--space-xs); align-items: center;">
+              <a href="mailto:greic_fci@uni.edu.pe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Correo: greic_fci@uni.edu.pe
+              </a>
+            </div>
+          </div>
+
+          <!-- FÍSICA RECREATIVA (AEFR-UNI) -->
+          <div id="fisica-recreativa" style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md);">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-sm);">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="height: 72px; width: 72px; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); padding: 8px; flex-shrink: 0; border: 1px solid var(--border);">
+                    <img src="../assets/images/grupos/fisica-recreativa.png" alt="Logo AEFR-UNI" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                  </div>
+                  <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.65rem; color: var(--accent); margin: 0; line-height: 1.2;">Física Recreativa</h3>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 2px 0 0 0;">Asociación Estudiantil de Física Recreativa (AEFR-UNI)</p>
+                  </div>
+                </div>
+                <span class="meta-badge" style="background: rgba(92, 13, 18, 0.08); color: var(--color-physics, #5c0d12); font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem;">Divulgación Lúdica & Experimentos</span>
+              </div>
+
+              <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-top: var(--space-xs);">
+                <p style="margin-bottom: 10px; color: var(--text);">
+                  La <strong>Asociación Estudiantil de Física Recreativa (AEFR-UNI)</strong> realiza talleres y demostraciones experimentales de mecánica, fluidos, electromagnetismo y óptica para acercar el método científico y la física a instituciones educativas y la comunidad.
+                </p>
+              </div>
+
+              <div style="background: var(--bg-alt); border-radius: var(--radius); padding: 10px 14px; font-size: 0.85rem; color: var(--text);">
+                <strong>Local de Atención:</strong> Sala R1-360, Facultad de Ciencias – UNI.
+              </div>
+            </div>
+
+            <!-- Links oficiales Física Recreativa -->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--border); padding-top: var(--space-sm); margin-top: var(--space-xs); align-items: center;">
+              <a href="mailto:fisicarecreativa@uni.edu.pe" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius); font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                Correo: fisicarecreativa@uni.edu.pe
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SECCIÓN: REPRESENTACIÓN Y GOBERNANZA ──────────────────────── -->
+    <section class="section section--alt">
+      <div class="inner" style="max-width: 900px; text-align: left;">
+        <h2 class="section-title text-center">Representación Estudiantil y Gobernanza</h2>
+        
+        <div style="background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); margin-top: var(--space-lg);">
+          <p style="font-size: var(--step-3); color: var(--text-muted); line-height: 1.6; margin-bottom: var(--space-md);">
+            La Facultad de Ciencias cuenta con representación estudiantil activa elegida democráticamente por votación estamental. Para comunicaciones institucionales gremiales, el correo oficial de contacto es <a href="mailto:cec.fc@uni.edu.pe" style="font-weight: 600;">cec.fc@uni.edu.pe</a>.
+          </p>
+          
+          <div class="grid-2" style="gap: var(--space-md); text-align: left;">
+            <div style="background: var(--bg-alt); border-left: 4px solid var(--accent); padding: var(--space-md); border-radius: var(--radius);">
+              <strong style="color: var(--accent); font-size: 1.1rem; display: block; margin-bottom: 4px;">Centro de Estudiantes (CEFC)</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 0; line-height: 1.5;">Gremio estudiantil encargado de defender los derechos universitarios y canalizar solicitudes ante el Decanato (Contacto: <a href="mailto:cec.fc@uni.edu.pe">cec.fc@uni.edu.pe</a>).</p>
+            </div>
+
+            <div style="background: var(--bg-alt); border-left: 4px solid var(--accent); padding: var(--space-md); border-radius: var(--radius);">
+              <strong style="color: var(--accent); font-size: 1.1rem; display: block; margin-bottom: 4px;">Tercio Estudiantil</strong>
+              <p style="font-size: var(--step-4); color: var(--text-muted); margin: 0; line-height: 1.5;">Representantes electos ante el Consejo de Facultad con voz y voto en la toma de decisiones institucionales de la FC.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: var(--space-md); border-top: 1px solid var(--border); padding-top: var(--space-md);">
+            <h4 style="font-family: var(--font-serif); color: var(--accent); font-size: 1.15rem; margin-bottom: 4px;">Comisiones Mixtas en Concursos Docentes</h4>
+            <p style="font-size: var(--step-4); color: var(--text-muted); line-height: 1.6; margin: 0;">
+              En los procesos de evaluación y contratación docente, los estudiantes integran comisiones mixtas con voz y voto para calificar expedientes y clases magistrales públicas, velando por la transparencia y calidad académica.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">FC-UNI</div>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Guía</p>
+        <a href="../guia/primer-ciclo.html">Primer ciclo</a>
+        <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+        <a href="../guia/tramites.html">Trámites</a>
+        <a href="../guia/consejos.html">Consejos</a>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Comunidad</p>
+        <a href="recursos.html">Recursos</a>
+        <a href="grupos.html">Grupos</a>
+        <a href="../guia/cientificos.html" role="menuitem">Científicos FC</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Proyecto FC · Facultad de Ciencias UNI · Lima, Perú</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

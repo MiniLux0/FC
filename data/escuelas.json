@@ -1,0 +1,214 @@
+{
+  "escuelas": [
+    {
+      "slug": "fisica",
+      "nombre": "Física",
+      "numero": "01",
+      "colorDiscipline": "#1a3a5c",
+      "tagline": "De la mecánica clásica a la computación cuántica. Formamos físicos con base experimental y teórica sólida.",
+      "description": "Escuela Profesional de Física de la UNI: formación teórica rigurosa, laboratorios de referencia y egresados en doctorados internacionales.",
+      "descripcion": [
+        "La Escuela Profesional de Física de la UNI tiene sus raíces en la antigua Facultad de Ciencias Físicas y Matemáticas. Tras la reorganización de 1983, se consolidó como una de las tres escuelas fundacionales de la Facultad de Ciencias.",
+        "El plan de estudios combina formación teórica rigurosa (mecánica clásica, electrodinámica, mecánica cuántica, mecánica estadística) con una fuerte componente experimental y computacional. Los laboratorios de Física Moderna, Óptica y Computación Científica son referentes en el país.",
+        "Los egresados se insertan en programas de doctorado en universidades de Europa, EE. UU. y Latinoamérica, así como en centros de I+D industriales y organismos como el INGEMMET, IGP y CONCYTEC."
+      ],
+      "perfilEgreso": [
+        { "titulo": "Modelado físico-matemático", "descripcion": "Capacidad para traducir problemas reales a modelos teóricos y resolverlos analítica o numéricamente." },
+        { "titulo": "Diseño experimental", "descripcion": "Planifica, ejecuta y analiza experimentos de precisión; maneja instrumentación avanzada y adquisición de datos." },
+        { "titulo": "Computación científica", "descripcion": "Domina métodos numéricos, simulación (Monte Carlo, elementos finitos) y lenguajes como Python, C++ y Fortran." },
+        { "titulo": "Comunicación científica", "descripcion": "Redacción de artículos, tesis y presentaciones técnicas en español e inglés; defensa de resultados ante pares." }
+      ],
+      "areasInvestigacion": [
+        { "nombre": "Física de la Materia Condensada", "descripcion": "Propiedades electrónicas, magnéticas y ópticas de materiales nanoestructurados; spintrónica y superconductividad." },
+        { "nombre": "Física de Altas Energías", "descripcion": "Fenomenología del Modelo Estándar y más allá; colisionadores y física de neutrinos." },
+        { "nombre": "Óptica y Fotónica", "descripcion": "Láseres, fibras ópticas, holografía, sensores fotónicos y comunicaciones cuánticas." },
+        { "nombre": "Física Computacional", "descripcion": "Simulación de sistemas complejos, dinámica molecular, métodos de Monte Carlo y machine learning aplicado a física." },
+        { "nombre": "Física de la Atmósfera y Clima", "descripcion": "Modelado climático, calidad del aire, radiación solar y sensores remotos." },
+        { "nombre": "Física Médica", "descripcion": "Dosimetría, radioterapia, imagen médica y protección radiológica." }
+      ],
+      "duracion": "5 años (10 semestres)",
+      "creditos": "~208",
+      "planEstudios": [
+        { "ciclo": "I–II", "cursos": "Cálculo I–II, Álgebra Lineal, Física I–II, Química I, Introducción a la Computación" },
+        { "ciclo": "III–IV", "cursos": "Cálculo III, Ecuaciones Diferenciales, Mecánica Clásica, Electromagnetismo I–II, Métodos Matemáticos, Laboratorio de Física I–II" },
+        { "ciclo": "V–VI", "cursos": "Mecánica Cuántica I–II, Termodinámica y Estadística, Electrodinámica, Física del Estado Sólido I, Laboratorio Avanzado I–II, Optativa I" },
+        { "ciclo": "VII–VIII", "cursos": "Física Estadística, Estado Sólido II, Física Nuclear y Partículas, Optativa II–III, Seminario de Tesis, Prácticas Preprofesionales" },
+        { "ciclo": "IX–X", "cursos": "Tesis de Bachillerato, Optativa IV–V, Seminarios de Investigación, Prácticas Preprofesionales" }
+      ],
+      "mallaCurricularUrl": null,
+      "mallaCurricularNota": "Consultar en la página oficial de la escuela",
+      "director": "Dr. Heriberto A. Sánchez Córdova (decano FC, escuela sin director titular publicado)",
+      "email": "fisica@fc.uni.edu.pe",
+      "telefono": "(01) 481-1070 anexo 5020",
+      "web": "https://fc.uni.edu.pe/escuela/fisica/",
+      "ubicacion": "Facultad de Ciencias, Campus UNI, Jr. Mariscal Cáceres 398, Rímac, Lima",
+      "ubicacionMaps": "Facultad+de+Ciencias+UNI+Lima"
+    },
+    {
+      "slug": "matematica",
+      "nombre": "Matemática",
+      "numero": "02",
+      "colorDiscipline": "#1e5631",
+      "tagline": "Álgebra, análisis y estadística con rigor demostrativo. La base abstracta de toda ciencia exacta.",
+      "description": "Escuela Profesional de Matemática de la UNI: pensamiento crítico e investigativo para modelar, resolver y predecir mediante herramientas matemáticas.",
+      "descripcion": [
+        "La Escuela Profesional de Matemática de la UNI forma profesionales con pensamiento crítico e investigativo para modelar, resolver y predecir comportamientos mediante herramientas matemáticas. Sus antecedentes se remontan a 1960 y fue formalizada como escuela en diciembre de 1983 bajo la Ley Universitaria N° 23733.",
+        "Mantiene un rol destacado en la capacitación de docentes de secundaria a nivel nacional y mantiene vínculo directo con el Instituto de Matemática y Ciencias Afines (IMCA)."
+      ],
+      "perfilEgreso": [
+        { "titulo": "Modelado matemático", "descripcion": "Capacidad para traducir problemas de diversas áreas a modelos matemáticos y resolverlos con técnicas analíticas y numéricas." },
+        { "titulo": "Rigor demostrativo", "descripcion": "Construcción y validación de demostraciones matemáticas en álgebra, análisis, topología y teoría de números." },
+        { "titulo": "Análisis estadístico y estocástico", "descripcion": "Diseño de experimentos, inferencia estadística, procesos estocásticos y aplicaciones en ciencia de datos." },
+        { "titulo": "Comunicación y docencia matemática", "descripcion": "Exposición clara de conceptos abstractos; formación de docentes de educación secundaria y universitaria." }
+      ],
+      "areasInvestigacion": [
+        { "nombre": "Optimización", "descripcion": "Métodos de optimización continua, discreta y multi-objetivo; aplicaciones en ingeniería y economía." },
+        { "nombre": "Álgebra, Geometría y Topología", "descripcion": "Estructuras algebraicas, variedades diferenciables, topología algebraica y geométrica." },
+        { "nombre": "Probabilidad y Procesos Estocásticos", "descripcion": "Teoría de la probabilidad, martingalas, procesos de Markov, aplicaciones en finanzas y biología." },
+        { "nombre": "Ecuaciones Diferenciales", "descripcion": "EDO y EDP, sistemas dinámicos, estabilidad, bifurcaciones y aplicaciones físicas." },
+        { "nombre": "Análisis Numérico", "descripcion": "Métodos numéricos para ecuaciones diferenciales, optimización y álgebra lineal computacional." },
+        { "nombre": "Teoría de Números", "descripcion": "Números primos, formas modulares, curvas elípticas y criptografía." }
+      ],
+      "duracion": "5 años (10 semestres)",
+      "creditos": "~208",
+      "planEstudios": [
+        { "ciclo": "I–II", "cursos": "Cálculo I–II, Álgebra Lineal, Geometría Analítica, Introducción a la Lógica Matemática, Computación Básica" },
+        { "ciclo": "III–IV", "cursos": "Cálculo III–IV, Álgebra Abstracta I–II, Topología General, Ecuaciones Diferenciales, Análisis Real I" },
+        { "ciclo": "V–VI", "cursos": "Análisis Complejo, Teoría de la Medida, Geometría Diferencial, Álgebra Conmutativa, Probabilidad, Estadística Matemática" },
+        { "ciclo": "VII–VIII", "cursos": "Análisis Funcional, Teoría de Números, Ecuaciones Diferenciales Parciales, Optimización, Seminario de Tesis I, Optativas" },
+        { "ciclo": "IX–X", "cursos": "Tesis de Bachillerato, Seminario de Tesis II, Optativas de Especialización, Prácticas Preprofesionales" }
+      ],
+      "mallaCurricularUrl": null,
+      "mallaCurricularNota": "No encontrada en PDF; referencia general en la página de la escuela",
+      "director": "Mg. William Echegaray Castillo (encargado, ciclo 2026-1)",
+      "email": "escuelas_fc1@uni.edu.pe",
+      "telefono": "(01) 481-1070 anexo 5020",
+      "web": "https://fc.uni.edu.pe/pregrado/matematica/",
+      "ubicacion": "Facultad de Ciencias, Campus UNI",
+      "ubicacionMaps": "Facultad+de+Ciencias+UNI+Lima"
+    },
+    {
+      "slug": "quimica",
+      "nombre": "Química",
+      "numero": "03",
+      "colorDiscipline": "#8b2d1a",
+      "tagline": "Orgánica, analítica y ambiental. Transformamos la materia para resolver problemas reales.",
+      "description": "Escuela Profesional de Química de la UNI: síntesis, análisis y gestión ambiental con certificaciones técnicas intermedias.",
+      "descripcion": [
+        "La Escuela Profesional de Química de la UNI forma profesionales con sólida visión científica para resolver retos tecnológicos en síntesis de productos, caracterización analítica, análisis de efluentes e impacto ambiental. Fue aprobada en 1968, autorizada en enero de 1969 y formalizada como escuela en diciembre de 1983 bajo la Ley 23733.",
+        "El plan 2018 exige proyecto de tesis (I–III) para egresar y emite certificaciones técnicas intermedias antes de terminar la carrera: Técnico Químico Analista, Técnico en Almacenamiento y Manipulación de Insumos Químicos, y Técnico en Gestión Ambiental."
+      ],
+      "perfilEgreso": [
+        { "titulo": "Síntesis y caracterización química", "descripcion": "Diseño de rutas sintéticas, purificación y elucidación estructural de compuestos orgánicos e inorgánicos." },
+        { "titulo": "Análisis instrumental y control de calidad", "descripcion": "Dominio de técnicas espectroscópicas, cromatográficas y electroquímicas; validación de métodos analíticos." },
+        { "titulo": "Química ambiental y gestión de residuos", "descripcion": "Evaluación de impacto ambiental, tratamiento de efluentes, normativa peruana e internacional." },
+        { "titulo": "Seguridad química y certificación técnica", "descripcion": "Manejo seguro de sustancias peligrosas, almacenamiento, transporte y normativa GHS; emisión de certificaciones técnicas intermedias." }
+      ],
+      "areasInvestigacion": [
+        { "nombre": "Química Orgánica y Farmacéutica", "descripcion": "Síntesis de bioactivos, productos naturales, química medicinal y catálisis." },
+        { "nombre": "Química Analítica y Ambiental", "descripcion": "Desarrollo de métodos analíticos, monitoreo de contaminantes, quimiometría." },
+        { "nombre": "Química Inorgánica y Materiales", "descripcion": "Complejos de coordinación, organometálicos, materiales funcionales y nanoestructurados." },
+        { "nombre": "Química Física y Teórica", "descripcion": "Termodinámica, cinética, electroquímica, modelado molecular y simulaciones." }
+      ],
+      "duracion": "5 años (10 semestres)",
+      "creditos": "208",
+      "planEstudios": [
+        { "ciclo": "I–II", "cursos": "Cálculo I–II, Química General I–II, Física I–II, Biología, Introducción a la Computación" },
+        { "ciclo": "III–IV", "cursos": "Química Orgánica I–II, Química Inorgánica I–II, Química Analítica I–II, Fisicoquímica I, Estadística" },
+        { "ciclo": "V–VI", "cursos": "Química Orgánica III, Química Inorgánica III, Instrumental Analítica, Fisicoquímica II–III, Bioquímica, Química Ambiental I" },
+        { "ciclo": "VII–VIII", "cursos": "Química de Materiales, Catálisis, Análisis Instrumental Avanzado, Gestión de Residuos, Tesis I–II, Optativas" },
+        { "ciclo": "IX–X", "cursos": "Tesis III, Seminarios de Investigación, Prácticas Preprofesionales, Optativas de Especialización" }
+      ],
+      "mallaCurricularUrl": "https://fc.uni.edu.pe/pregrado/quimica/plan-de-estudios/",
+      "mallaCurricularNota": null,
+      "director": "Dra. Ana Cecilia Valderrama Negrón",
+      "email": "escuelas_fc1@uni.edu.pe",
+      "telefono": "(01) 481-1070 anexo 5020",
+      "web": "https://fc.uni.edu.pe/pregrado/quimica/",
+      "ubicacion": "Facultad de Ciencias, Campus UNI",
+      "ubicacionMaps": "Facultad+de+Ciencias+UNI+Lima"
+    },
+    {
+      "slug": "computacion",
+      "nombre": "Ciencia de la Computación",
+      "numero": "04",
+      "colorDiscipline": "#3d1a5c",
+      "tagline": "IA, algoritmos y sistemas. Ingeniería de software con fundamentos teóricos profundos.",
+      "description": "Escuela Profesional de Ciencia de la Computación de la UNI: diseño, evaluación y desarrollo algorítmico de software con base matemática sólida.",
+      "descripcion": [
+        "La Escuela Profesional de Ciencia de la Computación de la UNI forma profesionales en el diseño, evaluación y desarrollo algorítmico de software, con base matemática sólida para modelar sistemas computacionales de alta innovación tecnológica. Fue creada el 3 de noviembre de 2009 mediante Resolución Rectoral N° 1481.",
+        "Cuenta con líneas de investigación en Ciencia de Datos, Big Data, Machine Learning y Computación Científica. Alianzas con el CTIC (Centro de Tecnologías de Información y Comunicaciones) y el IMCA."
+      ],
+      "perfilEgreso": [
+        { "titulo": "Diseño algorítmico y estructuras de datos", "descripcion": "Análisis de complejidad, algoritmos de grafos, programación dinámica, algoritmos aproximados y aleatorizados." },
+        { "titulo": "Ingeniería de software y arquitectura", "descripcion": "Patrones de diseño, arquitectura limpia, testing, CI/CD, microservicios, sistemas distribuidos." },
+        { "titulo": "Inteligencia artificial y ciencia de datos", "descripcion": "Machine learning, deep learning, NLP, visión computacional, big data, minería de datos." },
+        { "titulo": "Computación científica y sistemas", "descripcion": "Computación de alto rendimiento, simulación numérica, compiladores, sistemas operativos, seguridad informática." }
+      ],
+      "areasInvestigacion": [
+        { "nombre": "Ciencia de Datos y Big Data", "descripcion": "Procesamiento masivo de datos, bases de datos distribuidas, streaming, análisis en tiempo real." },
+        { "nombre": "Machine Learning e Inteligencia Artificial", "descripcion": "Aprendizaje supervisado/no supervisado, deep learning, transfer learning, explicabilidad." },
+        { "nombre": "Computación Científica", "descripcion": "Métodos numéricos paralelos, simulación científica, computación de alto rendimiento (HPC)." },
+        { "nombre": "Sistemas y Software", "descripcion": "Arquitectura de software, verificación formal, sistemas operativos, compiladores, ciberseguridad." }
+      ],
+      "duracion": "5 años (10 semestres)",
+      "creditos": "~208",
+      "planEstudios": [
+        { "ciclo": "I–II", "cursos": "Cálculo I–II, Álgebra Lineal, Introducción a la Programación, Programación Orientada a Objetos, Matemáticas Discretas, Física I" },
+        { "ciclo": "III–IV", "cursos": "Estructuras de Datos, Algoritmos I–II, Arquitectura de Computadoras, Sistemas Operativos, Bases de Datos, Probabilidad y Estadística" },
+        { "ciclo": "V–VI", "cursos": "Teoría de la Computación, Compiladores, Redes de Computadoras, Inteligencia Artificial I, Ingeniería de Software I, Computación Gráfica" },
+        { "ciclo": "VII–VIII", "cursos": "Machine Learning, Big Data, Sistemas Distribuidos, Seguridad Informática, Ingeniería de Software II, Optativas I–II, Tesis I" },
+        { "ciclo": "IX–X", "cursos": "Tesis II–III, Seminarios de Investigación, Optativas III–IV, Prácticas Preprofesionales, Proyecto de Innovación" }
+      ],
+      "mallaCurricularUrl": null,
+      "mallaCurricularNota": "No encontrada en PDF; detalle disperso entre sitios de pregrado y posgrado",
+      "director": "Dr. Ciro Javier Nuñez Iturri (encargado, ciclo 2025-2026)",
+      "email": "escuelas_fc2@uni.edu.pe",
+      "telefono": "(01) 481-1070 anexo 5020",
+      "web": "https://fc.uni.edu.pe/pregrado/ciencia-de-la-computacion/",
+      "ubicacion": "Facultad de Ciencias, Campus UNI",
+      "ubicacionMaps": "Facultad+de+Ciencias+UNI+Lima"
+    },
+    {
+      "slug": "ingenieria-fisica",
+      "nombre": "Ingeniería Física",
+      "numero": "05",
+      "colorDiscipline": "#155263",
+      "tagline": "Energía, instrumentación y materiales. Física aplicada a la ingeniería de vanguardia.",
+      "description": "Escuela Profesional de Ingeniería Física de la UNI: energía, instrumentación y materiales con enfoque aplicado y acreditación ABET.",
+      "descripcion": [
+        "La Escuela Profesional de Ingeniería Física de la UNI forma ingenieros capaces de resolver problemas tecnológicos integrando ciencias naturales con diseño, instrumentación de precisión y software especializado. Fue creada el 2 de agosto de 1999 mediante Resolución Rectoral N° 0598.",
+        "Cuenta con acreditación internacional ABET. Cuatro líneas de aplicación: instrumentación y metrología, energía no convencional, física médica, y ciencia de los materiales."
+      ],
+      "perfilEgreso": [
+        { "titulo": "Instrumentación y metrología de precisión", "descripcion": "Diseño de sensores, adquisición de datos, calibración, estándares de medición, instrumentación virtual." },
+        { "titulo": "Energía no convencional y sostenibilidad", "descripcion": "Sistemas fotovoltaicos, eólicos, de baterías, hidrógeno verde, eficiencia energética, modelado de recursos." },
+        { "titulo": "Física médica e ingeniería biomédica", "descripcion": "Dosimetría, imagen médica, radioterapia, biomecánica, biomateriales, dispositivos implantables." },
+        { "titulo": "Ciencia de materiales y nanotecnología", "descripcion": "Síntesis y caracterización de materiales avanzados, películas delgadas, nanocompuestos, propiedades ópticas/eléctricas/magnéticas." }
+      ],
+      "areasInvestigacion": [
+        { "nombre": "Instrumentación y Metrología", "descripcion": "Sensores inteligentes, sistemas de medición automática, calibración, normativa internacional." },
+        { "nombre": "Energías Renovables y Eficiencia Energética", "descripcion": "Celdas solares, turbinas eólicas, almacenamiento energético, redes inteligentes, auditorías energéticas." },
+        { "nombre": "Física Médica", "descripcion": "Planificación de tratamientos, optimización de dosis, imagen multimodal, protección radiológica." },
+        { "nombre": "Ciencia de Materiales", "descripcion": "Nanomateriales, semiconductores, superficies, caracterización estructural (XRD, SEM, TEM), simulación DFT." }
+      ],
+      "duracion": "5 años (10 semestres)",
+      "creditos": "~208",
+      "planEstudios": [
+        { "ciclo": "I–II", "cursos": "Cálculo I–II, Álgebra Lineal, Física I–II, Química I, Introducción a la Computación, Dibujo Técnico" },
+        { "ciclo": "III–IV", "cursos": "Cálculo III, Ecuaciones Diferenciales, Mecánica Clásica, Electromagnetismo I–II, Termodinámica, Laboratorio de Física I–II, Circuitos Eléctricos" },
+        { "ciclo": "V–VI", "cursos": "Mecánica Cuántica, Física del Estado Sólido I–II, Electrónica Analógica y Digital, Instrumentación I, Métodos Numéricos, Física Estadística" },
+        { "ciclo": "VII–VIII", "cursos": "Instrumentación II, Física Médica I, Energías Renovables, Ciencia de Materiales I, Optativas I–II, Seminario de Tesis, Prácticas Preprofesionales" },
+        { "ciclo": "IX–X", "cursos": "Tesis de Bachillerato, Física Médica II, Ciencia de Materiales II, Optativas III–IV, Seminarios de Investigación, Prácticas Preprofesionales" }
+      ],
+      "mallaCurricularUrl": "https://fc.uni.edu.pe/pregrado/ingenieria-fisica/plan-de-estudio-fisica/",
+      "mallaCurricularNota": null,
+      "director": "Dr. Juan Martin Rodríguez Rodríguez (encargado, ciclo 2026-1)",
+      "email": "escuelas_fc1@uni.edu.pe",
+      "telefono": "(01) 481-1070 anexo 5023",
+      "web": "https://fc.uni.edu.pe/pregrado/ingenieria-fisica/",
+      "ubicacion": "Facultad de Ciencias, Campus UNI",
+      "ubicacionMaps": "Facultad+de+Ciencias+UNI+Lima"
+    }
+  ]
+}

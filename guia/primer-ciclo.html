@@ -6,19 +6,66 @@
   <meta name="description" content="Guía práctica del primer ciclo en la Facultad de Ciencias de la UNI: etapas, cursos, errores comunes y contactos.">
   <title>Primer ciclo – FC-UNI</title>
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" href="../assets/logos/logo-fc.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/logos/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header class="header">
-    <div class="logo">FC-UNI</div>
+    <a href="../index.html" class="logo"><img src="../assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
     <nav class="nav" id="nav">
       <a href="../index.html">Inicio</a>
-      <a href="primer-ciclo.html" class="active">Primer ciclo</a>
-      <a href="../escuelas/index.html">Escuelas</a>
-      <a href="tramites.html">Trámites</a>
-      <a href="../comunidad/faq.html">FAQ</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="primer-ciclo.html" class="active" role="menuitem">Primer ciclo</a>
+          <a href="campus.html" role="menuitem">Instalaciones FC</a>
+          <a href="tramites.html" role="menuitem">Trámites</a>
+          <a href="consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../comunidad/recursos.html" role="menuitem">Recursos</a>
+          <a href="../comunidad/grupos.html" role="menuitem">Grupos</a>
+          <a href="cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="../comunidad/faq.html" role="menuitem">FAQ</a>
+        </div>
+      </div>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
   </header>
@@ -34,17 +81,19 @@
     </section>
 
     <section class="section">
-      <h2 class="section-title">Qué pasa cuando ingresas</h2>
-      <div class="prose">
-        <p>Al ingresar a la Facultad de Ciencias, todos los alumnos — sin importar la carrera a la que postularon — cursan los mismos <strong>cinco cursos base</strong> en el primer ciclo: Física I, Química I, Álgebra Lineal, Cálculo Diferencial e Introducción a la Computación.</p>
-        <p>El proceso no tiene fechas fijas — cambian cada ciclo. Lo que sí es fijo son las <strong>etapas</strong>: siempre ocurren en el mismo orden. Aquí te explicamos qué hacer en cada una.</p>
+      <div class="inner" style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title text-center">Qué pasa cuando ingresas</h2>
+        <div class="prose" style="margin: 0 auto;">
+          <p>Al ingresar a la Facultad de Ciencias, todos los alumnos — sin importar la carrera a la que postularon — cursan los mismos <strong>cinco cursos base</strong> en el primer ciclo: Física I, Química I, Álgebra Lineal, Cálculo Diferencial e Introducción a la Computación.</p>
+          <p>El proceso no tiene fechas fijas — cambian cada ciclo. Las fechas oficiales exactas se publican en el <a href="https://dirce.uni.edu.pe/calendario-actividades-uni" target="_blank" rel="noopener noreferrer">Calendario de Actividades de DIRCE ↗</a> o puedes consultar directamente el documento oficial <a href="https://drive.google.com/file/d/1bjrWqUxKY6iTqy8tGRN6uRVw78CGx9vj/view" target="_blank" rel="noopener noreferrer">Calendario de Actividades Académicas 2026 (RR 3678-2025) ↗</a>. Lo que sí es fijo son las <strong>etapas</strong>: siempre ocurren en el mismo orden. Aquí te explicamos qué hacer en cada una.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section section--alt">
+    <section class="section section--alt" id="etapas">
       <div class="inner">
-        <h2 class="section-title">Las tres etapas del primer ciclo</h2>
-        <p class="section-desc">No importa cuándo ingreses. Siempre pasan en este orden.</p>
+        <h2 class="section-title text-center">Las tres etapas del primer ciclo</h2>
+        <p class="section-desc text-center">No importa cuándo ingreses. Siempre pasan en este orden.</p>
         <div class="stages">
 
           <div class="stage-card">
@@ -64,14 +113,14 @@
                 <span class="step-num">2</span>
                 <div class="step-content">
                   <strong>Entra a INTRALU y genera tus pagos</strong>
-                  <p>En <a href="https://alumnos.uni.edu.pe/login" target="_blank" rel="noopener noreferrer">alumnos.uni.edu.pe</a>. Genera las órdenes: examen médico, carnet de biblioteca, carnet universitario y autoseguro.</p>
+                  <p>En el portal <strong>INTRALU</strong> (<a href="https://alumnos.uni.edu.pe/login" target="_blank" rel="noopener noreferrer">alumnos.uni.edu.pe</a>). Genera las órdenes: examen médico, carnet de biblioteca, <a href="tramites.html#carne-regular">carne universitario</a> y autoseguro.</p>
                 </div>
               </div>
               <div class="step">
                 <span class="step-num">3</span>
                 <div class="step-content">
                   <strong>Completa la ficha socioeconómica</strong>
-                  <p>En INTRALU: <em>Configuración → Socioeconómico</em>. Obligatoria para matricularte. Sin esto, no hay matrícula.</p>
+                  <p>En INTRALU: <em>Configuración → Socioeconómico</em>. Requisito obligatorio para todos los semestres. <a href="tramites.html#ficha-socioeconomica">Ver guía del trámite</a>.</p>
                 </div>
               </div>
               <div class="step">
@@ -137,8 +186,8 @@
               <div class="step">
                 <span class="step-num">3</span>
                 <div class="step-content">
-                  <strong>El carnet universitario llega al final</strong>
-                  <p>El aviso llega desde <a href="mailto:estadistica_fc@uni.edu.pe">estadistica_fc@uni.edu.pe</a>. Mientras tanto, usa tu <strong>boleta de matrícula</strong> como identificación dentro del campus.</p>
+                  <strong>El carné universitario tarda en emitirse</strong>
+                  <p>El trámite lo gestiona la facultad ante SUNEDU. El aviso para recogerlo físico llega de <a href="mailto:estadistica_fc@uni.edu.pe">estadistica_fc@uni.edu.pe</a>. Mientras tanto, usa tu <strong>boleta de matrícula</strong> como identificación. <a href="tramites.html#carne-regular">Ver detalles del carné</a>.</p>
                 </div>
               </div>
             </div>
@@ -148,10 +197,10 @@
       </div>
     </section>
 
-    <section class="section section--alt">
-      <div class="inner">
-        <h2 class="section-title">Cursos del primer ciclo</h2>
-        <p class="section-desc">Los cursos base que todos los ingresantes llevan en el primer semestre.</p>
+    <section class="section section--alt" id="cursos">
+      <div class="inner" style="max-width: 800px; text-align: center;">
+        <h2 class="section-title text-center">Cursos del primer ciclo</h2>
+        <p class="section-desc text-center">Los cursos base que todos los ingresantes llevan en el primer semestre.</p>
         <div class="table-wrap">
           <table class="table">
             <thead>
@@ -173,80 +222,63 @@
     </section>
 
     <section class="section">
-      <h2 class="section-title">¿Qué pasa si jalas una práctica o un examen?</h2>
-      <div class="prose">
-        <p>En la mayoría de cursos del primer ciclo, las <strong>prácticas calificadas no se recuperan</strong>. Si obtienes una nota baja, esa nota se mantiene en tu promedio. Por eso es importante no descuidar ninguna.</p>
-        <p>Para los exámenes principales sí existe una opción de recuperación.</p>
-      </div>
-      <div class="notice" style="margin-top: 1.5rem;">
-        <strong>Sustitutorio</strong><br>
-        Si jalas el Examen Parcial (EP) o el Examen Final (EF), puedes rendir un examen sustitutorio al final del ciclo. La nota del sustitutorio <strong>reemplaza automáticamente la nota más baja</strong> entre el EP o el EF, siempre que te convenga. El sistema toma la mejor combinación posible para tu promedio final.
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Errores comunes del primer ciclo</h2>
-      <p class="section-desc">Lo que casi todos hacen mal al ingresar.</p>
-      <div class="error-list">
-        <div class="error-item">
-          <span class="error-icon">✕</span>
-          <div>
-            <strong>No activar el correo institucional a tiempo</strong>
-            <p>Los avisos de matrícula, tutoría y trámites llegan ahí. Si no lo activas, los pierdes.</p>
-          </div>
+      <div class="inner" style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title text-center">¿Qué pasa si jalas una práctica o un examen?</h2>
+        <div class="prose" style="margin: 0 auto;">
+          <p>En la mayoría de cursos del primer ciclo, las <strong>prácticas calificadas no se recuperan</strong>. Si obtienes una nota baja, esa nota se mantiene en tu promedio. Por eso es importante no descuidar ninguna.</p>
+          <p>Para los exámenes principales sí existe una opción de recuperación.</p>
         </div>
-        <div class="error-item">
-          <span class="error-icon">✕</span>
-          <div>
-            <strong>Esperar a los parciales para estudiar</strong>
-            <p>El ritmo de los cursos es rápido desde la semana 1. Las notas del primer ciclo afectan tu promedio final — ese promedio define si puedes acceder a becas al exterior.</p>
-          </div>
-        </div>
-        <div class="error-item">
-          <span class="error-icon">✕</span>
-          <div>
-            <strong>No completar la ficha socioeconómica</strong>
-            <p>Es obligatoria para matricularte. Muchos la dejan para después y pierden su lugar.</p>
-          </div>
-        </div>
-        <div class="error-item">
-          <span class="error-icon">✕</span>
-          <div>
-            <strong>Estudiar solo todo el ciclo</strong>
-            <p>Los grupos de estudio son la herramienta más efectiva en la FC. Los exámenes son difíciles y estudiar en grupo marca la diferencia.</p>
-          </div>
-        </div>
-        <div class="error-item">
-          <span class="error-icon">✕</span>
-          <div>
-            <strong>No usar los recursos disponibles</strong>
-            <p>La biblioteca tiene libros de texto, el Drive FC tiene exámenes anteriores y prácticas. Úsalos desde el inicio. <a href="../comunidad/recursos.html">Ver recursos →</a></p>
-          </div>
+        <div class="notice" style="margin: 1.5rem auto 0;">
+          <strong>Sustitutorio</strong><br>
+          Si jalas el Examen Parcial (EP) o el Examen Final (EF), puedes rendir un examen sustitutorio al final del ciclo. La nota del sustitutorio <strong>reemplaza automáticamente la nota más baja</strong> entre el EP o el EF, siempre que te convenga. El sistema toma la mejor combinación posible para tu promedio final.
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2 class="section-title">Contactos clave</h2>
-      <div class="contacts">
-        <div class="contact-item">
-          <span class="contact-label">Registros Académicos (AERA)</span>
-          <a href="mailto:estadistica_fc@uni.edu.pe">estadistica_fc@uni.edu.pe</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">Tutoría Académica</span>
-          <a href="mailto:tutoriafc@uni.edu.pe">tutoriafc@uni.edu.pe</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">INTRALU</span>
-          <a href="https://alumnos.uni.edu.pe/login" target="_blank" rel="noopener noreferrer">alumnos.uni.edu.pe</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">UNI Virtual</span>
-          <a href="https://univirtual.uni.pe/login" target="_blank" rel="noopener noreferrer">univirtual.uni.pe</a>
+      <div class="inner" style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title text-center">Errores comunes del primer ciclo</h2>
+        <p class="section-desc text-center" style="margin-left: auto; margin-right: auto;">Lo que casi todos hacen mal al ingresar.</p>
+        <div class="error-list" style="margin-left: auto; margin-right: auto;">
+          <div class="error-item">
+            <span class="error-icon">✕</span>
+            <div>
+              <strong>No activar el correo institucional a tiempo</strong>
+              <p>Los avisos de matrícula, tutoría y trámites llegan ahí. Si no lo activas, los pierdes.</p>
+            </div>
+          </div>
+          <div class="error-item">
+            <span class="error-icon">✕</span>
+            <div>
+              <strong>Esperar a los parciales para estudiar</strong>
+              <p>El ritmo de los cursos es rápido desde la semana 1. Las notas del primer ciclo afectan tu promedio final — ese promedio define si puedes acceder a becas al exterior.</p>
+            </div>
+          </div>
+          <div class="error-item">
+            <span class="error-icon">✕</span>
+            <div>
+              <strong>No completar la ficha socioeconómica</strong>
+              <p>Es obligatoria para todos los ciclos. Si la dejas pasar, se bloqueará tu prioridad de matrícula para el siguiente periodo y te quedarás con malos horarios o sin vacantes.</p>
+            </div>
+          </div>
+          <div class="error-item">
+            <span class="error-icon">✕</span>
+            <div>
+              <strong>Estudiar solo todo el ciclo</strong>
+              <p>Los grupos de estudio son la herramienta más efectiva en la FC. Los exámenes son difíciles y estudiar en grupo marca la diferencia.</p>
+            </div>
+          </div>
+          <div class="error-item">
+            <span class="error-icon">✕</span>
+            <div>
+              <strong>No usar los recursos disponibles</strong>
+              <p>La biblioteca tiene libros de texto, el Drive FC tiene exámenes anteriores y prácticas. Úsalos desde el inicio. <a href="../comunidad/recursos.html">Ver recursos →</a></p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
 
   </main>
 
@@ -254,21 +286,38 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">FC-UNI</div>
-        <p>Guía no oficial creada por estudiantes de la Facultad de Ciencias.</p>
-        <p>Para información oficial visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe</a></p>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
       </div>
       <div class="footer-links">
         <p class="footer-links-title">Guía</p>
         <a href="primer-ciclo.html">Primer ciclo</a>
-        <a href="../escuelas/index.html">Escuelas</a>
+        <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
         <a href="tramites.html">Trámites</a>
         <a href="consejos.html">Consejos</a>
-        <a href="cientificos.html">Científicos</a>
       </div>
       <div class="footer-links">
         <p class="footer-links-title">Comunidad</p>
         <a href="../comunidad/recursos.html">Recursos</a>
         <a href="../comunidad/grupos.html">Grupos</a>
+          <a href="cientificos.html" role="menuitem">Científicos FC</a>
         <a href="../comunidad/faq.html">FAQ</a>
       </div>
     </div>

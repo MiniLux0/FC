@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Preguntas frecuentes sobre la Facultad de Ciencias de la UNI. Respuestas directas y prácticas sobre matrícula, cursos, reglamentos y vida estudiantil.">
+  <title>Preguntas Frecuentes – FC-UNI</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/logos/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .faq-list {
+      max-width: 800px;
+      margin: var(--space-lg) auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      text-align: left;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md) var(--space-lg);
+    }
+    .faq-question {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: var(--space-xs);
+    }
+    .faq-answer {
+      font-size: var(--step-3);
+      color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="../index.html" class="logo"><img src="../assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
+    <nav class="nav" id="nav">
+      <a href="../index.html">Inicio</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../guia/primer-ciclo.html" role="menuitem">Primer ciclo</a>
+          <a href="../guia/campus.html" role="menuitem">Instalaciones FC</a>
+          <a href="../guia/tramites.html" role="menuitem">Trámites</a>
+          <a href="../guia/consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="recursos.html" role="menuitem">Recursos</a>
+          <a href="grupos.html" role="menuitem">Grupos</a>
+          <a href="../guia/cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="faq.html" class="active" role="menuitem">FAQ</a>
+        </div>
+      </div>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+
+    <section class="hero hero--simple">
+      <div class="hero-content">
+        <p class="hero-label"><a href="../index.html">Inicio</a> · Comunidad</p>
+        <h1>Preguntas Frecuentes (FAQ)</h1>
+        <p>Absolvemos las consultas más recurrentes de los ingresantes y alumnos de la Facultad de Ciencias sin burocracia.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="inner">
+        <h2 class="section-title">Consultas de Ingresantes</h2>
+        
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <h3 class="faq-question">¿Puedo elegir o cambiar mi horario de clases en el primer ciclo?</h3>
+            <p class="faq-answer"><strong>No.</strong> Para el primer ciclo de ingresantes, los horarios son asignados de forma completamente automática por la oficina de registros académicos (AERA) en bloques preestablecidos. No existe trámite de permuta ni cambio de turno. Debes adaptarte a tu horario asignado desde la primera semana.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">¿Qué pasa si desapruebo un curso en mi primer semestre?</h3>
+            <p class="faq-answer">Llevar un curso por segunda vez ("bica") es un proceso común de adaptación en la UNI. Sin embargo, debes tener cuidado de no desaprobar un curso por tercera vez ("trica"), ya que el reglamento general universitario estipula la separación temporal o retiro definitivo de la universidad. Te sugerimos acudir a la oficina de Tutoría Académica si sientes dificultades.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">¿Cuándo entregan el carnet universitario y la biblioteca?</h3>
+            <p class="faq-answer">Las órdenes de pago para el carnet universitario y carnet de biblioteca se generan en INTRALU en las primeras semanas de clase. Una vez pagadas, la impresión del carnet universitario pasa a manos de la SUNEDU, por lo que el proceso suele demorar de 2 a 3 meses. Mientras tanto, tu boleta de matrícula oficial es tu documento de identificación para ingresar al campus.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">¿Dónde encuentro los Drives y exámenes pasados para estudiar?</h3>
+            <p class="faq-answer">Puedes ver las fuentes recomendadas en nuestra sección de <a href="recursos.html">Recursos</a>. Las carpetas y solucionarios son administrados de forma colaborativa por los estudiantes de ciclos avanzados y agrupaciones estudiantiles como AEDICI.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">¿Cómo solicito una vacante de intercambio internacional o becas?</h3>
+            <p class="faq-answer">La oficina de relaciones internacionales de la UNI y la Oficina de Bienestar Universitario publican convocatorias semestralmente. El requisito indispensable es pertenecer como mínimo al tercio superior y no haber registrado sanciones disciplinarias. Tu promedio acumulado de notas es el principal factor de selección.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">FC-UNI</div>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Guía</p>
+        <a href="../guia/primer-ciclo.html">Primer ciclo</a>
+        <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="../escuelas/fisica.html" role="menuitem">F&#237;sica</a>
+          <a href="../escuelas/matematica.html" role="menuitem">Matem&#225;tica</a>
+          <a href="../escuelas/quimica.html" role="menuitem">Qu&#237;mica</a>
+          <a href="../escuelas/computacion.html" role="menuitem">Ciencia de la Computaci&#243;n</a>
+          <a href="../escuelas/ingenieria-fisica.html" role="menuitem">Ingenier&#237;a F&#237;sica</a>
+        </div>
+      </div>
+        <a href="../guia/tramites.html">Trámites</a>
+        <a href="../guia/consejos.html">Consejos</a>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-title">Comunidad</p>
+        <a href="recursos.html">Recursos</a>
+        <a href="grupos.html">Grupos</a>
+          <a href="../guia/cientificos.html" role="menuitem">Científicos FC</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Proyecto FC · Facultad de Ciencias UNI · Lima, Perú</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

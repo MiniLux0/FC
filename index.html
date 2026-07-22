@@ -3,33 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Guía no oficial de la Facultad de Ciencias de la UNI. Conoce las carreras, egresados y cómo aprovechar la facultad.">
-  <meta property="og:title" content="Facultad de Ciencias – UNI">
-  <meta property="og:description" content="Guía no oficial para ingresantes de la Facultad de Ciencias de la UNI. Carreras, trámites, recursos y científicos egresados.">
+  <meta name="description" content="Plataforma de la Facultad de Ciencias de la Universidad Nacional de Ingeniería (UNI). Carreras, guías, trámites, agrupaciones e instalaciones.">
+  <meta property="og:title" content="Facultad de Ciencias – FC-UNI">
+  <meta property="og:description" content="Plataforma académica y guía estudiantil de la Facultad de Ciencias de la UNI.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/logos/logo-fc.png">
-  <meta property="og:url" content="https://tusitio.com">
-  <link rel="icon" href="assets/logos/logo-fc.png">
-  <title>Facultad de Ciencias – UNI</title>
+  <link rel="icon" href="assets/logos/favicon.ico">
+  <link rel="icon" type="image/png" href="assets/logos/favicon.png">
+  <title>Facultad de Ciencias – FC-UNI</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header class="header">
-    <div class="logo">FC-UNI</div>
+    <a href="index.html" class="logo"><img src="assets/logos/logo-fc.png" alt="Facultad de Ciencias UNI" style="height: 40px; width: auto; display: block;"></a>
     <nav class="nav" id="nav">
       <a href="index.html" class="active">Inicio</a>
-      <a href="guia/primer-ciclo.html">Primer ciclo</a>
-      <a href="escuelas/index.html">Escuelas</a>
-      <a href="guia/tramites.html">Trámites</a>
-      <a href="comunidad/faq.html">FAQ</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Guía">
+          Guía
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="guia/index.html" role="menuitem">Ver toda la guía</a>
+          <hr class="nav-dropdown-divider">
+          <a href="guia/primer-ciclo.html" role="menuitem">Primer ciclo</a>
+          <a href="guia/campus.html" role="menuitem">Instalaciones FC</a>
+          <a href="guia/tramites.html" role="menuitem">Trámites</a>
+          <a href="guia/consejos.html" role="menuitem">Consejos</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Escuelas">
+          Escuelas
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="escuelas/index.html" role="menuitem">Ver todas las escuelas</a>
+          <hr class="nav-dropdown-divider">
+          <a href="escuelas/fisica.html" role="menuitem">Física</a>
+          <a href="escuelas/matematica.html" role="menuitem">Matemática</a>
+          <a href="escuelas/quimica.html" role="menuitem">Química</a>
+          <a href="escuelas/computacion.html" role="menuitem">Ciencia de la Computación</a>
+          <a href="escuelas/ingenieria-fisica.html" role="menuitem">Ingeniería Física</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Comunidad">
+          Comunidad
+          <svg class="nav-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="comunidad/recursos.html" role="menuitem">Recursos</a>
+          <a href="comunidad/grupos.html" role="menuitem">Grupos</a>
+          <a href="guia/cientificos.html" role="menuitem">Científicos FC</a>
+          <a href="comunidad/faq.html" role="menuitem">FAQ</a>
+        </div>
+      </div>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
   </header>
 
   <main>
 
+    <!-- ─── HERO ──────────────────────────────────────────────────────────── -->
     <section class="hero">
       <div class="hero-content">
         <p class="hero-label">Universidad Nacional de Ingeniería · Lima, Perú</p>
@@ -37,22 +84,25 @@
         <p>Forma matemáticos, físicos, químicos e informáticos con base científica sólida. Sus egresados investigan en universidades y laboratorios del mundo.</p>
       </div>
       <div class="hero-image">
-        <img src="assets/images/campus-uni.jpg" alt="Campus de la Universidad Nacional de Ingeniería, Lima" loading="lazy">
+        <div class="hero-image-wrapper">
+          <img src="assets/images/campus-uni.jpg" alt="Campus de la Universidad Nacional de Ingeniería, Lima" loading="lazy">
+        </div>
       </div>
       <div class="hero-actions">
-        <a class="btn" href="guia/primer-ciclo.html">Guía del primer ciclo</a>
-        <a class="btn btn--outline" href="escuelas/index.html">Ver las 5 escuelas</a>
+        <a class="btn" href="guia/index.html">Guía del Estudiante</a>
+        <a class="btn btn--outline" href="escuelas/index.html">Escuelas Profesionales</a>
         <a class="btn btn--outline" href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">Sitio oficial FC ↗</a>
       </div>
     </section>
 
+    <!-- ─── SOBRE LA FACULTAD ─────────────────────────────────────────────── -->
     <section class="section">
       <h2 class="section-title">Sobre la facultad</h2>
       <div class="about-grid">
         <div class="prose">
           <p>La <strong>Facultad de Ciencias de la UNI</strong> tiene sus antecedentes en la antigua Facultad de Ciencias Físicas y Matemáticas. Tras una reorganización institucional en 1983 adoptó su estructura actual con las escuelas de Física, Matemática y Química, y luego sumó Ingeniería Física (1999) y Ciencia de la Computación (2009).</p>
           <p>Su misión es <em>"formar investigadores en ciencias con enfoque integrador de ciencias puras y aplicadas, mediante excelencia académica, innovación científica y responsabilidad ética"</em>. El decano actual es el Dr. Heriberto A. Sánchez Córdova (desde 2023).</p>
-          <p>La facultad cuenta con el Instituto de Investigación <a href="https://fc.uni.edu.pe/investigacion/grupos-de-investigacion/" target="_blank" rel="noopener noreferrer">IIFUNI</a>, más de 20 grupos de investigación activos (aprox.), biblioteca especializada con más de 17,000 volúmenes y programas de posgrado en Física, Matemática, Química y Computación.</p>
+          <p>La facultad cuenta con el Instituto de Investigación <a href="https://fc.uni.edu.pe/investigacion/grupos-de-investigacion/" target="_blank" rel="noopener noreferrer">IIFUNI</a>, más de 20 grupos de investigación activos, la Biblioteca FC equipada con más de 17,800 volúmenes y el sistema UNI-KOHA, además de programas de posgrado en Física, Matemática, Química y Computación.</p>
         </div>
         <div class="about-image">
           <img src="assets/images/laboratorio-fc.jpg" alt="Laboratorio de la Facultad de Ciencias UNI" loading="lazy">
@@ -60,91 +110,158 @@
       </div>
     </section>
 
-    <section class="section section--alt">
+    <!-- ─── GUÍA Y RECURSOS ───────────────────────────────────────────────── -->
+    <section class="section section--alt" id="guia">
       <div class="inner">
-        <h2 class="section-title">Las 5 escuelas profesionales</h2>
-        <p class="section-desc">Todas tienen una duración de 5 años (10 semestres) y requieren aproximadamente 208 créditos para egresar.</p>
+        <h2 class="section-title text-center">Guía y Recursos Estudiantiles</h2>
+        <p class="section-desc text-center">Información práctica y herramientas colaborativas diseñadas para estudiantes de la Facultad de Ciencias.</p>
+        <div class="grid-4 reveal-grid">
+          
+          <a class="card" href="guia/primer-ciclo.html">
+            <h3>Guía del Primer Ciclo</h3>
+            <p>Todo el proceso de inducción paso a paso: activación de correos, ficha socioeconómica, examen médico y matrícula.</p>
+          </a>
+
+          <a class="card" href="guia/campus.html">
+            <h3>Instalaciones FC</h3>
+            <p>Conoce la Biblioteca FC, servicios de préstamo, sala de lectura, catálogo virtual AlphaCloud e infraestructura universitaria.</p>
+          </a>
+
+          <a class="card" href="guia/tramites.html">
+            <h3>Trámites y Reglamentos</h3>
+            <p>Información simplificada sobre créditos mínimos de egreso (208 créditos), tutorías y reglamentos de matrícula.</p>
+          </a>
+
+          <a class="card" href="comunidad/recursos.html">
+            <h3>Recursos y Drives</h3>
+            <p>Drives compartidos con exámenes pasados, guías de laboratorio y enlaces a software científico recomendado.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ESCUELAS PROFESIONALES ────────────────────────────────────────── -->
+    <section class="section">
+      <div class="inner">
+        <h2 class="section-title text-center">Las 5 escuelas profesionales</h2>
+        <p class="section-desc text-center">Todas tienen una duración de 5 años (10 semestres) y requieren aproximadamente 208 créditos para egresar.</p>
         <div class="escuelas-grid">
-          <a class="escuela-card" href="escuelas/fisica.html">
+          <a class="escuela-card" href="escuelas/fisica.html" data-discipline="physics">
             <span class="escuela-num">01</span>
             <strong>Física</strong>
-            <span>Mecánica · Cuántica · Computacional</span>
+            <div class="escuela-areas">
+              <span class="escuela-area">Mecánica</span>
+              <span class="escuela-area">Cuántica</span>
+              <span class="escuela-area">Computacional</span>
+            </div>
           </a>
-          <a class="escuela-card" href="escuelas/matematica.html">
+          <a class="escuela-card" href="escuelas/matematica.html" data-discipline="math">
             <span class="escuela-num">02</span>
             <strong>Matemática</strong>
-            <span>Álgebra · Análisis · Estadística</span>
+            <div class="escuela-areas">
+              <span class="escuela-area">Álgebra</span>
+              <span class="escuela-area">Análisis</span>
+              <span class="escuela-area">Estadística</span>
+            </div>
           </a>
-          <a class="escuela-card" href="escuelas/quimica.html">
+          <a class="escuela-card" href="escuelas/quimica.html" data-discipline="chem">
             <span class="escuela-num">03</span>
             <strong>Química</strong>
-            <span>Orgánica · Analítica · Ambiental</span>
+            <div class="escuela-areas">
+              <span class="escuela-area">Orgánica</span>
+              <span class="escuela-area">Analítica</span>
+              <span class="escuela-area">Ambiental</span>
+            </div>
           </a>
-          <a class="escuela-card" href="escuelas/computacion.html">
+          <a class="escuela-card" href="escuelas/computacion.html" data-discipline="comp">
             <span class="escuela-num">04</span>
             <strong>Ciencia de la Computación</strong>
-            <span>IA · Algoritmos · Sistemas</span>
+            <div class="escuela-areas">
+              <span class="escuela-area">IA</span>
+              <span class="escuela-area">Algoritmos</span>
+              <span class="escuela-area">Sistemas</span>
+            </div>
           </a>
-          <a class="escuela-card" href="escuelas/ingenieria-fisica.html">
+          <a class="escuela-card" href="escuelas/ingenieria-fisica.html" data-discipline="engphys">
             <span class="escuela-num">05</span>
             <strong>Ingeniería Física</strong>
-            <span>Energía · Instrumentación · Materiales</span>
+            <div class="escuela-areas">
+              <span class="escuela-area">Energía</span>
+              <span class="escuela-area">Instrumentación</span>
+              <span class="escuela-area">Materiales</span>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
+    <!-- ─── FOTO PANORÁMICA ───────────────────────────────────────────────── -->
     <div class="campus-photo">
       <img src="assets/images/campus-panorama.jpg" alt="Campus Universidad Nacional de Ingeniería" loading="lazy">
     </div>
 
+    <!-- ─── EGRESADOS DESTACADOS ──────────────────────────────────────────── -->
     <section class="section">
-      <h2 class="section-title">Egresados en el mundo</h2>
-      <p class="section-desc">Estudiantes que salieron de esta misma facultad e investigan hoy en instituciones científicas de primer nivel.</p>
-      <div class="scientists">
-        <article class="scientist">
-          <img src="assets/images/joan-caceres.jpg" alt="Joan Cáceres Salazar" class="scientist-photo" loading="lazy">
-          <span class="scientist-country">Francia</span>
-          <strong>Joan Cáceres Salazar</strong>
-          <p>Doctorando en Física Cuántica, <a href="https://www.cea.fr" target="_blank" rel="noopener noreferrer">CEA Paris-Saclay</a>. Investiga circuitos cuánticos superconductores (Quantronics Group). Bachiller en Física, UNI 2019.</p>
-        </article>
-        <article class="scientist">
-          <img src="assets/images/juan-rojas.jpg" alt="Juan Carlos Rojas Sánchez" class="scientist-photo" loading="lazy">
-          <span class="scientist-country">Francia</span>
-          <strong>Juan Carlos Rojas Sánchez</strong>
-          <p>Investigador del <a href="https://www.cnrs.fr" target="_blank" rel="noopener noreferrer">CNRS</a> (Instituto Jean Lamour, Nancy). Especialista en espintrónica y nanomagnetismo. Más de 50 publicaciones. Medalla CNRS. Bachiller UNI 1999.</p>
-        </article>
-        <article class="scientist">
-          <img src="assets/images/dennis-nunez.jpg" alt="Dennis Núñez" class="scientist-photo" loading="lazy">
-          <span class="scientist-country">Francia</span>
-          <strong>Dennis Núñez</strong>
-          <p>Doctorando en NeuroSpin, <a href="https://www.universite-paris-saclay.fr" target="_blank" rel="noopener noreferrer">Université Paris-Saclay</a>. Trabaja en inteligencia artificial y visión computacional. Becario Embassy France.</p>
-        </article>
+      <div class="inner">
+        <h2 class="section-title text-center">Egresados en el mundo</h2>
+        <p class="section-desc text-center">Estudiantes que salieron de esta misma facultad e investigan hoy en instituciones científicas de primer nivel.</p>
+        <div class="scientists reveal-grid">
+          <article class="scientist">
+            <img src="assets/images/joan-caceres.jpg" alt="Joan Cáceres Salazar" class="scientist-photo" loading="lazy">
+            <span class="scientist-country">Francia</span>
+            <strong>Joan Cáceres Salazar</strong>
+            <p>Doctorando en Física Cuántica, <a href="https://www.cea.fr" target="_blank" rel="noopener noreferrer">CEA Paris-Saclay</a>. Investiga circuitos cuánticos superconductores (Quantronics Group). Bachiller en Física, UNI 2019.</p>
+          </article>
+          <article class="scientist">
+            <img src="assets/images/juan-rojas.jpg" alt="Juan Carlos Rojas Sánchez" class="scientist-photo" loading="lazy">
+            <span class="scientist-country">Francia</span>
+            <strong>Juan Carlos Rojas Sánchez</strong>
+            <p>Investigador del <a href="https://www.cnrs.fr" target="_blank" rel="noopener noreferrer">CNRS</a> (Instituto Jean Lamour, Nancy). Especialista en espintrónica y nanomagnetismo. Más de 50 publicaciones. Medalla CNRS. Bachiller UNI 1999.</p>
+          </article>
+          <article class="scientist">
+            <img src="assets/images/dennis-nunez.jpg" alt="Dennis Núñez" class="scientist-photo" loading="lazy">
+            <span class="scientist-country">Francia</span>
+            <strong>Dennis Núñez</strong>
+            <p>Doctorando en NeuroSpin, <a href="https://www.universite-paris-saclay.fr" target="_blank" rel="noopener noreferrer">Université Paris-Saclay</a>. Trabaja en inteligencia artificial y visión computacional. Becario Embassy France.</p>
+          </article>
+        </div>
+        <a href="guia/cientificos.html" class="link-more text-center" style="display: block; margin-top: var(--space-md);">Ver todos los científicos →</a>
       </div>
-      <a href="guia/cientificos.html" class="link-more">Ver todos los científicos →</a>
     </section>
 
+    <!-- ─── AYUDA / CONSULTAS ────────────────────────────────────────────── -->
     <section class="section section--alt">
-      <div class="inner">
-        <h2 class="section-title">Cómo usar esta guía</h2>
-        <p class="section-desc">Esta web está organizada en cuatro áreas. Cada una responde a una etapa distinta de tu vida en la FC.</p>
-        <div class="grid">
-          <a class="card" href="guia/primer-ciclo.html">
-            <h3>Primer ciclo</h3>
-            <p>Qué pasa al ingresar: correos, INTRALU, matrícula, cursos y consejos para el primer semestre.</p>
-          </a>
-          <a class="card" href="escuelas/index.html">
-            <h3>Escuelas</h3>
-            <p>Qué se estudia en cada carrera, perfil de egreso y diferencias entre las cinco escuelas.</p>
-          </a>
-          <a class="card" href="comunidad/recursos.html">
-            <h3>Recursos</h3>
-            <p>Drives, apuntes, exámenes anteriores y material organizado por curso y semestre.</p>
-          </a>
-          <a class="card" href="comunidad/faq.html">
-            <h3>FAQ</h3>
-            <p>Preguntas frecuentes de ingresantes respondidas sin burocracia.</p>
-          </a>
+      <div class="inner" style="max-width: 850px; text-align: center;">
+        <h2 class="section-title">¿Necesitas ayuda o tienes consultas?</h2>
+        <p class="section-desc text-center">Si eres ingresante y no sabes por dónde empezar, o si tienes dudas sobre trámites o recursos académicos, cuentas con la comunidad de la Facultad.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); text-align: left;">
+          
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h3 style="font-family: var(--font-serif); color: var(--accent); font-size: 1.15rem; margin-bottom: var(--space-xs);">Preguntas Frecuentes</h3>
+              <p style="font-size: var(--step-3); color: var(--text-muted); line-height: 1.6;">Respuestas rápidas sobre matrícula, convalidación de cursos, promedios ponderados y reglamentos sin burocracia.</p>
+            </div>
+            <a href="comunidad/faq.html" class="link-more" style="margin-top: var(--space-sm); display: inline-block;">Ver FAQ →</a>
+          </div>
+
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h3 style="font-family: var(--font-serif); color: var(--accent); font-size: 1.15rem; margin-bottom: var(--space-xs);">Grupos de Apoyo</h3>
+              <p style="font-size: var(--step-3); color: var(--text-muted); line-height: 1.6;">Conecta con el Centro de Estudiantes (CEFC) o agrupaciones estudiantiles como ACECOM o AEDICI para recibir orientación directa.</p>
+            </div>
+            <a href="comunidad/grupos.html" class="link-more" style="margin-top: var(--space-sm); display: inline-block;">Conectar →</a>
+          </div>
+
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h3 style="font-family: var(--font-serif); color: var(--accent); font-size: 1.15rem; margin-bottom: var(--space-xs);">Recursos Académicos</h3>
+              <p style="font-size: var(--step-3); color: var(--text-muted); line-height: 1.6;">Accede a drives de exámenes pasados, guías de laboratorio del ciclo básico y herramientas recomendadas de software científico.</p>
+            </div>
+            <a href="comunidad/recursos.html" class="link-more" style="margin-top: var(--space-sm); display: inline-block;">Explorar Drives →</a>
+          </div>
+
         </div>
       </div>
     </section>
@@ -155,26 +272,25 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">FC-UNI</div>
-        <p>Guía no oficial creada por estudiantes de la Facultad de Ciencias.</p>
-        <p>Para información oficial visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe</a></p>
+        <p>Plataforma independiente creada por y para estudiantes de la Facultad de Ciencias.</p>
+        <p style="font-size: var(--step-4); opacity: 0.85; margin-top: 4px;">Información recopilada y verificada directamente de portales, resoluciones y reglamentos oficiales de la UNI (DIRCE, AERA, SUNEDU, OCRI).</p>
+        <p style="margin-top: 8px;">Para trámites institucionales y comunicados oficiales visita <a href="https://fc.uni.edu.pe" target="_blank" rel="noopener noreferrer">fc.uni.edu.pe ↗</a></p>
       </div>
       <div class="footer-links">
         <p class="footer-links-title">Guía</p>
         <a href="guia/primer-ciclo.html">Primer ciclo</a>
+        <a href="guia/campus.html">Instalaciones FC</a>
         <a href="escuelas/index.html">Escuelas</a>
         <a href="guia/tramites.html">Trámites</a>
         <a href="guia/consejos.html">Consejos</a>
-        <a href="guia/cientificos.html">Científicos</a>
       </div>
       <div class="footer-links">
         <p class="footer-links-title">Comunidad</p>
         <a href="comunidad/recursos.html">Recursos</a>
         <a href="comunidad/grupos.html">Grupos</a>
+        <a href="guia/cientificos.html">Científicos FC</a>
         <a href="comunidad/faq.html">FAQ</a>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Proyecto FC · Facultad de Ciencias UNI · Lima, Perú</p>
     </div>
   </footer>
 
