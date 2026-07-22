@@ -1,0 +1,73 @@
+# Dependencias
+node_modules/
+
+# Build / dist (si se añade en el futuro)
+dist/
+build/
+.out/
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS
+*.DS_Store
+ehthumbs.db
+Desktop.ini
+
+# Testing / Coverage (si se añade)
+coverage/
+.nyc_output/
+
+# Cache
+.cache/
+.eslintcache
+.stylelintcache
+
+# Imágenes optimizadas generadas (opcional, si no se commitean)
+assets/images/optimized/
+
+# Archivos temporales
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Logs de despliegue
+vercel.log
+netlify.log
+
+# Archivos de configuración local (no commitear)
+*.local.js
+*.local.ts
+*.local.json
+
+# IA / Asistentes (no commitear)
+.opencode/
+.gemini/
+.cursor/
+.copilot/
+.windsurf/
+.continue/
+.avante/
+.claude/
+.agent/
+agents/
+*.agent.md
